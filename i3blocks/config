@@ -24,6 +24,12 @@ command=~/git-repos/dotfiles/i3blocks/scripts/iface
 color=#859900
 interval=10
 
+[memory]
+command=~/git-repos/dotfiles/i3blocks/scripts/memory
+#label=MEM
+interval=30
+#instance=swap
+
 [cpu_usage2]
 command=~/git-repos/dotfiles/i3blocks/scripts/cpu_usage2
 markup=pango
