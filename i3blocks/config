@@ -1,0 +1,42 @@
+# i3blocks configuration file
+
+# Global properties
+SCRIPT_DIR=/usr/lib/i3blocks
+separator=true
+separator_block_width=15
+
+[pacman-updates]
+command=/usr/lib/i3blocks/arch-update/arch-update.py
+markup=pango
+interval= 3600
+QUIET=true
+
+[iface]
+command=$SCRIPT_DIR/iface
+#LABEL=wlan0:
+#IFACE=wlan0
+#ADDRESS_FAMILY=inet6?
+color=#00FF00
+interval=10
+
+[cpu_usage2]
+command=/usr/lib/i3blocks/cpu_usage2/cpu_usage2
+markup=pango
+interval=persist
+#min_width=CPU 100.00%
+#REFRESH_TIME=1
+LABEL=
+#WARN_PERCENT=50
+#CRIT_PERCENT=80
+#DECIMALS=2
+
+[temperature]
+command=/usr/lib/i3blocks/temperature/temperature
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
