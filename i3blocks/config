@@ -44,10 +44,10 @@ LABEL=
 [temperature]
 command=~/git-repos/dotfiles/i3blocks/scripts/temperature
 #label=TEMP
-interval=10
-#T_WARN=70
-#T_CRIT=90
-#SENSOR_CHIP=""
+interval=1
+T_WARN=65
+T_CRIT=80
+SENSOR_CHIP=k10temp-pci-00c3
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
