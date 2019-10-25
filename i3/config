@@ -127,8 +127,14 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# lock screen
+bindsym $mod+Shift+x exec i3lock
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/git-repos/dotfiles/i3/scripts/exit_menu.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,20 +164,7 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
-# lock screen
-bindsym $mod+Shift+x exec i3lock
-
 # solarized dark theme
-# common
-set $yellow  #b58900
-set $orange  #cb4b16
-set $red     #dc322f
-set $magenta #d33682
-set $violet  #6c71c4
-set $blue    #268bd2
-set $cyan    #2aa198
-set $green   #859900
-# dark
 set $base03  #002b36
 set $base02  #073642
 set $base01  #586e75
@@ -180,6 +173,15 @@ set $base0   #839496
 set $base1   #93a1a1
 set $base2   #eee8d5
 set $base3   #fdf6e3
+
+set $yellow  #b58900
+set $orange  #cb4b16
+set $red     #dc322f
+set $magenta #d33682
+set $violet  #6c71c4
+set $blue    #268bd2
+set $cyan    #2aa198
+set $green   #859900
 
 # window colors
 #                       border          background      text            indicator
@@ -201,11 +203,8 @@ bar {
         }
 }
 
-# start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$base03" -bg "$base03" -fg "$text-color" -hlbg "$base03" -hlfg "#9575cd" -font "Deja Vu Sans 16"
-
 # wallpaper
-exec_always hsetroot -solid '$base03'
+exec_always --no-startup-id hsetroot -solid '$base03'
 
 # disable tile bars and borders
 for_window [class=".*"] border pixel 0
@@ -214,8 +213,8 @@ for_window [class=".*"] border pixel 0
 gaps inner 20
 gaps outer 0
 
-# Only enable gaps on a workspace when there is at least one container
+# only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
 # transparency, shadows, fade
-exec compton -f
+exec --no-startup-id compton -f
