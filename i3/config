@@ -133,6 +133,9 @@ bindsym $mod+Shift+x exec i3lock
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run
 
+# start flameshot to take screenshot
+bindsym $mod+F3 exec --no-startup-id flameshot gui
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec ~/git-repos/dotfiles/i3/scripts/exit_menu.sh
 
