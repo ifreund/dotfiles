@@ -19,9 +19,21 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # tab completion
 source /usr/share/bash-completion/completions/git
 
-
 # CDDA Compile commands
-alias cddamake-no-style="make -j12 NATIVE=linux64 CXXFLAGS=\"-march=native\" RELEASE=1 LOCALIZE=0 CCACHE=1 LTO=1 ASTYLE=0 LINTJSON=0"
+alias cddamake-no-style="make -j12 CLANG=1 NATIVE=linux64 OTHERS=\"-march=native\" RELEASE=1 LOCALIZE=0 CCACHE=1 LTO=1 ASTYLE=0 LINTJSON=0"
 alias cddamake="make astyle && cddamake-no-style"
 alias cddamake-tiles-no-style="cddamake-no-style TILES=1 BUILD_PREFIX=\"tiles-\""
 alias cddamake-tiles="make astyle && cddamake-tiles-no-style"
+
+# colorize
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias ls='ls --color=auto'
+
+
+# probably delete this perl stuff soon
+PATH="/home/ifreund/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ifreund/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ifreund/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ifreund/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ifreund/perl5"; export PERL_MM_OPT;
