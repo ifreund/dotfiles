@@ -96,16 +96,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
+set $ws1 "1:Terminals"
 set $ws2 "2"
-set $ws3 "3"
+set $ws3 "3:Firefox"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10-Music"
+set $ws9 "9:Mail"
+set $ws10 "10:Music"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -130,6 +130,14 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# assign certian applications to workspaces
+assign [class="firefox"] $ws3
+assign [class="Claws-mail"] $ws9
+assign [class="Spotify"] $ws10
+
+# Speical case for Spotify case it fails to assign window class on start
+for_window [class="Spotify"] move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
