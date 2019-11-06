@@ -9,4 +9,6 @@ ln -s ~/git-repos/dotfiles/bashrc ~/.bashrc
 ln -s ~/git-repos/dotfiles/xprofile ~/.xprofile
 ln -s ~/git-repos/dotfiles/spicetify/Themes/ ~/.config/spicetify/Themes
 ln -s ~/git-repos/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
+ln -s ~/git-repos/dotfiles/xinitrc ~/.xinitrc
+ln -s ~/git-repos/dotfiles/bash_profile ~/.bash_profile
 

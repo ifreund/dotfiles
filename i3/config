@@ -96,16 +96,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:Terminals"
+set $ws1 "1"
 set $ws2 "2"
-set $ws3 "3:Firefox"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9:Mail"
-set $ws10 "10:Music"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -228,6 +228,22 @@ bar {
                 urgent_workspace   $red         $red            $base0
         }
 }
+
+#bar {
+#    font pango:DejaVu Sans Mono, FontAwesome 12
+#    position bottom
+#    status_command ~/git-repos/i3status-rust/target/release/i3status-rs ~/git-repos/dotfiles/i3/status.toml
+#    colors {
+#        separator $base0
+#        background $base03 
+#        statusline #00ff00
+#        #                   border   background  text
+#        focused_workspace   $base0   $base0      $base02
+#        active_workspace    $base0   $base0      $base02
+#        inactive_workspace  $base02  $base02     $base0
+#        urgent_workspace    $red     $red        $base0
+#    }
+#}
 
 # wallpaper
 exec_always --no-startup-id hsetroot -solid '$base03'
