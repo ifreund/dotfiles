@@ -48,3 +48,5 @@ set recolor-lightcolor "#002b36"
 # set index-active-fg
 # set index-active-bg
 
+# use standard clipboard
+set selection-clipboard clipboard
