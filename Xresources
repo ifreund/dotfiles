@@ -1,0 +1,40 @@
+#include "/home/ifreund/.Xresources_colors"
+
+! font options
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+! hintnone, hintslight, hintmedium, or hintfull
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+#define FONTSIZE 10
+URxvt*font: xft:Deja Vu Sans Mono:size=FONTSIZE
+URxvt*boldFont: xft:Deja Vu Sans Mono Bold:size=FONTSIZE
+
+! Extra options for xft font spec - ~/.fonts.conf seems to override this
+!:antialias=false:hintstyle=hintfull
+
+! URxvt
+!URxvt.modifier: mod1
+!URxvt*loginShell: true
+!URxvt.borderless: false
+!URxvt*dynamicColors: on
+!URxvt*letterSpace: -1
+!URxvt.lineSpace: 0
+!URxvt.loginShell: true
+
+URxvt.saveLines: 100000
+URxvt.scrollBar: false
+URxvt.scrollstyle: plain
+
+URxvt.visualBell: false
+URxvt.urgentOnBell: true
+
+! clickable links
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.rend.0: Uline Bold S_blue
+URxvt.matcher.button: 1

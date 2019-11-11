@@ -11,4 +11,6 @@ ln -s ~/git-repos/dotfiles/spicetify/Themes/ ~/.config/spicetify/Themes
 ln -s ~/git-repos/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
 ln -s ~/git-repos/dotfiles/xinitrc ~/.xinitrc
 ln -s ~/git-repos/dotfiles/bash_profile ~/.bash_profile
+ln -s ~/git-repos/dotfiles/Xresources ~/.Xresources
+ln -s ~/git-repos/dotfiles/Xresources_colors ~/.Xresources_colors
 
