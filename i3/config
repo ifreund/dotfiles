@@ -133,6 +133,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # assign certian applications to workspaces
 assign [class="firefox"] $ws3
+assign [class="discord"] $ws8
 assign [class="Claws-mail"] $ws9
 assign [class="Spotify"] $ws10
 
