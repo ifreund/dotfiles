@@ -38,6 +38,7 @@ fi
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+setxkbmap -option "caps:swapescape"
 
 # start some nice programs
 
