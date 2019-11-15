@@ -157,7 +157,7 @@ bindsym $mod+Shift+x exec i3lock --image=/usr/share/pixmaps/solarized_wallpaper_
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # start flameshot to take screenshot
-bindsym $mod+F3 exec --no-startup-id flameshot gui
+bindsym $mod+F3 exec --no-startup-id flameshot gui ~/screenshots
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec ~/git-repos/dotfiles/i3/scripts/exit_menu.sh
