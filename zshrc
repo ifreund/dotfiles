@@ -23,10 +23,11 @@ export EDITOR=/bin/nvim
 export AUR_PAGER=/bin/nnn
 
 # nnn config
-alias n=nnn
+# -si starts in type to nav mode with fuzzy matching
+alias n=nnn -si
 export NNN_USE_EDITOR=1                                 # use the $EDITOR when opening text files
 export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote
-export NNN_CONTEXT_COLORS="2136"                        # use a different color for each context
+export NNN_CONTEXT_COLORS="5132"                        # use a different color for each context
 export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
 
 # CDDA Compile commands
