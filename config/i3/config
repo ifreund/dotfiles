@@ -261,5 +261,5 @@ gaps outer 0
 # only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
-# transparency, shadows, fade
-exec --no-startup-id picom -f
+# transparency, shadows, fade, experimental-backends to help test
+exec --no-startup-id picom -f --experimental-backends
