@@ -33,21 +33,11 @@ if executable('rg')
     set grepformat=%f:%l:%c:%m
 endif
 
-" ripgrep -> fzy project search
-" https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-noremap <leader>s ':Rg '
-let g:fzf_layout = { 'down': '~20%' }
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
 " editor settings
 filetype plugin indent on
 set autoindent
 set tabstop=4
+set shiftwidth=4
 set expandtab
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 
@@ -59,10 +49,10 @@ set undofile
 set background=dark
 colorscheme solarized
 set relativenumber
-set number " absolute number instead of 0
 set nowrap
 set scrolloff=3
 set noshowmode
+set cursorline
 "set signcolumn=yes " always draw sign column.
 
 " airline settings
@@ -76,4 +66,26 @@ let g:airline_solarized_dark_inactive_border = 1
 let g:airline_solarized_enable_command_color = 1
 
 " keybindings
+
+" quicker write
 nnoremap <Leader>w :w<CR>
+" shows/hides hidden characters
+nnoremap <leader>, :set invlist<cr>
+
+" fzy open file
+map <C-p> :Files<CR>
+" fzy switch buffer
+nmap <leader>; :Buffers<CR>
+" switch to previous buffer
+nnoremap <leader><leader> <c-^>
+
+" ripgrep -> fzy project search
+" taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+noremap <leader>s ':Rg '
+let g:fzf_layout = { 'down': '~20%' }
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)

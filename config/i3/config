@@ -238,7 +238,7 @@ bar {
 #    status_command ~/git-repos/i3status-rust/target/release/i3status-rs ~/git-repos/dotfiles/i3/status.toml
 #    colors {
 #        separator $base0
-#        background $base03 
+#        background $base03
 #        statusline #00ff00
 #        #                   border   background  text
 #        focused_workspace   $base0   $base0      $base02
