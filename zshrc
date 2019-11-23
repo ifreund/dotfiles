@@ -33,12 +33,13 @@ export NNN_TRASH=1                                      # trash (needs trash-cli
 
 # shortcut aliases
 # -si starts in type to nav mode with fuzzy matching
-alias n="nnn"
-alias nn="nnn -si"
 alias ls="exa"
 alias l="exa"
 alias ll="exa -l"
 alias lll="exa -la"
+alias n="nnn"
+alias nn="nnn -si"
+alias o="xdg-open"
 
 # CDDA Compile commands
 alias cddamake-no-style="make -j12 NATIVE=linux64 LOCALIZE=0 CCACHE=1 DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0"
