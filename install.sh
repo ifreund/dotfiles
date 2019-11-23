@@ -1,18 +1,19 @@
 #!/bin/bash
 
 # symlink configs
-ln -s ~/git-repos/dotfiles/i3/config ~/.config/i3/config
-ln -s ~/git-repos/dotfiles/i3blocks/config ~/.config/i3blocks/config
-ln -s ~/git-repos/dotfiles/rofi/config ~/.config/rofi/config
-ln -s ~/git-repos/dotfiles/picom.conf ~/.config/picom.conf
-ln -s ~/git-repos/dotfiles/xprofile ~/.xprofile
+ln -s ~/git-repos/dotfiles/config/alacritty/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/i3/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/i3blocks/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/nnn ~/.config/
+ln -s ~/git-repos/dotfiles/config/nvim/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/picom/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/rofi/ ~/.config/
+ln -s ~/git-repos/dotfiles/config/zathura/ ~/.config/
+
 ln -s ~/git-repos/dotfiles/spicetify/Themes/ ~/.config/spicetify/
-ln -s ~/git-repos/dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc
-ln -s ~/git-repos/dotfiles/xinitrc ~/.xinitrc
 ln -s ~/git-repos/dotfiles/Xresources ~/.Xresources
 ln -s ~/git-repos/dotfiles/Xresources_colors ~/.Xresources_colors
 ln -s ~/git-repos/dotfiles/zshrc ~/.zshrc
 ln -s ~/git-repos/dotfiles/zprofile ~/.zprofile
-ln -s ~/git-repos/dotfiles/nnn ~/.config/
-ln -s ~/git-repos/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/git-repos/dotfiles/alacritty/ ~/.config/
+ln -s ~/git-repos/dotfiles/xprofile ~/.xprofile
+ln -s ~/git-repos/dotfiles/xinitrc ~/.xinitrc
