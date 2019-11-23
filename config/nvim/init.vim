@@ -2,6 +2,14 @@ let mapleader = "\<Space>"
 
 call plug#begin()
 
+" gui enhancements
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" qol enhancements
+Plug 'andymass/vim-matchup'
+
 " editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
@@ -12,21 +20,22 @@ Plug 'airblade/vim-rooter'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
-" Syntactic language support
+" syntactic language support
+Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
-
 " use ripgrep if availible
 if executable('rg')
-	set grepprg=rg\ --no-heading\ --vimgrep
-	set grepformat=%f:%l:%c:%m
+    set grepprg=rg\ --no-heading\ --vimgrep
+    set grepformat=%f:%l:%c:%m
 endif
 
-" <leader>s for Rg search
-noremap <leader>s :Rg
+" ripgrep -> fzy project search
+" https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+noremap <leader>s ':Rg '
 let g:fzf_layout = { 'down': '~20%' }
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -41,18 +50,30 @@ set autoindent
 set tabstop=4
 set expandtab
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
-set encoding=utf-8
 
 " Permanent undo
 set undodir=~/.config/nvim/undo
 set undofile
 
 " gui settings
+set background=dark
+colorscheme solarized
 set relativenumber
 set number " absolute number instead of 0
 set nowrap
 set scrolloff=3
-"set signcolumn=yes " Always draw sign column. Prevent buffer moving when adding/deleting sign.
+set noshowmode
+"set signcolumn=yes " always draw sign column.
+
+" airline settings
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg = 'dark'
+let g:airline_solarized_normal_green = 1
+let g:airline_solarized_dark_text = 1
+let g:airline_solarized_dark_inactive_background = 1
+let g:airline_solarized_dark_inactive_border = 1
+let g:airline_solarized_enable_command_color = 1
 
 " keybindings
 nnoremap <Leader>w :w<CR>
