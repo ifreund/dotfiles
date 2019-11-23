@@ -4,14 +4,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
-# enable autocompletion and init prompt theme
-autoload -Uz compinit promptinit
+# enable fancy zsh autocompletion
+autoload -Uz compinit
 compinit
-promptinit
-prompt spaceship
-
-# i use arch btw
-neofetch
 
 # use gpg-agent for ssh keys
 unset SSH_AGENT_PID
@@ -32,13 +27,12 @@ export NNN_CONTEXT_COLORS="5132"                        # use a different color 
 export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
 
 # shortcut aliases
-# -si starts in type to nav mode with fuzzy matching
 alias ls="exa"
 alias l="exa"
 alias ll="exa -l"
 alias lll="exa -la"
 alias n="nnn"
-alias nn="nnn -si"
+alias nn="nnn -si" # -si starts in type to nav mode with fuzzy matching
 alias o="xdg-open"
 
 # CDDA Compile commands
@@ -48,3 +42,6 @@ alias cddamake-tiles-no-style="cddamake-no-style TILES=1 BUILD_PREFIX=\"tiles-\"
 alias cddamake-tiles="make astyle && cddamake-tiles-no-style"
 
 alias cddamake-tiles-perf="make -j12 NATIVE=linux64 OTHERS=\"-Ofast -march=native\" RELEASE=1 LTO=1 TILES=1 LOCALIZE=0 CCACHE=1 ASTYLE=0 LINTJSON=0 USE_HOME_DIR=1 BUILD_PREFIX=perf-"
+
+# use the starship prompt
+eval "$(starship init zsh)"
