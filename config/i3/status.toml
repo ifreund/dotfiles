@@ -1,0 +1,29 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "pacman"
+interval = 10
+
+[[block]]
+block = "net"
+device = "wlp38s0"
+signal_strength = true
+speed_up = false
+speed_down = false
+
+[[block]]
+block = "memory"
+display_type = "memory"
+icons = false
+format_mem = "{MFg}/{MTg}G"
+#format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %y-%m-%d %R"
