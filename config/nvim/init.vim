@@ -6,6 +6,7 @@ call plug#begin()
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 
 " qol enhancements
 Plug 'andymass/vim-matchup'
@@ -40,6 +41,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
+set updatetime=100 " governs how often things like git-gutter update
 
 " Permanent undo
 set undodir=~/.config/nvim/undo
@@ -53,7 +55,7 @@ set nowrap
 set scrolloff=3
 set noshowmode
 set cursorline
-"set signcolumn=yes " always draw sign column.
+set signcolumn=yes " always draw sign column.
 
 " airline settings
 let g:airline_powerline_fonts = 1
