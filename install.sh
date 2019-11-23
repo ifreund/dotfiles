@@ -15,3 +15,4 @@ ln -s ~/git-repos/dotfiles/zshrc ~/.zshrc
 ln -s ~/git-repos/dotfiles/zprofile ~/.zprofile
 ln -s ~/git-repos/dotfiles/nnn ~/.config/
 ln -s ~/git-repos/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/git-repos/dotfiles/alacritty/ ~/.config/

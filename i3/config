@@ -5,7 +5,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:{Deja Vu Sans 12, Font Awesome 5 Free 12}
+font pango: DejaVuSansMono Nerd Font Mono 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -158,7 +158,7 @@ bindsym $mod+Shift+x exec i3lock --image=/usr/share/pixmaps/solarized_wallpaper_
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # start flameshot to take screenshot
-bindsym $mod+F3 exec --no-startup-id flameshot gui ~/screenshots
+bindsym $mod+F3 exec --no-startup-id flameshot gui -d ~/screenshots
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec ~/git-repos/dotfiles/i3/scripts/exit_menu.sh
@@ -220,12 +220,14 @@ client.urgent           $red            $red            $base0          #00ff00
 # status bar
 bar {
         status_command i3blocks
+        #status_command ~/git-repos/i3status-rust/target/release/i3status-rs ~/git-repos/dotfiles/i3/status.toml
+        font pango: DejaVuSansMono Nerd Font Mono 12
         colors {
                 background $base03
                 separator $base0
                 #                  border       background      text
-                focused_workspace  $base0       $base0          $base032
-                inactive_workspace $base02      $base02         $base0
+                focused_workspace  $base0       $base0          $base03
+                inactive_workspace $base03      $base03         $base0
                 urgent_workspace   $red         $red            $base0
         }
 }
@@ -260,4 +262,4 @@ gaps outer 0
 smart_gaps on
 
 # transparency, shadows, fade
-exec --no-startup-id compton -f
+exec --no-startup-id picom -f

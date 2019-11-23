@@ -1,14 +1,17 @@
-# Lines configured by zsh-newuser-install
+# lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
-# Enable autocompletion and init prompt theme
+# enable autocompletion and init prompt theme
 autoload -Uz compinit promptinit
 compinit
 promptinit
-prompt walters
+prompt spaceship
+
+# i use arch btw
+neofetch
 
 # use gpg-agent for ssh keys
 unset SSH_AGENT_PID
@@ -18,17 +21,24 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# A few defaults
+# a few defaults
 export EDITOR=/bin/nvim
 export AUR_PAGER=/bin/nnn
 
 # nnn config
-# -si starts in type to nav mode with fuzzy matching
-alias n=nnn -si
 export NNN_USE_EDITOR=1                                 # use the $EDITOR when opening text files
 export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote
 export NNN_CONTEXT_COLORS="5132"                        # use a different color for each context
 export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
+
+# shortcut aliases
+# -si starts in type to nav mode with fuzzy matching
+alias n="nnn"
+alias nn="nnn -si"
+alias ls="exa"
+alias l="exa"
+alias ll="exa -l"
+alias lll="exa -la"
 
 # CDDA Compile commands
 alias cddamake-no-style="make -j12 NATIVE=linux64 LOCALIZE=0 CCACHE=1 DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0"
