@@ -1,0 +1,3 @@
+# this is the dir to store undo history for neovim, so ignore everything
+*
+!.gitignore
