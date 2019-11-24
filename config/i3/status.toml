@@ -25,6 +25,8 @@ thermometer = ""
 [[block]]
 block = "pacman"
 interval = 10
+format = "{count} updates available"
+format_up_to_date = "system up to date"
 
 [[block]]
 block = "networkmanager"
