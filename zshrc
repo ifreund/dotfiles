@@ -4,6 +4,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
+# initalize autojump
+source /usr/share/autojump/autojump.zsh
+
 # enable fancy zsh autocompletion
 autoload -Uz compinit
 compinit
