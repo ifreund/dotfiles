@@ -4,6 +4,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
+# reduce delay entering vi mode to 0.1 s
+export KEYTIMEOUT=1
+
 # initalize autojump
 source /usr/share/autojump/autojump.zsh
 
