@@ -1,17 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
-#env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: xterm-256color
-
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -82,8 +70,8 @@ colors:
     cursor:     '0x93a1a1'
 
   selection:
-    text:       '0x93a1a1'
-    background: '0x002b36'
+    text:       '0x002b36'
+    background: '0x93a1a1'
 
   normal:
     black:      '0x073642'
