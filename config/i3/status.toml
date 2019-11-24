@@ -1,27 +1,52 @@
-theme = "solarized-dark"
-icons = "awesome"
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+idle_bg = "#002b36" # base03
+idle_fg = "#839496" # base0
+info_bg = "#002b36" # base03
+info_fg = "#268bd2" # blue
+good_bg = "#002b36" # base03
+good_fg = "#859900" # green
+warning_bg = "#002b36" # base03
+warning_fg = "#b58900" # yellow
+critical_bg = "#002b36" # base03
+critical_fg = "#dc322f" # red
+separator = ""
+separator_bg = "#002b36" # base03
+separator_fg = "#839496" # base0
+
+[icons]
+name = "none"
+[icons.overrides]
+cpu = ""
+update = ""
+thermometer = ""
 
 [[block]]
 block = "pacman"
 interval = 10
 
 [[block]]
-block = "net"
-device = "wlp38s0"
-signal_strength = true
-speed_up = false
-speed_down = false
+block = "networkmanager"
 
 [[block]]
 block = "memory"
 display_type = "memory"
 icons = false
-format_mem = "{MFg}/{MTg}G"
+format_mem = "{Mug}/{MTg}G"
 #format_swap = "{SUp}%"
 
 [[block]]
 block = "cpu"
 interval = 1
+
+[[block]]
+block = "temperature"
+interval = 1
+collapsed = false
+format = "{max}°C"
+idle = 60
+warning = 75
 
 [[block]]
 block = "time"
