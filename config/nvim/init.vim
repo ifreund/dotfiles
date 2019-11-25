@@ -76,6 +76,7 @@ nnoremap <leader>, :set invlist<cr>
 
 " fzy open file
 map <C-p> :Files<CR>
+nmap <leader>p <C-p>
 " fzy switch buffer
 nmap <leader>; :Buffers<CR>
 " switch to previous buffer
