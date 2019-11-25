@@ -52,5 +52,5 @@ warning = 75
 
 [[block]]
 block = "time"
-interval = 60
-format = "%a %y-%m-%d %R"
+interval = 1
+format = "%a %y-%m-%d %T"
