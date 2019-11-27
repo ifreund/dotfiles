@@ -26,6 +26,12 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 export EDITOR=/bin/nvim
 export AUR_PAGER=/bin/nnn
 
+# use ripgrep for fzf
+export FZF_DEFAULT_COMMAND="rg --files"
+
+# use run firefox through wayland
+export MOZ_ENABLE_WAYLAND=1
+
 # nnn config
 export NNN_USE_EDITOR=1                                 # use the $EDITOR when opening text files
 export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote

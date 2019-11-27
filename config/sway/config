@@ -142,7 +142,6 @@
     # probably because they are electron apps running through xwayland
     for_window [class="discord"] move container to workspace $ws8
     for_window [class="Spotify"] move container to workspace $ws10
-    #MOZ_ENABLE_WAYLAND=1 firefox
 #
 # Layout stuff:
 #
