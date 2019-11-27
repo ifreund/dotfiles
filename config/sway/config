@@ -1,223 +1,233 @@
-# i3 config file (v4)
+# config file for sway, a tiling wayland compositor
+# created 2019 by Isaac Freund
 
-# mod key
-set $mod Mod4
+### Variables
+    # Logo key
+    set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango: DejaVuSansMono Nerd Font Mono 12
+    # vikeys
+    set $left  h
+    set $down  j
+    set $up    k
+    set $right l
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+    # terminal emulator
+    set $term alacritty
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --image=/usr/share/pixmaps/solarized_wallpaper_1920x1080.png \
---ignore-empty-password --veriftext="" --wrongtext="" --noinputtext="" --locktext="" \
---insidecolor=073642ff --insidevercolor=073642ff --insidewrongcolor=dc322fff \
---ringcolor=839496ff --ringvercolor=839496ff --ringwrongcolor=839496ff \
---keyhlcolor=eee8d5ff --bshlcolor=eee8d5ff --separatorcolor=002b36ff \
---line-uses-ring --radius 90 --ring-width 20.0 \
+    # program launcher
+    #set $menu dmenu_path | dmenu | xargs swaymsg exec --
+    set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
+    #set $launcher dmenu_path | fzf | xargs swaymsg exec
+    #bindsym $mod+d exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
+    #for_window [title="^launcher$"] floating enable, border pixel
+    # solarized dark theme
+    set $base03  #002b36
+    set $base02  #073642
+    set $base01  #586e75
+    set $base00  #657b83
+    set $base0   #839496
+    set $base1   #93a1a1
+    set $base2   #eee8d5
+    set $base3   #fdf6e3
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
+    set $yellow  #b58900
+    set $orange  #cb4b16
+    set $red     #dc322f
+    set $magenta #d33682
+    set $violet  #6c71c4
+    set $blue    #268bd2
+    set $cyan    #2aa198
+    set $green   #859900
 
-# Use pactl to adjust volume in PulseAudio.
-# set $refresh_i3status killall -SIGUSR1 i3status
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+### Output configuration
+    output * bg $base03 solid_color
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+### Idle configuration
+    #
+    # Example configuration:
+    #
+    # exec swayidle -w \
+    #          timeout 300 'swaylock -f -c 000000' \
+    #          timeout 600 'swaymsg "output * dpms off"' \
+    #               resume 'swaymsg "output * dpms on"' \
+    #          before-sleep 'swaylock -f -c 000000'
+    #
+    # This will lock your screen after 300 seconds of inactivity, then turn off
+    # your displays after another 300 seconds, and turn your screens back on when
+    # resumed. It will also lock your screen before your computer goes to sleep.
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+### Input configuration
+    # to get input names: $ swaymsg -t get_inputs
+    # `man 5 sway-input` for more information
 
-# kill focused window
-bindsym $mod+Shift+q kill
+    input * xkb_options caps:swapescape
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
 
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+    # Kill focused window
+    bindsym $mod+Shift+q kill
 
-# split in horizontal orientation
-bindsym $mod+semicolon split h
+    # Start your launcher
+    bindsym $mod+d exec $menu
 
-# split in vertical orientation
-bindsym $mod+v split v
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+#
+# Workspaces:
+#
+    # Workspace labels
+    set $ws1 "1:term"
+    set $ws2 "2"
+    set $ws3 "3:web"
+    set $ws4 "4"
+    set $ws5 "5"
+    set $ws6 "6"
+    set $ws7 "7"
+    set $ws8 "8:chat"
+    set $ws9 "9"
+    set $ws10 "10:music"
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+    # Switch to workspace
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws10
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Always float some windows:
-# browser pop-ups
-for_window [window_role="pop-up"] floating enable
-# more to come...
+    # assign certian applications to workspaces
+    assign [class="firefox"] $ws3
+    # same thing, but the above doesn't work for spotify and discord
+    # probably because they are electron apps running through xwayland
+    for_window [class="discord"] move container to workspace $ws8
+    for_window [class="Spotify"] move container to workspace $ws10
+#MOZ_ENABLE_WAYLAND=1 firefox
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
 
-# focus the parent container
-bindsym $mod+a focus parent
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
 
-# focus the child container
-#bindsym $mod+d focus child
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:term"
-set $ws2 "2"
-set $ws3 "3:web"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8:chat"
-set $ws9 "9"
-set $ws10 "10:music"
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
 
-# switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
 
-# assign certian applications to workspaces
-assign [class="firefox"] $ws3
-assign [class="discord"] $ws8
-assign [class="Claws-mail"] $ws9
-assign [class="Spotify"] $ws10
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
 
-# Speical case for Spotify case it fails to assign window class on start
-for_window [class="Spotify"] move container to workspace $ws10
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+    mode "resize" {
+        # left will shrink the containers width
+        # right will grow the containers width
+        # up will shrink the containers height
+        # down will grow the containers height
+        bindsym $left resize shrink width 10px
+        bindsym $down resize grow height 10px
+        bindsym $up resize shrink height 10px
+        bindsym $right resize grow width 10px
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# lock screen
-bindsym $mod+Shift+x exec i3lock --image=/usr/share/pixmaps/solarized_wallpaper_1920x1080.png \
---ignore-empty-password --veriftext="" --wrongtext="" --noinputtext="" --locktext="" \
---insidecolor=073642ff --insidevercolor=073642ff --insidewrongcolor=dc322fff \
---ringcolor=839496ff --ringvercolor=839496ff --ringwrongcolor=839496ff \
---keyhlcolor=eee8d5ff --bshlcolor=eee8d5ff --separatorcolor=002b36ff \
---line-uses-ring --radius 90 --ring-width 20.0 \
-
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
-
-# start flameshot to take screenshot
-bindsym $mod+F3 exec --no-startup-id flameshot gui -d ~/screenshots
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
+        # Return to default mode
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+    }
+    bindsym $mod+r mode "resize"
+#
+# Screenshots:
+#
+    bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+#
+# Style settings:
+#
+    default_border pixel 1
+    default_floating_border pixel 1
+    smart_borders on
 
-# resize mode
-bindsym $mod+r mode "resize"
+    # Note: urgent only relevant for xwayland windows
+    #                       border  background text    indicator child_border
+    client.focused          $base0  #00ff00    #00ff00 $base0    $base0
+    client.focused_inactive $base01 #00ff00    #00ff00 $base01   $base01
+    client.unfocused        $base01 #00ff00    #00ff00 $base01   $base01
+    client.urgent           $red    #00ff00    #00ff00 $red      $red
 
-# solarized dark theme
-set $base03  #002b36
-set $base02  #073642
-set $base01  #586e75
-set $base00  #657b83
-set $base0   #839496
-set $base1   #93a1a1
-set $base2   #eee8d5
-set $base3   #fdf6e3
-
-set $yellow  #b58900
-set $orange  #cb4b16
-set $red     #dc322f
-set $magenta #d33682
-set $violet  #6c71c4
-set $blue    #268bd2
-set $cyan    #2aa198
-set $green   #859900
-
-# window colors
-#                       border  background text    indicator child_border
-client.focused          $base03 $base03    $base0  #00ff00   $base03
-client.unfocused        $base03 $base03    $base00 #00ff00   $base03
-client.focused_inactive $base03 $base03    $base00 #00ff00   $base03
-client.urgent           $red    $red       $base0  #00ff00   $red   
-
-# status bar
-#bar {
-#        status_command i3blocks
-#        #status_command ~/git-repos/i3status-rust/target/release/i3status-rs ~/git-repos/dotfiles/i3/status.toml
-#        font pango: DejaVuSansMono Nerd Font Mono 12
-#        colors {
-#                background $base03
-#                separator $base0
-#                #                  border       background      text
-#                focused_workspace  $base0       $base0          $base03
-#                inactive_workspace $base03      $base03         $base0
-#                urgent_workspace   $red         $red            $base0
-#        }
-#}
-
+#
+# Status Bar:
+#
 bar {
     font pango: DejaVuSansMono Nerd Font Mono 12
     position bottom
     tray_output none
     # this allows workspaces to have names while still staying in order
     strip_workspace_numbers yes
-    status_command ~/git-repos/i3status-rust/target/release/i3status-rs ~/git-repos/dotfiles/config/i3/status.toml
+    status_command ~/git-repos/i3status-rust/target/release/i3status-rs \
+                   ~/git-repos/dotfiles/config/i3/status.toml
+    status_padding 0
+    status_edge_padding 0
     colors {
         separator $base0
         background $base03
@@ -226,22 +236,8 @@ bar {
         focused_workspace   $base0   $base0      $base03
         active_workspace    $base0   $base0      $base03
         inactive_workspace  $base03  $base03     $base0
-        urgent_workspace    $red     $red        $base0
+        urgent_workspace    $red     $red        $base03
     }
 }
 
-# wallpaper
-exec_always --no-startup-id hsetroot -solid '$base03'
-
-# disable tile bars and borders
-for_window [class=".*"] border pixel 0
-
-# gaps
-gaps inner 20
-gaps outer 0
-
-# only enable gaps on a workspace when there is at least one container
-smart_gaps on
-
-# shadows, fade, experimental-backends to help test
-exec --no-startup-id picom -f --experimental-backends
+include /etc/sway/config.d/*
