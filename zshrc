@@ -34,9 +34,6 @@ export NNN_TRASH=1                                      # trash (needs trash-cli
 
 # shortcut aliases
 alias ls="exa"
-alias l="exa"
-alias ll="exa -l"
-alias lll="exa -la"
 alias n="nnn"
 alias nn="nnn -si" # -si starts in type to nav mode with fuzzy matching
 alias o="xdg-open"
