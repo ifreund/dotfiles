@@ -69,10 +69,16 @@ let g:airline_solarized_enable_command_color = 1
 
 " keybindings
 
+" better macro movement
+noremap K H
+noremap J L
+noremap H 0
+noremap L $
+
 " quicker write
-nnoremap <Leader>w :w<CR>
+nnoremap <leader>w :w<CR>
 " shows/hides hidden characters
-nnoremap <leader>, :set invlist<cr>
+nnoremap <leader>, :set invlist<CR>
 
 " fzy open file
 map <C-p> :Files<CR>
@@ -80,7 +86,7 @@ nmap <leader>p <C-p>
 " fzy switch buffer
 nmap <leader>; :Buffers<CR>
 " switch to previous buffer
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> <C-^>
 
 " ripgrep -> fzy project search
 " taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
