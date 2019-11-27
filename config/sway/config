@@ -142,7 +142,8 @@
     # probably because they are electron apps running through xwayland
     for_window [class="discord"] move container to workspace $ws8
     for_window [class="Spotify"] move container to workspace $ws10
-#MOZ_ENABLE_WAYLAND=1 firefox
+    #MOZ_ENABLE_WAYLAND=1 firefox
+#
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
@@ -174,11 +175,15 @@
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    #bindsym $mod+Shift+minus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
+    # Automatically move any windows with class notes to the scratchpad
+    for_window [app_id="notes"] floating enable, move to scratchpad
+
 #
 # Resizing containers:
 #
@@ -239,5 +244,12 @@ bar {
         urgent_workspace    $red     $red        $base03
     }
 }
+#
+# Start programs:
+#
+exec $term
+exec firefox
+exec spotify
+exec $term --class notes -e nvim ~/Documents/notes/todo.txt
 
 include /etc/sway/config.d/*
