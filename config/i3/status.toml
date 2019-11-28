@@ -4,7 +4,7 @@ name = "solarized-dark"
 idle_bg = "#002b36" # base03
 idle_fg = "#839496" # base0
 info_bg = "#002b36" # base03
-info_fg = "#268bd2" # blue
+info_fg = "#b58900" # yellow
 good_bg = "#002b36" # base03
 good_fg = "#859900" # green
 warning_bg = "#002b36" # base03
@@ -26,6 +26,7 @@ thermometer = ""
 block = "pacman"
 interval = 10
 format = "{count} updates available"
+format_singular = "{count} update available"
 format_up_to_date = "system up to date"
 
 [[block]]
