@@ -247,7 +247,7 @@ bar {
 # Start programs:
 #
 exec $term
-exec firefox-developer-edtion
+exec firefox-developer-edition
 exec spotify
 exec $term --class notes -e nvim ~/Documents/notes/todo.txt
 
