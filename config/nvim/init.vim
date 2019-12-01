@@ -79,6 +79,8 @@ noremap L $
 nnoremap <leader>w :w<CR>
 " shows/hides hidden characters
 nnoremap <leader>, :set invlist<CR>
+" format rust code
+nnoremap <leader>f :RustFmt<CR>
 
 " fzy open file
 map <C-p> :Files<CR>
@@ -90,7 +92,7 @@ nnoremap <leader><leader> <C-^>
 
 " ripgrep -> fzy project search
 " taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-noremap <leader>s ':Rg '
+noremap <leader>s :Rg 
 let g:fzf_layout = { 'down': '~20%' }
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
