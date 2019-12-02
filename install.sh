@@ -16,6 +16,8 @@ ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
 ln -s ~/git-repos/dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 
 # home dir stuff
+ln -s ~/git-repos/dotfiles/weechat/ ~/.weechat
+
 ln -s ~/git-repos/dotfiles/xinitrc  ~/.xinitrc
 ln -s ~/git-repos/dotfiles/Xresources ~/.Xresources
 ln -s ~/git-repos/dotfiles/xprofile ~/.xprofile
