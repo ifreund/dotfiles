@@ -70,8 +70,6 @@ let g:airline_solarized_enable_command_color = 1
 " keybindings
 
 " better macro movement
-noremap K H
-noremap J L
 noremap H 0
 noremap L $
 
