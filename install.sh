@@ -5,11 +5,12 @@ ln -s ~/git-repos/dotfiles/config/alacritty/ ~/.config/
 ln -s ~/git-repos/dotfiles/config/Dharkael/  ~/.config/
 ln -s ~/git-repos/dotfiles/config/i3/        ~/.config/
 ln -s ~/git-repos/dotfiles/config/i3blocks/  ~/.config/
+ln -s ~/git-repos/dotfiles/config/mpv/       ~/.config/
 ln -s ~/git-repos/dotfiles/config/nnn/       ~/.config/
 ln -s ~/git-repos/dotfiles/config/nvim/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/picom/     ~/.config/
 ln -s ~/git-repos/dotfiles/config/rofi/      ~/.config/
-ln -s ~/git-repos/dotfiles/config/sway/        ~/.config/
+ln -s ~/git-repos/dotfiles/config/sway/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
 
 # spicetify is a little different

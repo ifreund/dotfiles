@@ -208,7 +208,7 @@
 #
 # Style settings:
 #
-    default_border pixel 1
+    default_border pixel 0
     default_floating_border pixel 1
     smart_borders on
 
