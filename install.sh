@@ -11,6 +11,7 @@ ln -s ~/git-repos/dotfiles/config/nvim/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/picom/     ~/.config/
 ln -s ~/git-repos/dotfiles/config/rofi/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/sway/      ~/.config/
+ln -s ~/git-repos/dotfiles/config/waybar/    ~/.config/
 ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
 
 # spicetify is a little different

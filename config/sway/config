@@ -222,27 +222,9 @@
 #
 # Status Bar:
 #
-bar {
-    font pango: DejaVuSansMono Nerd Font Mono 12
-    position bottom
-    tray_output none
-    # this allows workspaces to have names while still staying in order
-    strip_workspace_numbers yes
-    status_command ~/git-repos/i3status-rust/target/release/i3status-rs \
-                   ~/git-repos/dotfiles/config/i3/status.toml
-    status_padding 0
-    status_edge_padding 0
-    colors {
-        separator $base0
-        background $base03
-        statusline #00ff00
-        #                   border   background  text
-        focused_workspace   $base0   $base0      $base03
-        active_workspace    $base0   $base0      $base03
-        inactive_workspace  $base03  $base03     $base0
-        urgent_workspace    $red     $red        $base03
+    bar {
+        swaybar_command waybar
     }
-}
 #
 # Start programs:
 #

@@ -30,6 +30,7 @@ slurp
 spotify
 starship
 sway
+waybar
 weechat
 vlc
 zathura-pdf-mupdf
