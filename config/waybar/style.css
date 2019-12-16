@@ -22,7 +22,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: DejaVu;
+    font-family: DejaVuSansMono;
     font-size: 16px;
     min-height: 0;
 }
@@ -33,30 +33,20 @@ window#waybar {
     color: #839496; /*base0*/
 }
 
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#mode,
+#tray,
 #workspaces button {
-    padding: 0px 5px;
+    padding: 2px 5px;
+    margin: 0px 4px;
     color: #839496; /*base0*/
-    border-top: 3px solid #586e75; /*base01*/
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-}
-
-#workspaces button.focused {
     background-color: #073642; /*base02*/
     border-top: 3px solid #839496; /*base0*/
-}
-
-#workspaces button.urgent {
-    border-top: 3px solid #dc322f; /*red*/
-}
-
-#mode {
-    background-color: #073642; /*base02*/
-    border-top: 3px solid #dc322f; /*red*/
+    border-bottom: 3px solid #073642; /*base02*/
 }
 
 #clock,
@@ -64,39 +54,27 @@ window#waybar {
 #memory,
 #temperature,
 #network,
-#tray,
-#mode {
-    padding: 0 10px;
-    margin: 0 4px;
-    color: #839496; /*base0*/
-    background-color: #073642; /*base02*/
-    border-top: 3px solid #839496; /*base0*/
-}
-
-#clock {
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-}
-
-#memory {
-}
-
-#network {
-}
-
-#network.disconnected {
-}
-
-#temperature {
-}
-
-#temperature.critical {
-}
-
+#mode,
 #tray {
+
+}
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #073642; /*base02*/
+}
+
+#workspaces button.focused {
+    color: #93a1a1; /*base1*/
+    border-top: 3px solid #93a1a1; /*base1*/
+    border-bottom: 3px solid #839496; /*base1*/
+}
+
+#mode,
+#temperature.critical,
+#workspaces button.urgent {
+    color: #93a1a1; /*base1*/
+    border-top: 3px solid #dc322f; /*red*/
+    border-bottom: 3px solid #dc322f; /*red*/
 }
