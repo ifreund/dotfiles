@@ -35,10 +35,11 @@ window#waybar {
 
 #clock,
 #cpu,
+#custom-pacman,
 #memory,
-#temperature,
 #network,
 #mode,
+#temperature,
 #tray,
 #workspaces button {
     padding: 2px 5px;
@@ -49,15 +50,6 @@ window#waybar {
     border-bottom: 3px solid #073642; /*base02*/
 }
 
-#clock,
-#cpu,
-#memory,
-#temperature,
-#network,
-#mode,
-#tray {
-
-}
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     box-shadow: inherit;
@@ -71,6 +63,16 @@ window#waybar {
     border-bottom: 3px solid #839496; /*base1*/
 }
 
+#cpu.warning,
+#custom-pacman.warning,
+#memory.warning {
+    color: #93a1a1; /*base1*/
+    border-top: 3px solid #b58900; /*yellow*/
+    border-bottom: 3px solid #b58900; /*yellow*/
+}
+
+#cpu.critical,
+#memory.critical,
 #mode,
 #temperature.critical,
 #workspaces button.urgent {

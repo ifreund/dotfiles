@@ -4,6 +4,7 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": [
+        "custom/pacman",
         "network",
         "memory",
         "cpu",
@@ -19,8 +20,14 @@
         "interval": 1,
         "tooltip": false
     },
+    "custom/pacman": {
+        "exec": "~/.config/waybar/pacman.sh",
+        "return-type": "json",
+        "interval": 600, // 10 minutes
+        "signal": 1, // Can use `pkill -SIGRTMIN+1 waybar` to refresh
+        "tooltip": false
+    },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} {signalStrength}%",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP)",
@@ -31,11 +38,19 @@
     "memory": {
         "format": "mem {}%",
         "interval": 1,
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
         "tooltip": false
     },
     "cpu": {
         "format": "cpu{usage:3}%",
         "interval": 1,
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
         "tooltip": false
     },
     "temperature": {

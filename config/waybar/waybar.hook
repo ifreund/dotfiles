@@ -1,0 +1,12 @@
+# pacman hook to trigger an update of the custom pacman waybar module
+
+[Trigger]
+Operation = Upgrade
+Type = File
+Target = *
+
+[Action]
+Description = waybar: refresh pacman module
+When = PostTransaction
+Exec = pkill -SIGRTMIN+1 waybar
+Depends = waybar
