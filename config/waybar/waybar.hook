@@ -8,5 +8,5 @@ Target = *
 [Action]
 Description = waybar: refresh pacman module
 When = PostTransaction
-Exec = pkill -SIGRTMIN+1 waybar
+Exec = "/usr/bin/pkill -SIGRTMIN+1 waybar"
 Depends = waybar
