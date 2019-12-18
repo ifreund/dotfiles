@@ -19,8 +19,8 @@ ln -s ~/git-repos/dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 
 # home dir stuff
 ln -s ~/git-repos/dotfiles/gitconfig ~/.gitconfig
-
-# need the -T since this is otherwise ambigous
+# need the -T since this is otherwise ambiguous
+ln -sT ~/git-repos/dotfiles/gnupg    ~/.gnupg
 ln -sT ~/git-repos/dotfiles/weechat/ ~/.weechat
 
 ln -s ~/git-repos/dotfiles/xinitrc  ~/.xinitrc
