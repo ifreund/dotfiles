@@ -137,7 +137,7 @@
     bindsym $mod+Shift+0 move container to workspace $ws10
 
     # assign certian applications to workspaces
-    assign [class="firefox"] $ws3
+    assign [app_id="firefoxdeveloperedition"] $ws3
     # same thing, but the above doesn't work for spotify and discord
     # probably because they are electron apps running through xwayland
     for_window [class="discord"] move container to workspace $ws8
