@@ -1,2 +1,0 @@
-# Allow qt5c utility to control theme of qt programs
-export QT_QPA_PLATFORMTHEME="qt5ct"

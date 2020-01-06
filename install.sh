@@ -18,10 +18,5 @@ ln -s ~/git-repos/dotfiles/gitconfig ~/.gitconfig
 # need the -T since this is otherwise ambiguous
 ln -sT ~/git-repos/dotfiles/gnupg    ~/.gnupg
 ln -sT ~/git-repos/dotfiles/weechat/ ~/.weechat
-
-ln -s ~/git-repos/dotfiles/xinitrc  ~/.xinitrc
-ln -s ~/git-repos/dotfiles/Xresources ~/.Xresources
-ln -s ~/git-repos/dotfiles/xprofile ~/.xprofile
-
 ln -s ~/git-repos/dotfiles/zprofile ~/.zprofile
 ln -s ~/git-repos/dotfiles/zshrc    ~/.zshrc
