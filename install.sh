@@ -7,6 +7,7 @@ ln -s ~/git-repos/dotfiles/config/nnn/       ~/.config/
 ln -s ~/git-repos/dotfiles/config/nvim/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/rofi/      ~/.config/
 ln -s ~/git-repos/dotfiles/config/sway/      ~/.config/
+ln -s ~/git-repos/dotfiles/config/spotifyd/  ~/.config/
 ln -s ~/git-repos/dotfiles/config/waybar/    ~/.config/
 ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
 
