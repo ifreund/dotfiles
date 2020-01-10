@@ -1,3 +1,14 @@
+# all logs
 logs
 *.log
+
+# file that stores encrypted passwords
 sec.conf
+
+# all script dirs
+guile
+lua
+perl
+python
+script
+tcl
