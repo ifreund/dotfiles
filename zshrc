@@ -42,12 +42,12 @@ alias nn="nnn -si" # -si starts in type to nav mode with fuzzy matching
 alias o="xdg-open"
 
 # CDDA Compile commands
-alias cddamake-no-style="make -j12 NATIVE=linux64 LOCALIZE=0 CCACHE=1 DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 OTHERS=-fdiagnostics-color"
+alias cddamake-no-style="make -j14 NATIVE=linux64 LOCALIZE=0 CCACHE=1 DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 OTHERS=-fdiagnostics-color"
 alias cddamake="make astyle && cddamake-no-style"
 alias cddamake-tiles-no-style="cddamake-no-style TILES=1 BUILD_PREFIX=\"tiles-\""
 alias cddamake-tiles="make astyle && cddamake-tiles-no-style"
 
-alias cddamake-tiles-perf="make -j12 NATIVE=linux64 OTHERS=\"-Ofast -march=native -fdiagnostics-color\" RELEASE=1 LTO=1 TILES=1 LOCALIZE=0 CCACHE=1 ASTYLE=0 LINTJSON=0 USE_HOME_DIR=1 BUILD_PREFIX=perf-"
+alias cddamake-tiles-perf="make -j14 NATIVE=linux64 OTHERS=\"-Ofast -march=native -fdiagnostics-color\" RELEASE=1 LTO=1 TILES=1 LOCALIZE=0 CCACHE=1 ASTYLE=0 LINTJSON=0 USE_HOME_DIR=1 BUILD_PREFIX=perf-"
 
 # use the starship prompt
 eval "$(starship init zsh)"
