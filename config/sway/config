@@ -107,8 +107,8 @@
     set $ws4 "4"
     set $ws5 "5"
     set $ws6 "6"
-    set $ws7 "7"
-    set $ws8 "8:chat"
+    set $ws7 "7:irc"
+    set $ws8 "8:discord"
     set $ws9 "9"
     set $ws10 "10:music"
 
@@ -229,9 +229,16 @@
 #
 # Start programs:
 #
-exec $term
-exec firefox-developer-edition
-exec spotify
-exec $term --class notes -e nvim ~/Documents/notes/todo.txt
+    exec $term --class notes -e nvim ~/Documents/notes/todo.txt
+    
+    workspace 7:irc
+    exec WEECHAT_PASSPHRASE=$(pass weechat) $term -e weechat
+    
+    workspace 1:term
+    exec $term
+    exec firefox-developer-edition
+    exec spotify
 
+# Doesn't seem to be anything in this dir yet, but it was in the example config
+# file so I'm keeping it in case packages put things there
 include /etc/sway/config.d/*
