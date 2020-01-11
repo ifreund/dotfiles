@@ -1,0 +1,55 @@
+################################################################################
+# Dungeon Crawl Stone Soup config file
+################################################################################
+
+# See /usr/share/stone-soup/data/docs/options_guide.txt
+
+################################################################################
+# General
+################################################################################
+
+default_manual_training = true
+# This should choose the oldest non-rotten chunk automatically
+easy_eat_chunks = true
+auto_butcher = true
+
+################################################################################
+# Autopickup
+################################################################################
+
+ae := autopickup_exceptions
+# include potions of mutation overriding default setting
+ae ^= <potions? of mutation
+# exclude wands of random effects
+ae += >wands? of random effects
+
+################################################################################
+# Cosmetics
+################################################################################
+
+allow_extended_colours = true
+
+# This sets black to base03 as well
+background_colour = darkgrey
+
+colour.red           = red
+colour.green         = green
+colour.brown         = yellow
+colour.blue          = blue
+#violet
+colour.magenta       = lightmagenta
+colour.cyan          = cyan
+#base1
+colour.lightgrey     = lightcyan
+
+#base01
+colour.darkgrey      = lightgreen
+#orange
+colour.lightred      = lightred
+colour.lightgreen    = green
+#orange
+colour.yellow        = lightred
+colour.lightblue     = blue
+colour.lightmagenta  = magenta
+colour.lightcyan     = cyan
+colour.white         = white

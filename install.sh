@@ -15,9 +15,10 @@ ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
 ln -s ~/git-repos/dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 
 # home dir stuff
-ln -s ~/git-repos/dotfiles/gitconfig ~/.gitconfig
-# need the -T since this is otherwise ambiguous
-ln -sT ~/git-repos/dotfiles/gnupg    ~/.gnupg
-ln -sT ~/git-repos/dotfiles/weechat/ ~/.weechat
-ln -s ~/git-repos/dotfiles/zprofile ~/.zprofile
-ln -s ~/git-repos/dotfiles/zshrc    ~/.zshrc
+# need the -T for some of these which are otherwise ambiguous
+ln -sT ~/git-repos/dotfiles/crawl     ~/.crawl
+ln -s  ~/git-repos/dotfiles/gitconfig ~/.gitconfig
+ln -sT ~/git-repos/dotfiles/gnupg     ~/.gnupg
+ln -sT ~/git-repos/dotfiles/weechat/  ~/.weechat
+ln -s  ~/git-repos/dotfiles/zprofile  ~/.zprofile
+ln -s  ~/git-repos/dotfiles/zshrc     ~/.zshrc
