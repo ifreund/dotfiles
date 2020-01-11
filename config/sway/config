@@ -208,14 +208,15 @@
 #
 # Style settings:
 #
-    default_border pixel 2
-    default_floating_border pixel 1
+    default_border pixel 3
+    default_floating_border pixel 3
+    gaps inner 16
     smart_borders on
-    hide_edge_borders both
+    smart_gaps on
 
     # Note: urgent only relevant for xwayland windows
     #                       border  background text    indicator child_border
-    client.focused          $base01 #00ff00    #00ff00 $base01   $base01
+    client.focused          $base0  #00ff00    #00ff00 $base0    $base0
     client.focused_inactive $base01 #00ff00    #00ff00 $base01   $base01
     client.unfocused        $base01 #00ff00    #00ff00 $base01   $base01
     client.urgent           $red    #00ff00    #00ff00 $red      $red
