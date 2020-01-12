@@ -40,6 +40,7 @@ alias ls="exa"
 alias n="nnn"
 alias nn="nnn -si" # -si starts in type to nav mode with fuzzy matching
 alias o="xdg-open"
+alias 0x0="curl -F'file=@-' https://0x0.st"
 
 # CDDA Compile commands
 alias cddamake-no-style="make -j14 NATIVE=linux64 LOCALIZE=0 CCACHE=1 DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 OTHERS=-fdiagnostics-color"
