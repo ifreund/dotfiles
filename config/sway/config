@@ -1,7 +1,9 @@
 # config file for sway, a tiling wayland compositor
 # created 2019 by Isaac Freund
 
-### Variables
+#
+# Variables
+#
     # Logo key
     set $mod Mod4
 
@@ -15,11 +17,10 @@
     set $term alacritty
 
     # program launcher
-    #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-    set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
-    #set $launcher dmenu_path | fzf | xargs swaymsg exec
-    #bindsym $mod+d exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
-    #for_window [title="^launcher$"] floating enable, border pixel
+    set $menu ls /usr/share/applications | sed 's/\.desktop$//' | sk | xargs swaymsg exec gtk-launch
+    set $launcher exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$menu\'
+    for_window [title="^launcher$"] floating enable
+
     # solarized dark theme
     set $base03  #002b36
     set $base02  #073642
@@ -38,12 +39,13 @@
     set $blue    #268bd2
     set $cyan    #2aa198
     set $green   #859900
-
-### Output configuration
+#
+# Output configuration
+#
     output * bg $base03 solid_color
-
-### Idle configuration
-    #
+#
+# Idle configuration
+#
     # Example configuration:
     #
     # exec swayidle -w \
@@ -55,13 +57,10 @@
     # This will lock your screen after 300 seconds of inactivity, then turn off
     # your displays after another 300 seconds, and turn your screens back on when
     # resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-    # to get input names: $ swaymsg -t get_inputs
-    # `man 5 sway-input` for more information
-
+#
+# Input configuration
+#
     input * xkb_options caps:swapescape
-
 #
 # Basics:
 #
@@ -72,7 +71,7 @@
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $launcher
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -231,10 +230,10 @@
 # Start programs:
 #
     exec $term --class notes -e nvim ~/Documents/notes/todo.txt
-    
+
     workspace 7:irc
     exec WEECHAT_PASSPHRASE=$(pass weechat) $term -e weechat
-    
+
     workspace 1:term
     exec $term
     exec firefox-developer-edition
