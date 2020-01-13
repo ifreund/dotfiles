@@ -34,7 +34,8 @@ background_colour = darkgrey
 
 colour.red           = red
 colour.green         = green
-colour.brown         = yellow
+# base01
+colour.brown         = lightgreen
 colour.blue          = blue
 #violet
 colour.magenta       = lightmagenta
@@ -42,13 +43,13 @@ colour.cyan          = cyan
 #base1
 colour.lightgrey     = lightcyan
 
-#base01
-colour.darkgrey      = lightgreen
+#base02
+colour.darkgrey      = black
 #orange
 colour.lightred      = lightred
 colour.lightgreen    = green
-#orange
-colour.yellow        = lightred
+#brown is actually yellow
+colour.yellow        = brown
 colour.lightblue     = blue
 colour.lightmagenta  = magenta
 colour.lightcyan     = cyan
