@@ -1,95 +1,129 @@
-#
-# core
-#
-base
-grub
-efibootmgr
-f2fs-tools
-linux
-linux-firmware
-sudo
+## core
 
-#
-# app
-#
-alacritty
-autojump
-bitwarden-cli-bin
-bitwarden-rofi
-exa
-firefox-developer-edition
-fzf
-grim
-htop
-neovim
-neovim-symlinks
-nnn
-ripgrep
-rofi
-slurp
-spotify
-starship
-sway
-waybar
-weechat
-vlc
-zathura-pdf-mupdf
-zsh
+    # all hardware
+        base
+        f2fs-tools
+        linux
+        linux-firmware
+        systemd-boot-pacman-hook
 
-#
-# theme
-#
-gtk-theme-solarc-git
-nerd-fonts-dejavu-complete
-spicetify-cli
+    # amd
+        amd-ucode
+        linux-ck-zen2
+        linux-ck-firmware-zen2
 
-#
-# util
-#
-aurutils
-etckeeper
-man-db
-man-pages
-megatools
-imagemagick
-networkmanager
-p7zip
-pmount
-alsa-utils
-pulseaudio
-pulseaudio-alsa
-pulsemixer
-reflector
-stress
-trash-cli
-unzip
-wine
-wine-mono
-wine_gecko
-wl-clipboard
-xclip
-xorg-server-xwayland
-zip
+## core programs
 
-#
-# dev
-#
-astyle
-ccache
-clang
-cmake
-devtools
-make
-autoconf
-automake
-gcc
-gdb
-git
-pacman-contrib
-python
-rustup
-sdl2_image
-sdl2_ttf
-texlive-bin
-texlive-core
-texlive-localmanager-git
+    # wayland compositor and bar
+        sway
+        waybar
+        wl-clipboard
+        xorg-server-xwayland
+
+    # theme
+        gtk-theme-solarc-git
+        nerd-fonts-dejavu-complete
+        noto-fonts-cjk
+        noto-fonts-emoji
+        ttf-dejavu
+
+    # term and shell
+        alacritty
+        starship
+        zsh
+
+    # editing
+        neovim
+        neovim-symlinks
+
+    # multimedia
+        firefox-developer-edition
+        imv
+        mpv
+        pulseaudio
+        pulseaudio-alsa
+        pulsemixer
+        spotify
+        spicetify-cli
+        zathura-pdf-mupdf
+
+    # chat
+        discord
+        weechat
+
+## util
+
+    # docs
+        man-db
+        man-pages
+
+    # network
+        dhcpcd
+        netctl
+        dialog
+        wpa_supplicant
+
+    # package management/maintenance
+        aurto
+        aurutils
+        etckeeper
+        reflector
+
+    # password management
+        bitwarden-cli-bin
+        pass
+
+    # screen capture
+        grim
+        slurp
+        wf-recorder-git
+
+    # shell utils
+        autojump
+        exa
+        htop
+        imagemagick
+        megatools
+        nnn
+        openssh
+        pacman-contrib
+        ripgrep
+        skim
+        stress
+        sudo
+        trash-cli
+        unzip
+        which
+        zip
+
+## devtools
+
+    # general
+        devtools
+        gdb
+        git
+        perf
+        valgrind
+
+    # C++
+        astyle
+        ccache
+        clang
+        gcc
+        make
+        sdl2_image
+        sdl2_mixer
+        sdl2_ttf
+
+    # rust
+        rustup
+
+    # python
+        python
+        python-numpy
+        python-pytorch
+
+    # TeX
+        texlive-bin
+        texlive-core
+        texlive-localmanager-git
