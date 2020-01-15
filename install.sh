@@ -1,24 +1,27 @@
 #!/bin/bash
 
+# this script must be run from the root of the dotfiles git repository
+dotfiles=`pwd`
+
 # standard config dir stuff
-ln -s ~/git-repos/dotfiles/config/alacritty/ ~/.config/
-ln -s ~/git-repos/dotfiles/config/mpv/       ~/.config/
-ln -s ~/git-repos/dotfiles/config/nnn/       ~/.config/
-ln -s ~/git-repos/dotfiles/config/nvim/      ~/.config/
-ln -s ~/git-repos/dotfiles/config/rofi/      ~/.config/
-ln -s ~/git-repos/dotfiles/config/sway/      ~/.config/
-ln -s ~/git-repos/dotfiles/config/spotifyd/  ~/.config/
-ln -s ~/git-repos/dotfiles/config/waybar/    ~/.config/
-ln -s ~/git-repos/dotfiles/config/zathura/   ~/.config/
+ln -s $dotfiles/config/alacritty/ ~/.config/
+ln -s $dotfiles/config/mpv/       ~/.config/
+ln -s $dotfiles/config/nnn/       ~/.config/
+ln -s $dotfiles/config/nvim/      ~/.config/
+ln -s $dotfiles/config/rofi/      ~/.config/
+ln -s $dotfiles/config/sway/      ~/.config/
+ln -s $dotfiles/config/spotifyd/  ~/.config/
+ln -s $dotfiles/config/waybar/    ~/.config/
+ln -s $dotfiles/config/zathura/   ~/.config/
 
 # spicetify is a little different
-ln -s ~/git-repos/dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
+ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 
 # home dir stuff
 # need the -T for some of these which are otherwise ambiguous
-ln -sT ~/git-repos/dotfiles/crawl     ~/.crawl
-ln -s  ~/git-repos/dotfiles/gitconfig ~/.gitconfig
-ln -sT ~/git-repos/dotfiles/gnupg     ~/.gnupg
-ln -sT ~/git-repos/dotfiles/weechat/  ~/.weechat
-ln -s  ~/git-repos/dotfiles/zprofile  ~/.zprofile
-ln -s  ~/git-repos/dotfiles/zshrc     ~/.zshrc
+ln -sT $dotfiles/crawl     ~/.crawl
+ln -s  $dotfiles/gitconfig ~/.gitconfig
+ln -sT $dotfiles/gnupg     ~/.gnupg
+ln -sT $dotfiles/weechat/  ~/.weechat
+ln -s  $dotfiles/zprofile  ~/.zprofile
+ln -s  $dotfiles/zshrc     ~/.zshrc
