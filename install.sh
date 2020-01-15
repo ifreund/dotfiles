@@ -5,6 +5,7 @@ dotfiles=`pwd`
 
 # standard config dir stuff
 ln -s $dotfiles/config/alacritty/ ~/.config/
+ln -s $dotfiles/config/gtk-3.0/   ~/.config/
 ln -s $dotfiles/config/mpv/       ~/.config/
 ln -s $dotfiles/config/nnn/       ~/.config/
 ln -s $dotfiles/config/nvim/      ~/.config/
@@ -22,6 +23,7 @@ ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 ln -sT $dotfiles/crawl     ~/.crawl
 ln -s  $dotfiles/gitconfig ~/.gitconfig
 ln -sT $dotfiles/gnupg     ~/.gnupg
+ln -s  $dotfiles/gtkrc-2.0 ~/.gtkrc-2.0
 ln -sT $dotfiles/weechat/  ~/.weechat
 ln -s  $dotfiles/zprofile  ~/.zprofile
 ln -s  $dotfiles/zshrc     ~/.zshrc
