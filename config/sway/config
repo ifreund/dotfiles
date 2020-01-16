@@ -150,10 +150,8 @@
     bindsym $mod+b splith
     bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    #bindsym $mod+s layout stacking
-    #bindsym $mod+w layout tabbed
-    #bindsym $mod+e layout toggle split
+    # Toggle the current container between stacking and tiling
+    bindsym $mod+s layout toggle split stacking
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -209,16 +207,22 @@
 #
     default_border pixel 3
     default_floating_border pixel 3
+
     gaps inner 16
     smart_borders on
     smart_gaps on
 
+    # Hide titlebars completely in stacking/tabbed layouts
+    font pango:DejaVuSansMono Nerd Font Mono 0
+    titlebar_border_thickness 0
+    titlebar_padding 0 0
+
     # Note: urgent only relevant for xwayland windows
     #                       border  background text    indicator child_border
-    client.focused          $base0  #00ff00    #00ff00 $base0    $base0
-    client.focused_inactive $base01 #00ff00    #00ff00 $base01   $base01
-    client.unfocused        $base01 #00ff00    #00ff00 $base01   $base01
-    client.urgent           $red    #00ff00    #00ff00 $red      $red
+    client.focused          $base0  $base03    $base0  $base0    $base0
+    client.focused_inactive $base01 $base03    $base01 $base01   $base01
+    client.unfocused        $base01 $base03    $base01 $base01   $base01
+    client.urgent           $red    $base03    $red    $red      $red
 
 #
 # Status Bar:
