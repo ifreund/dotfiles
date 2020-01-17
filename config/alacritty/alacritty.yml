@@ -12,6 +12,11 @@ scrolling:
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
 
+window:
+  padding:
+    x: 3
+    y: 3
+
 # Spaces per Tab (changes require restart)
 #
 # This setting defines the width of a tab in cells.
@@ -53,16 +58,16 @@ draw_bold_text_with_bright_colors: false
 colors:
   primary:
     background: '0x002b36'
-    foreground: '0x93a1a1'
+    foreground: '0x839496'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text:       '0x002b36'
-    cursor:     '0x93a1a1'
+    cursor:     '0x839496'
 
   selection:
     text:       '0x002b36'
-    background: '0x93a1a1'
+    background: '0x839496'
 
   normal:
     black:      '0x073642'
