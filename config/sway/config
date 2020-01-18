@@ -231,8 +231,16 @@
         swaybar_command waybar
     }
 #
+# Notifications:
+#
+    # notification daemon
+    exec mako
+
+    bindsym $mod+Backspace exec makoctl dismiss
+#
 # Start programs:
 #
+    # gets sent to the scatchpad
     exec $term --class notes -e nvim ~/Documents/notes/todo.txt
 
     workspace 7:irc
