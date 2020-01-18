@@ -13,6 +13,9 @@ if test (tty) = "/dev/tty1"
     exec sway
 end
 
+set -x GPG_TTY (tty)
+gpg-connect-agent updatestartuptty /bye > /dev/null
+
 # clear the greeting
 set -U fish_greeting
 

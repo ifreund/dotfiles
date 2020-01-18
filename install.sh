@@ -21,10 +21,11 @@ ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 
 # home dir stuff
 # need the -T for some of these which are otherwise ambiguous
-ln -sT $dotfiles/crawl     ~/.crawl
-ln -s  $dotfiles/gitconfig ~/.gitconfig
-ln -sT $dotfiles/gnupg     ~/.gnupg
-ln -s  $dotfiles/gtkrc-2.0 ~/.gtkrc-2.0
-ln -sT $dotfiles/weechat/  ~/.weechat
-ln -s  $dotfiles/zprofile  ~/.zprofile
-ln -s  $dotfiles/zshrc     ~/.zshrc
+ln -sT $dotfiles/crawl          ~/.crawl
+ln -s  $dotfiles/gitconfig      ~/.gitconfig
+ln -sT $dotfiles/gnupg          ~/.gnupg
+ln -s  $dotfiles/gtkrc-2.0      ~/.gtkrc-2.0
+ln -s  $dotfiles/pam_enviroment ~/.pam_enviroment
+ln -sT $dotfiles/weechat/       ~/.weechat
+ln -s  $dotfiles/zprofile       ~/.zprofile
+ln -s  $dotfiles/zshrc          ~/.zshrc
