@@ -10,7 +10,6 @@ ln -s $dotfiles/config/gtk-3.0/   ~/.config/
 ln -s $dotfiles/config/mpv/       ~/.config/
 ln -s $dotfiles/config/nnn/       ~/.config/
 ln -s $dotfiles/config/nvim/      ~/.config/
-ln -s $dotfiles/config/rofi/      ~/.config/
 ln -s $dotfiles/config/sway/      ~/.config/
 ln -s $dotfiles/config/spotifyd/  ~/.config/
 ln -s $dotfiles/config/waybar/    ~/.config/
