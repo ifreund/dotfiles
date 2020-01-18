@@ -1,4 +1,11 @@
+" config file for neovim
+" created by Isaac Freund
+
+" The biggest key on your keyboard is the best leader key of course
 let mapleader = "\<Space>"
+
+" for all its greatness, fish isn't very POSIX compliant
+set shell=bash
 
 call plug#begin()
 
@@ -24,6 +31,7 @@ Plug 'lotabout/skim.vim'
 
 " syntactic language support
 Plug 'rust-lang/rust.vim'
+Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 
