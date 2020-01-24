@@ -3,6 +3,7 @@
 
 " The biggest key on your keyboard is the best leader key of course
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
 " for all its greatness, fish isn't very POSIX compliant
 set shell=bash
@@ -112,11 +113,6 @@ nnoremap <leader>, :set invlist<CR>
 nnoremap <leader><leader> <C-^>
 
 """" plugin bindings """"
-
-" format rust code
-" TODO: make this dynamically check if the file is rust first
-" if not it should invoke other formatting tools
-nnoremap <leader>f :RustFmt<CR>
 
 " Open files and switch buffers with skim.vim
 map <C-p> :Files<CR>
