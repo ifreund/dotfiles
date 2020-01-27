@@ -3,7 +3,7 @@
 # this script must be run from the root of the dotfiles git repository
 dotfiles=`pwd`
 
-# standard config dir stuff
+# standard xdg config dir stuff
 ln -s $dotfiles/config/alacritty/ ~/.config/
 ln -s $dotfiles/config/fish/      ~/.config/
 ln -s $dotfiles/config/gtk-3.0/   ~/.config/
@@ -14,6 +14,7 @@ ln -s $dotfiles/config/sway/      ~/.config/
 ln -s $dotfiles/config/spotifyd/  ~/.config/
 ln -s $dotfiles/config/waybar/    ~/.config/
 ln -s $dotfiles/config/zathura/   ~/.config/
+ln -s $dotfiles/config/zsh/       ~/.config/
 
 # spicetify is a little different
 ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
@@ -26,5 +27,3 @@ ln -sT $dotfiles/gnupg           ~/.gnupg
 ln -s  $dotfiles/gtkrc-2.0       ~/.gtkrc-2.0
 ln -s  $dotfiles/pam_environment ~/.pam_environment
 ln -sT $dotfiles/weechat/        ~/.weechat
-ln -s  $dotfiles/zprofile        ~/.zprofile
-ln -s  $dotfiles/zshrc           ~/.zshrc
