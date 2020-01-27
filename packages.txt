@@ -29,7 +29,7 @@
 
     # term and shell
         alacritty
-        starship
+        zsh-theme-powerlevel10k-git
         zsh
 
     # editing
@@ -40,7 +40,6 @@
         firefox-developer-edition
         imv
         mpv
-        pulseaudio
         pulseaudio-alsa
         pulsemixer
         spotify
@@ -93,7 +92,6 @@
         sudo
         trash-cli
         unzip
-        which
         zip
 
 ## devtools
