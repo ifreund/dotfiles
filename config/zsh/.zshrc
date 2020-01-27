@@ -2,23 +2,27 @@
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# confirmations, etc.) must go above this, everything else may go below.
+source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
-HISTFILE=~/.histfile
+# essentially syncs history between shells
+setopt INC_APPEND_HISTORY
+# when adding a new entry to history remove any currently present duplicate
+setopt HIST_IGNORE_ALL_DUPS
+
+HISTFILE=${XDG_DATA_HOME:-$HOME/.local/share}/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
 # vi bindings
 bindkey -v
 
-# reduce delay entering vi mode to 0.1 s
-export KEYTIMEOUT=1
+# ergonomic homerow beginning and end of line bindings
+bindkey -M vicmd H vi-beginning-of-line
+bindkey -M vicmd L vi-end-of-line
 
-# initalize autojump
-source /usr/share/autojump/autojump.zsh
+# reduce delay entering vi mode to 0.1 s
+KEYTIMEOUT=1
 
 # enable fancy zsh autocompletion
 autoload -Uz compinit
@@ -27,29 +31,16 @@ compinit
 # use gpg-agent for ssh keys
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# shortcut aliases
-alias ls="exa"
-alias n="nnn"
-alias paste="curl --data-binary @- https://paste.rs/"
-alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
-alias sdm="sudo systemd-mount"
-alias sdum="sudo systemd-umount"
+# initalize autojump
+source /usr/share/autojump/autojump.zsh
 
-# CDDA Compile commands
-cddamake_common="make -j14 NATIVE=linux64 CCACHE=1 LOCALIZE=0"
-alias cddamake-no-style="$cddamake_common DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 \
-    OTHERS=-fdiagnostics-color"
-alias cddamake="make astyle && cddamake-no-style"
-alias cddamake-tiles-no-style="cddamake-no-style TILES=1 BUILD_PREFIX=\"tiles-\""
-alias cddamake-tiles="make astyle && cddamake-tiles-no-style"
-alias cddamake-tiles-perf="$cddamake_common OTHERS=\"-Ofast -march=native \
-    -fdiagnostics-color\" RELEASE=1 LTO=1 TILES=1 ASTYLE=0 LINTJSON=0 \
-    USE_XDG_DIR=1 BUILD_PREFIX=perf-"
+# load aliases
+source $ZDOTDIR/.aliases.zsh
 
 # use the powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

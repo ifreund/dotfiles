@@ -1,0 +1,20 @@
+# shortcut aliases
+alias ls="exa"
+alias n="nnn"
+alias paste="curl --data-binary @- https://paste.rs/"
+alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+alias sdm="sudo systemd-mount"
+alias sdum="sudo systemd-umount"
+
+# CDDA Compile commands
+function {
+    local cddamake_common="make -j14 NATIVE=linux64 CCACHE=1 LOCALIZE=0"
+    alias cddamake-no-style="$cddamake_common DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 \
+        OTHERS=-fdiagnostics-color"
+    alias cddamake="make astyle && cddamake-no-style"
+    alias cddamake-tiles-no-style="cddamake-no-style TILES=1 BUILD_PREFIX=\"tiles-\""
+    alias cddamake-tiles="make astyle && cddamake-tiles-no-style"
+    alias cddamake-tiles-perf="$cddamake_common OTHERS=\"-Ofast -march=native \
+        -fdiagnostics-color\" RELEASE=1 LTO=1 TILES=1 ASTYLE=0 LINTJSON=0 \
+        USE_XDG_DIR=1 BUILD_PREFIX=perf-"
+}
