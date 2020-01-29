@@ -29,8 +29,10 @@
 
     # term and shell
         alacritty
-        zsh-theme-powerlevel10k-git
         zsh
+        zsh-autosuggestions
+        zsh-syntax-highlighting-git
+        zsh-theme-powerlevel10k-git
 
     # editing
         neovim

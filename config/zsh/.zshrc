@@ -5,6 +5,14 @@
 # confirmations, etc.) must go above this, everything else may go below.
 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
+# use gpg-agent for ssh keys
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # essentially syncs history between shells
 setopt INC_APPEND_HISTORY
 # when adding a new entry to history remove any currently present duplicate
@@ -28,13 +36,11 @@ KEYTIMEOUT=1
 autoload -Uz compinit
 compinit
 
-# use gpg-agent for ssh keys
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
+# intialize autosuggestions plugin with base01 as color and ctrl-N to accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^n' autosuggest-accept
 
 # initalize autojump
 source /usr/share/autojump/autojump.zsh
@@ -42,7 +48,40 @@ source /usr/share/autojump/autojump.zsh
 # load aliases
 source $ZDOTDIR/.aliases.zsh
 
-# use the powerlevel10k prompt
+# initalize powerlevel10k prompt (edit .p10k.zsh to customize)
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt edit .p10k.zsh.
 source $ZDOTDIR/.p10k.zsh
+
+# initalize syntax highlighting and customize colors
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=2' # green
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=2' # green
+ZSH_HIGHLIGHT_STYLES[path]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=3' # yellow
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=12' # base0
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=6' # cyan
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=9' # orange
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=1' # red
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=1' # red
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=2' # green
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
