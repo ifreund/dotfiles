@@ -505,13 +505,16 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PREFIX='%ftook '
 
   #######################[ background_jobs: presence of background jobs ]#######################
-  # Don't show the number of background jobs.
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
-  # Background jobs color.
+  # Background jobs color is cyan
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=6
-  # Custom icon.
+  # Use + as the icon for background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='+'
+  # No space between the icon and content. LEFT refers to left prompt here.
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_LEFT_MIDDLE_WHITESPACE=
+  # Show the number of background jobs.
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
+  # Show the number of background jobs even if it's 1.
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
 
   #######################[ direnv: direnv status (https://direnv.net/) ]########################
   # Direnv color.
