@@ -31,6 +31,7 @@
         alacritty
         zsh
         zsh-autosuggestions
+        zsh-completions
         zsh-syntax-highlighting-git
         zsh-theme-powerlevel10k-git
 
@@ -117,11 +118,6 @@
 
     # rust
         rustup
-
-    # python
-        python
-        python-numpy
-        python-pytorch
 
     # TeX
         texlive-bin

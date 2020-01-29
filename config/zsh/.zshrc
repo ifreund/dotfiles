@@ -32,7 +32,10 @@ bindkey -M vicmd L vi-end-of-line
 # reduce delay entering vi mode to 0.1 s
 KEYTIMEOUT=1
 
-# enable fancy zsh autocompletion
+# add completion functions from zsh-completions packages to fpath so compinit
+# can find them
+fpath=(/usr/share/zsh/site-functions $fpath)
+# initialize completions
 autoload -Uz compinit
 compinit
 
