@@ -4,18 +4,19 @@
 dotfiles=`pwd`
 
 # standard xdg config dir stuff
-ln -s $dotfiles/config/alacritty/ ~/.config/
-ln -s $dotfiles/config/fish/      ~/.config/
-ln -s $dotfiles/config/gtk-3.0/   ~/.config/
-ln -s $dotfiles/config/htop/      ~/.config/
-ln -s $dotfiles/config/mpv/       ~/.config/
-ln -s $dotfiles/config/nnn/       ~/.config/
-ln -s $dotfiles/config/nvim/      ~/.config/
-ln -s $dotfiles/config/sway/      ~/.config/
-ln -s $dotfiles/config/spotifyd/  ~/.config/
-ln -s $dotfiles/config/waybar/    ~/.config/
-ln -s $dotfiles/config/zathura/   ~/.config/
-ln -s $dotfiles/config/zsh/       ~/.config/
+ln -s $dotfiles/config/alacritty/       ~/.config/
+ln -s $dotfiles/config/fish/            ~/.config/
+ln -s $dotfiles/config/gtk-3.0/         ~/.config/
+ln -s $dotfiles/config/htop/            ~/.config/
+ln -s $dotfiles/config/mimeapps.list/   ~/.config/
+ln -s $dotfiles/config/mpv/             ~/.config/
+ln -s $dotfiles/config/nnn/             ~/.config/
+ln -s $dotfiles/config/nvim/            ~/.config/
+ln -s $dotfiles/config/sway/            ~/.config/
+ln -s $dotfiles/config/spotifyd/        ~/.config/
+ln -s $dotfiles/config/waybar/          ~/.config/
+ln -s $dotfiles/config/zathura/         ~/.config/
+ln -s $dotfiles/config/zsh/             ~/.config/
 
 # spicetify is a little different
 ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
