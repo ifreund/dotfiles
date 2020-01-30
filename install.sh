@@ -6,7 +6,6 @@ config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 
 # standard xdg config dir stuff
 ln -s $dotfiles/config/alacritty/       $config_home
-ln -s $dotfiles/config/fish/            $config_home
 ln -s $dotfiles/config/git/             $config_home
 ln -s $dotfiles/config/gtk-3.0/         $config_home
 ln -s $dotfiles/config/htop/            $config_home
