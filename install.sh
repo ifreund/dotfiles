@@ -21,11 +21,9 @@ ln -s $dotfiles/config/mpv/             $config_home
 ln -s $dotfiles/config/nnn/             $config_home
 ln -s $dotfiles/config/nvim/            $config_home
 ln -s $dotfiles/config/sway/            $config_home
+ln -s $dotfiles/config/spicetify/       $config_home
 ln -s $dotfiles/config/spotifyd/        $config_home
 ln -s $dotfiles/config/waybar/          $config_home
 ln -s $dotfiles/config/weechat/         $config_home
 ln -s $dotfiles/config/zathura/         $config_home
 ln -s $dotfiles/config/zsh/             $config_home
-
-# spicetify is a little ugly
-ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
