@@ -1,23 +1,24 @@
-#!/bin/bash
+#!/bin/sh
 
 # this script must be run from the root of the dotfiles git repository
 dotfiles=`pwd`
+config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 
 # standard xdg config dir stuff
-ln -s $dotfiles/config/alacritty/       ~/.config/
-ln -s $dotfiles/config/fish/            ~/.config/
-ln -s $dotfiles/config/git/             ~/.config/
-ln -s $dotfiles/config/gtk-3.0/         ~/.config/
-ln -s $dotfiles/config/htop/            ~/.config/
-ln -s $dotfiles/config/mimeapps.list/   ~/.config/
-ln -s $dotfiles/config/mpv/             ~/.config/
-ln -s $dotfiles/config/nnn/             ~/.config/
-ln -s $dotfiles/config/nvim/            ~/.config/
-ln -s $dotfiles/config/sway/            ~/.config/
-ln -s $dotfiles/config/spotifyd/        ~/.config/
-ln -s $dotfiles/config/waybar/          ~/.config/
-ln -s $dotfiles/config/zathura/         ~/.config/
-ln -s $dotfiles/config/zsh/             ~/.config/
+ln -s $dotfiles/config/alacritty/       $config_home
+ln -s $dotfiles/config/fish/            $config_home
+ln -s $dotfiles/config/git/             $config_home
+ln -s $dotfiles/config/gtk-3.0/         $config_home
+ln -s $dotfiles/config/htop/            $config_home
+ln -s $dotfiles/config/mimeapps.list/   $config_home
+ln -s $dotfiles/config/mpv/             $config_home
+ln -s $dotfiles/config/nnn/             $config_home
+ln -s $dotfiles/config/nvim/            $config_home
+ln -s $dotfiles/config/sway/            $config_home
+ln -s $dotfiles/config/spotifyd/        $config_home
+ln -s $dotfiles/config/waybar/          $config_home
+ln -s $dotfiles/config/zathura/         $config_home
+ln -s $dotfiles/config/zsh/             $config_home
 
 # spicetify is a little different
 ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
