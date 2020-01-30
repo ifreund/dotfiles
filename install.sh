@@ -7,6 +7,7 @@ dotfiles=`pwd`
 ln -s $dotfiles/config/alacritty/ ~/.config/
 ln -s $dotfiles/config/fish/      ~/.config/
 ln -s $dotfiles/config/gtk-3.0/   ~/.config/
+ln -s $dotfiles/config/htop/      ~/.config/
 ln -s $dotfiles/config/mpv/       ~/.config/
 ln -s $dotfiles/config/nnn/       ~/.config/
 ln -s $dotfiles/config/nvim/      ~/.config/
