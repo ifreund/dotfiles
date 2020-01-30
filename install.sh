@@ -6,6 +6,7 @@ dotfiles=`pwd`
 # standard xdg config dir stuff
 ln -s $dotfiles/config/alacritty/       ~/.config/
 ln -s $dotfiles/config/fish/            ~/.config/
+ln -s $dotfiles/config/git/             ~/.config/
 ln -s $dotfiles/config/gtk-3.0/         ~/.config/
 ln -s $dotfiles/config/htop/            ~/.config/
 ln -s $dotfiles/config/mimeapps.list/   ~/.config/
@@ -24,7 +25,6 @@ ln -s $dotfiles/config/spicetify/Themes/ ~/.config/spicetify/
 # home dir stuff
 # need the -T for some of these which are otherwise ambiguous
 ln -sT $dotfiles/crawl           ~/.crawl
-ln -s  $dotfiles/gitconfig       ~/.gitconfig
 ln -sT $dotfiles/gnupg           ~/.gnupg
 ln -s  $dotfiles/gtkrc-2.0       ~/.gtkrc-2.0
 ln -s  $dotfiles/pam_environment ~/.pam_environment
