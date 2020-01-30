@@ -4,5 +4,6 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # exec sway -d 2> ~/sway.log
 
     # env var to run firefox through wayland
-    MOZ_ENABLE_WAYLAND=1 sway
+    export MOZ_ENABLE_WAYLAND=1
+    exec sway
 fi
