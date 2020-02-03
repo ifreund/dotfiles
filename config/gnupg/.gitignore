@@ -1,3 +1,4 @@
 *
 !.gitignore
 !gpg-agent.conf
+!dirmngr.conf
