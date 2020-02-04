@@ -9,6 +9,7 @@ config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 ln -s  $dotfiles/pam_environment ~/.pam_environment
 
 # standard xdg config dir stuff
+ln -s $dotfiles/config/aerc/            $config_home
 ln -s $dotfiles/config/alacritty/       $config_home
 ln -s $dotfiles/config/crawl/           $config_home
 ln -s $dotfiles/config/git/             $config_home
