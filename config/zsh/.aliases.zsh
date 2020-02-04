@@ -3,8 +3,10 @@ alias ls="exa"
 alias n="nnn"
 alias paste="curl --data-binary @- https://paste.rs/"
 alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+alias sc="sudo systemctl"
 alias sdm="sudo systemd-mount"
 alias sdum="sudo systemd-umount"
+alias syu="sudo pacman -Syu"
 
 # CDDA Compile commands
 function {
