@@ -51,6 +51,7 @@
 
     # chat
         discord
+        telegram-desktop
         weechat
 
 ## util
@@ -101,6 +102,7 @@
 
     # general
         devtools
+        docker
         gdb
         git
         perf
