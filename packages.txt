@@ -53,6 +53,7 @@
         discord
         telegram-desktop
         weechat
+        weechat-vimode-git
 
 ## util
 
@@ -84,7 +85,7 @@
     # shell utils
         autojump
         exa
-        htop
+        htop-vim-solarized
         imagemagick
         megatools
         nnn
