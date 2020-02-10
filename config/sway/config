@@ -199,6 +199,13 @@
     }
     bindsym $mod+r mode "resize"
 #
+# Passthrough mode for nested sessions:
+#
+    mode passthrough {
+    	bindsym $mod+Pause mode default
+    }
+    bindsym $mod+Pause mode passthrough
+#
 # Screenshots:
 #
     bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
