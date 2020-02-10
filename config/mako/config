@@ -1,0 +1,27 @@
+# configuration file for mako
+
+font=DejaVuSansMono Nerd Font Mono 12
+
+# base03
+background-color=#002b36
+# base0
+text-color=#839496
+border-color=#839496
+
+border-size=6
+
+ignore-timeout=1
+default-timeout=5000
+margin=8
+
+[hidden]
+format=(and %h more)
+#base01
+text-color=#586e75
+border-color=#586e75
+
+[urgency=high]
+# base03
+background-color=#002b36
+# red
+border-color=#dc322f
