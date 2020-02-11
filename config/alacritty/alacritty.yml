@@ -28,22 +28,30 @@ tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
+  # normal:
+  #   family: DejaVuSansMono Nerd Font Mono
+  #   style: Book
+  # bold:
+  #   family: DejaVuSansMono Nerd Font Mono
+  #   style: Bold
+  # italic:
+  #   family: DejaVuSansMono Nerd Font Mono
+  #   style: Italic
+  # size: 12.0 # This is point size. 12pt should be 16px
+
   normal:
-    family: DejaVuSansMono Nerd Font Mono
-    style: Book
+    family: cozette
   bold:
-    family: DejaVuSansMono Nerd Font Mono
-    style: Bold
-  italic:
-    family: DejaVuSansMono Nerd Font Mono
-    style: Italic
-  size: 12.0 # This is point size. 12pt should be 16px
+    family: cozette
+  itallic:
+    family: cozette
+  size: 9.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
