@@ -22,14 +22,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: DejaVuSansMono;
-    font-size: 16px;
+    font-family: cozette;
     min-height: 0;
 }
 
 window#waybar {
     background-color: #002b36; /*base03*/
-    border-top: 3px solid #586e75; /*base01*/
+    border-top: 2px solid #586e75; /*base01*/
     color: #839496; /*base0*/
 }
 
@@ -42,12 +41,12 @@ window#waybar {
 #temperature,
 #tray,
 #workspaces button {
-    padding: 2px 5px;
+    padding: 1px 5px;
     margin: 0px 4px;
     color: #839496; /*base0*/
     background-color: #073642; /*base02*/
-    border-top: 3px solid #839496; /*base0*/
-    border-bottom: 3px solid #073642; /*base02*/
+    border-top: 2px solid #839496; /*base0*/
+    border-bottom: 2px solid #073642; /*base02*/
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -59,16 +58,16 @@ window#waybar {
 
 #workspaces button.focused {
     color: #93a1a1; /*base1*/
-    border-top: 3px solid #93a1a1; /*base1*/
-    border-bottom: 3px solid #839496; /*base1*/
+    border-top: 2px solid #93a1a1; /*base1*/
+    border-bottom: 2px solid #839496; /*base1*/
 }
 
 #cpu.warning,
 #custom-pacman.warning,
 #memory.warning {
     color: #93a1a1; /*base1*/
-    border-top: 3px solid #b58900; /*yellow*/
-    border-bottom: 3px solid #b58900; /*yellow*/
+    border-top: 2px solid #b58900; /*yellow*/
+    border-bottom: 2px solid #b58900; /*yellow*/
 }
 
 #cpu.critical,
@@ -77,6 +76,6 @@ window#waybar {
 #temperature.critical,
 #workspaces button.urgent {
     color: #93a1a1; /*base1*/
-    border-top: 3px solid #dc322f; /*red*/
-    border-bottom: 3px solid #dc322f; /*red*/
+    border-top: 2px solid #dc322f; /*red*/
+    border-bottom: 2px solid #dc322f; /*red*/
 }

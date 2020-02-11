@@ -202,7 +202,7 @@
 # Passthrough mode for nested sessions:
 #
     mode passthrough {
-    	bindsym $mod+Pause mode default
+        bindsym $mod+Pause mode default
     }
     bindsym $mod+Pause mode passthrough
 #
@@ -212,15 +212,15 @@
 #
 # Style settings:
 #
-    default_border pixel 3
-    default_floating_border pixel 3
+    default_border pixel 2
+    default_floating_border pixel 2
 
     gaps inner 16
     smart_borders on
     smart_gaps on
 
     # Hide titlebars completely in stacking/tabbed layouts
-    font pango:DejaVuSansMono Nerd Font Mono 0
+    font pango:cozette 0
     titlebar_border_thickness 0
     titlebar_padding 0 0
 
