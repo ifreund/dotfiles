@@ -1,5 +1,8 @@
 # .zshrc
 
+# use beam cursor on startup
+echo -ne '\e[5 q'
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this, everything else may go below.
@@ -32,24 +35,9 @@ bindkey -M vicmd L vi-end-of-line
 # reduce delay entering vi mode to 0.1 s
 KEYTIMEOUT=1
 
-# function to resume the most recently stopped job
-function better-ctrl-z () {
-    # if the list of stopped jobs is not empty
-    if [[ -n $(jobs -sp) ]]; then
-        # if the current buffer is not empty
-        if [[ $#BUFFER -ne 0 ]]; then
-            # save whatever is in the current buffer for later
-            zle push-input
-        fi
-        # put the command to resume the most recently stopped job on the buffer
-        BUFFER="fg %$(jobs -sp | tail -n 1 | cut -c 2)"
-        # run the command currently on the buffer
-        zle accept-line
-    fi
-}
-# add new keymap and bind it to ctrl-Z
-zle -N better-ctrl-z
-bindkey '^z' better-ctrl-z
+# init some custom behavior
+source $ZDOTDIR/better_ctrl_z.zsh
+source $ZDOTDIR/vi_modal_cursor.zsh
 
 # add completion functions from zsh-completions packages to fpath so compinit
 # can find them
@@ -68,11 +56,11 @@ bindkey '^n' autosuggest-accept
 source /usr/share/autojump/autojump.zsh
 
 # load aliases
-source $ZDOTDIR/.aliases.zsh
+source $ZDOTDIR/aliases.zsh
 
-# initalize powerlevel10k prompt (edit .p10k.zsh to customize)
+# initalize powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source $ZDOTDIR/.p10k.zsh
+source $ZDOTDIR/p10k.zsh
 
 # initalize syntax highlighting and customize colors
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
