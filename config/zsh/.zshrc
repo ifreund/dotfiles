@@ -1,13 +1,5 @@
 # .zshrc
 
-# use beam cursor on startup
-echo -ne '\e[5 q'
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this, everything else may go below.
-source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-
 # setup path
 path=("$HOME/.local/bin" $path)
 export PATH
