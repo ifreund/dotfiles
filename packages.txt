@@ -102,6 +102,7 @@
 ## devtools
 
     # general
+        ctags
         devtools
         docker
         gdb
@@ -118,6 +119,10 @@
         sdl2_image
         sdl2_mixer
         sdl2_ttf
+
+    # python
+        python
+        python-virtualenv
 
     # rust
         rustup
