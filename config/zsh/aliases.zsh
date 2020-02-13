@@ -1,5 +1,6 @@
-# shortcut aliases
-alias gs="git status"
+# aliases to save precious keypresses
+
+# general purpose
 alias ls="exa"
 alias n="nnn"
 alias paste="curl --data-binary @- https://paste.rs/"
@@ -9,9 +10,19 @@ alias sdum="sudo systemd-umount"
 alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
 alias syu="sudo pacman -Syu"
 
+# git related
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias gf="git fetch"
+alias go="git checkout"
+alias gp="git push"
+alias gr="git rebase"
+alias gs="git status"
+
 # CDDA Compile commands
 function {
-    local cddamake_common="make -j14 NATIVE=linux64 CCACHE=1 LOCALIZE=0"
+    local cddamake_common="make -j15 NATIVE=linux64 CCACHE=1 LOCALIZE=0"
     alias cddamake-no-style="$cddamake_common DEBUG_SYMBOLS=1 ASTYLE=0 LINTJSON=0 \
         OTHERS=-fdiagnostics-color"
     alias cddamake="make astyle && cddamake-no-style"
