@@ -12,3 +12,6 @@ ln -s  $dotfiles/pam_environment ~/.pam_environment
 for file in $dotfiles/config/*; do
     ln -s $file $config_home
 done
+
+# symlink to ~/.local/bin
+ln -s $dotfiles/local/bin ~/.local

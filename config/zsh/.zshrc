@@ -8,6 +8,10 @@ echo -ne '\e[5 q'
 # confirmations, etc.) must go above this, everything else may go below.
 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
+# setup path
+path=("$HOME/.local/bin" $path)
+export PATH
+
 # use gpg-agent for ssh keys
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
