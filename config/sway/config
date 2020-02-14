@@ -213,10 +213,11 @@
 #
 # Style settings:
 #
+    # waybar is set to 17px + 2px border
     default_border pixel 2
     default_floating_border pixel 2
 
-    gaps inner 16
+    gaps inner 17
     smart_borders on
     smart_gaps on
 
