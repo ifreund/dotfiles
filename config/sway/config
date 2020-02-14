@@ -208,7 +208,8 @@
 #
 # Screenshots:
 #
-    bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+    bindsym $mod+p exec /usr/share/sway/scripts/grimshot copy area
+    bindsym $mod+o exec /usr/share/sway/scripts/grimshot copy win
 #
 # Style settings:
 #
