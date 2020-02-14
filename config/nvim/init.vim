@@ -27,7 +27,7 @@ Plug 'airblade/vim-rooter'
 
 " fast fuzzy find with skim
 Plug '/usr/bin/sk'
-Plug 'lotabout/skim.vim'
+Plug 'ifreund/skim-preview.vim'
 
 " syntactic language support
 Plug 'rust-lang/rust.vim'
@@ -70,7 +70,7 @@ set signcolumn=yes
 
 """" plugin settings """"
 
-" airline settings
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -84,23 +84,9 @@ let g:airline_solarized_dark_inactive_background = 1
 let g:airline_solarized_dark_inactive_border = 1
 let g:airline_solarized_enable_command_color = 1
 
-" Floating windows for skim commands
-" TODO: implement border
-" let $SKIM_DEFAULT_OPTIONS .= ' --border --margin=0,2'
-function! FloatingSkim()
-  let width = float2nr(&columns * 0.9)
-  let height = float2nr(&lines * 0.6)
-  let opts = { 'relative': 'editor',
-             \ 'row': (&lines - height) / 2,
-             \ 'col': (&columns - width) / 2,
-             \ 'width': width,
-             \ 'height': height,
-             \ 'style': 'minimal' }
-
-  let win = nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
-  call setwinvar(win, '&winhighlight', 'NormalFloat:Normal')
-endfunction
-let g:skim_layout = { 'window': 'call FloatingSkim()' }
+" skim-preview
+let g:fzf_preview_directory_files_command = 'git rev-parse && rg --files --hidden --follow --no-messages -g "!.git/*"'
+let g:fzf_preview_fzf_color_option = '16,current:7,cursor:4,info:-1'
 
 """" editor bindings """"
 
@@ -116,11 +102,10 @@ nnoremap <leader><leader> <C-^>
 
 """" plugin bindings """"
 
-" Open files and switch buffers with skim.vim
-map <C-p> :Files<CR>
+" open files
+map <C-p> :FzfPreviewDirectoryFiles<CR>
 nmap <leader>p <C-p>
-nmap <leader>; :Buffers<CR>
-" search across all files in interactive mode using ripgrep
-" TODO: this should be able to give me a preview somehow
-command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
-nnoremap <leader>s :Rg<CR>
+" switch buffers
+nmap <leader>; :FzfPreviewBuffers<CR>
+" grep across files with preview
+nnoremap <leader>s :FzfPreviewProjectGrep<CR>
