@@ -18,7 +18,6 @@ Plug 'airblade/vim-gitgutter'
 
 " qol enhancements
 Plug 'andymass/vim-matchup'
-Plug 'machakann/vim-sandwich'
 
 " editorconfig support
 Plug 'editorconfig/editorconfig-vim'
@@ -32,7 +31,6 @@ Plug 'lotabout/skim.vim'
 
 " syntactic language support
 Plug 'rust-lang/rust.vim'
-Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 
