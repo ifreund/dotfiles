@@ -8,7 +8,8 @@ function better-ctrl-z () {
             zle push-input
         fi
         # put the command to resume the most recently stopped job on the buffer
-        BUFFER="fg %$(jobs -sp | tail -n 1 | cut -c 2)"
+        # BUFFER="fg %$(jobs -sp | tail -n 1 | cut -c 2)"
+        BUFFER="fg"
         # run the command currently on the buffer
         zle accept-line
     fi
