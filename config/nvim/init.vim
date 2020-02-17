@@ -19,6 +19,9 @@ Plug 'airblade/vim-gitgutter'
 " qol enhancements
 Plug 'andymass/vim-matchup'
 
+" git integration
+Plug 'tpope/vim-fugitive'
+
 " editorconfig support
 Plug 'editorconfig/editorconfig-vim'
 
