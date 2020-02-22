@@ -40,7 +40,11 @@ source $ZDOTDIR/vi_modal_cursor.zsh
 fpath=(/usr/share/zsh/site-functions $fpath)
 # initialize completions
 autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 compinit
+# allow completion of hidden files
+_comp_options+=(globdots)
 
 # intialize autosuggestions plugin with base01 as color and ctrl-N to accept
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
