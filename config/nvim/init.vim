@@ -30,7 +30,7 @@ Plug 'airblade/vim-rooter'
 
 " fast fuzzy find with skim
 Plug '/usr/bin/sk'
-Plug 'ifreund/skim-preview.vim'
+Plug 'lotabout/skim.vim'
 
 " syntactic language support
 Plug 'rust-lang/rust.vim'
@@ -85,9 +85,50 @@ let g:airline_solarized_dark_inactive_background = 1
 let g:airline_solarized_dark_inactive_border = 1
 let g:airline_solarized_enable_command_color = 1
 
-" skim-preview
-let g:fzf_preview_directory_files_command = 'git rev-parse && rg --files --hidden --follow --no-messages -g "!.git/*"'
-let g:fzf_preview_fzf_color_option = '16,current:7,cursor:4,info:-1'
+" Floating windows with borders for skim commands
+function! FloatingSkim()
+    let width = min([&columns - 4, 144])
+    let height = min([&lines - 4, 48])
+
+    " -2 because of the status bar
+    let row = (&lines - height - 2) / 2
+    let col = (&columns - width) / 2
+
+    let opts = { 'relative': 'editor',
+               \ 'row': row,
+               \ 'col': col,
+               \ 'width': width,
+               \ 'height': height,
+               \ 'style': 'minimal' }
+
+    " Create border window
+    let top = '┏' . repeat('━', width - 2) . '┓'
+    let mid = '┃' . repeat(' ', width - 2) . '┃'
+    let bot = '┗' . repeat('━', width - 2) . '┛'
+    let border_lines = [top] + repeat([mid], height - 2) + [bot]
+
+    " buffer scoped to the script
+    let s:border_buf = nvim_create_buf(v:false, v:true)
+    call nvim_buf_set_lines(s:border_buf, 0, -1, v:true, border_lines)
+    call nvim_open_win(s:border_buf, v:true, opts)
+    set winhl=Normal:Floating
+    
+    " make the nested window fit inside, leaving an extra column on either
+    " side for a cleaner look
+    let opts.row += 1
+    let opts.height -= 2
+    let opts.col += 2
+    let opts.width -= 4
+
+    let s:skim_buf = nvim_create_buf(v:false, v:true)
+    let win = nvim_open_win(s:skim_buf, v:true, opts)
+    call setwinvar(win, '&winhighlight', 'NormalFloat:Normal')
+
+    " clears the border window after the skim window is exited
+    au BufWipeout <buffer> exe 'bw '.s:border_buf
+endfunction
+
+let g:skim_layout = { 'window': 'call FloatingSkim()' }
 
 """" editor bindings """"
 
@@ -103,10 +144,11 @@ nnoremap <leader><leader> <C-^>
 
 """" plugin bindings """"
 
-" open files
-map <C-p> :FzfPreviewDirectoryFiles<CR>
+" Open files and switch buffers with skim.vim
+map <C-p> :Files<CR>
 nmap <leader>p <C-p>
-" switch buffers
-nmap <leader>; :FzfPreviewBuffers<CR>
-" grep across files with preview
-nnoremap <leader>s :FzfPreviewProjectGrep<CR>
+nmap <leader>; :Buffers<CR>
+" search across all files in interactive mode using ripgrep
+" TODO: this should be able to give me a preview somehow
+command! -bang -nargs=* Rg call fzf#vim#rg_interactive(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'alt-h'))
+nnoremap <leader>s :Rg<CR>
