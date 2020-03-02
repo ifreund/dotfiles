@@ -16,6 +16,8 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 setopt INC_APPEND_HISTORY
 # when adding a new entry to history remove any currently present duplicate
 setopt HIST_IGNORE_ALL_DUPS
+# don't record lines starting with a space in the history
+setopt HIST_IGNORE_SPACE
 
 HISTFILE=${XDG_DATA_HOME:-$HOME/.local/share}/.histfile
 HISTSIZE=10000
