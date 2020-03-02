@@ -3,7 +3,7 @@
 # general purpose
 alias ls="exa"
 alias n="nnn"
-alias paste="curl --data-binary @- https://paste.rs/"
+alias pastebin="curl --data-binary @- https://paste.rs/"
 alias sc="sudo systemctl"
 alias sdm="sudo systemd-mount"
 alias sdum="sudo systemd-umount"
