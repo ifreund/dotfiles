@@ -54,8 +54,8 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^n' autosuggest-accept
 
-# initalize autojump
-source /usr/share/autojump/autojump.zsh
+# initalize jump
+source $ZDOTDIR/jump.zsh
 
 # load aliases
 source $ZDOTDIR/aliases.zsh
