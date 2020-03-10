@@ -202,9 +202,9 @@
 # Passthrough mode for nested sessions:
 #
     mode passthrough {
-        bindsym $mod+Pause mode default
+        bindsym $mod+F12 mode default
     }
-    bindsym $mod+Pause mode passthrough
+    bindsym $mod+F12 mode passthrough
 #
 # Screenshots:
 #
