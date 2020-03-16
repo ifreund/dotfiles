@@ -1,0 +1,12 @@
+map global normal <space> , -docstring 'leader'
+map global normal <backspace> <space> -docstring 'remove all sels except main'
+map global normal <a-backspace> <a-space> -docstring 'remove main sel'
+
+colorscheme solarized-dark-termcolors
+
+map global user w ':w<ret>'
+
+set-option global scrolloff 3,3
+set-option global ui_options ncurses_assistant=none
+
+add-highlighter global/ number-lines -relative -hlcursor
