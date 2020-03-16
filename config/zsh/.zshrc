@@ -23,6 +23,9 @@ HISTFILE=${XDG_DATA_HOME:-$HOME/.local/share}/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
+# disable ctrl-S/ctrl-Q for START/STOP
+stty -ixon -ixoff
+
 # vi bindings
 bindkey -v
 
