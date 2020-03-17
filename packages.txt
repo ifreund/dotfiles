@@ -22,6 +22,8 @@
         xorg-server-xwayland
 
     # theme
+        cozette-otb
+        cozett-ttf
         gtk-theme-solarc-git
         nerd-fonts-dejavu-complete
         noto-fonts-cjk
@@ -37,6 +39,8 @@
         zsh-theme-powerlevel10k-git
 
     # editing
+        gimp
+        kakoune
         neovim
         neovim-symlinks
 
@@ -63,10 +67,8 @@
         man-pages
 
     # network
-        dhcpcd
-        netctl
-        dialog
-        wpa_supplicant
+        iwd
+        openresolv
 
     # package management/maintenance
         aurto
@@ -134,3 +136,6 @@
         texlive-bin
         texlive-core
         texlive-localmanager-git
+
+    # zig
+        zig-git
