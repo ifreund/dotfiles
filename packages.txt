@@ -39,6 +39,7 @@
         zsh-theme-powerlevel10k-git
 
     # editing
+        aspell-en
         gimp
         kakoune
         neovim
@@ -68,7 +69,6 @@
 
     # network
         iwd
-        openresolv
 
     # package management/maintenance
         aurto
