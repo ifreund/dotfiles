@@ -10,7 +10,7 @@ plug "andreyorst/plug.kak" noload
 # general
 plug "andreyorst/fzf.kak" defer "fzf" %{
     set-option global fzf_implementation 'sk'
-    set-option global fzf_file_command 'rg'
+    set-option global fzf_file_command 'rg --files'
 }
 
 # rust
@@ -55,4 +55,4 @@ map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 map global user w ':w<ret>'
 
 # fzf stuff
-map global user p ':fzf-mode<ret>'
+map global user p ':fzf-mode<ret>f'
