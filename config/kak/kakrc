@@ -25,6 +25,7 @@ plug "Vurich/zig-kak"
 colorscheme solarized-dark-termcolors
 
 add-highlighter global/ number-lines -relative -hlcursor
+add-highlighter global/ show-matching
 
 set-option global scrolloff 3,3
 set-option global ui_options ncurses_assistant=none
@@ -52,7 +53,15 @@ map global normal <backspace> <space> -docstring 'remove all sels except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 
 # write
-map global user w ':w<ret>'
+map global user w ':w<ret>' -docstring 'write'
 
 # fzf stuff
-map global user p ':fzf-mode<ret>f'
+map global user p ':fzf-mode<ret>f' -docstring 'files'
+map global user s ':fzf-mode<ret>g' -docstring 'grep'
+
+# ctags goto
+map global user t ':ctags-search<ret>' -docstring 'ctag def'
+
+# system clipboard
+map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
+map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
