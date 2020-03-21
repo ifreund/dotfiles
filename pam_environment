@@ -1,4 +1,4 @@
-EDITOR          DEFAULT=/bin/nvim
+EDITOR          DEFAULT=/bin/kak
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 
 CRAWL_DIR       DEFAULT=${XDG_CONFIG_HOME}/crawl/
