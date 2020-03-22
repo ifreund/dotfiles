@@ -37,6 +37,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
+Plug 'ziglang/zig.vim'
 
 call plug#end()
 
