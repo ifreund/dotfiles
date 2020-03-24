@@ -13,8 +13,9 @@ plug "andreyorst/fzf.kak" defer "fzf" %{
     set-option global fzf_file_command 'rg --files'
 }
 
-# rust
-plug "Screwtapello/kakoune-cargo" domain "gitlab.com"
+# easymotion
+# the characters chosen are carefully sorted with homerow first, then top row
+set-option global em_jumpchars 'fjdkslahgurieowpq'
 
 # zig
 plug "Vurich/zig-kak"
@@ -66,6 +67,9 @@ map global user f ':format-buffer<ret>' -docstring 'format'
 
 # grep
 map global user g ':grep ' -docstring 'grep'
+
+# easymotion
+map global user e ':enter-user-mode easymotion<ret>'
 
 # fzf stuff
 map global user p ':fzf-mode<ret>f' -docstring 'fzf files'
