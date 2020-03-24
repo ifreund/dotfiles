@@ -29,7 +29,7 @@ hook global WinSetOption filetype=zig %[
 
 colorscheme solarized-dark-termcolors
 
-add-highlighter global/ number-lines -relative -hlcursor
+# add-highlighter global/ number-lines -relative -hlcursor -separator ' '
 add-highlighter global/ show-matching
 
 set-option global scrolloff 3,3
@@ -42,11 +42,12 @@ set-option global ui_options ncurses_assistant=none
 set-option global tabstop 4
 
 # expand tabs
-hook global InsertChar \t %{ exec -draft h@ }
+# hook global InsertChar \t %{ exec -draft h@ }
 
 # load editorconfig for all buffers except special ones like *debug*
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
 
+# use ripgrep for grepping
 set-option global grepcmd 'rg --column'
 
 # key bindings
