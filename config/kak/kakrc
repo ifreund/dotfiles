@@ -17,9 +17,6 @@ plug "andreyorst/fzf.kak" defer "fzf" %{
 # the characters chosen are carefully sorted with homerow first, then top row
 set-option global em_jumpchars 'fjdkslahgurieowpq'
 
-# zig
-plug "Vurich/zig-kak"
-
 hook global WinSetOption filetype=zig %[
     set-option window formatcmd 'zig fmt --stdin'
 ]
