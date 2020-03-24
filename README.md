@@ -1,7 +1,7 @@
 # Isaac Freund's dotfiles
 
-This is my relatively minimal configuration for [Arch Linux]
-(https://www.archlinux.org/) and [Sway](https://swaywm.org/)
+This is my relatively minimal configuration for
+[Arch Linux](https://www.archlinux.org/) and [Sway](https://swaywm.org/)
 
 # Installation
 
