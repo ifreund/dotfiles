@@ -14,7 +14,10 @@ hook global BufCreate .*[.]zig %{
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 hook global WinSetOption filetype=zig %<
+    set-option window formatcmd 'zig fmt --stdin'
+
     require-module zig
+
     hook window ModeChange pop:insert:.* -group zig-trim-indent zig-trim-indent
     hook window InsertChar \n -group zig-indent zig-indent-on-new-line
     hook window InsertChar \} -group zig-indent zig-indent-on-closing
