@@ -20,6 +20,9 @@ alias gp="git push"
 alias gr="git rebase"
 alias gs="git status"
 
+# zig
+alias zb="zig build"
+
 # CDDA Compile commands
 function {
     local cddamake_common="make -j15 NATIVE=linux64 CCACHE=1 LOCALIZE=0"
