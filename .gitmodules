@@ -1,0 +1,3 @@
+[submodule "config/kak/autoload/kakoune-easymotion"]
+	path = config/kak/autoload/kakoune-easymotion
+	url = https://github.com/danr/kakoune-easymotion
