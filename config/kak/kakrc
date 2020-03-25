@@ -35,6 +35,9 @@ define-command fuzzy-open-file -params 0 %{
 # the characters chosen are carefully sorted with homerow first, then top row
 set-option global em_jumpchars 'fjdkslahgurieowpq'
 
+# format before write
+hook global BufWritePre .* "try %{ format-buffer }"
+
 # key bindings
 # ==============================================================================
 
@@ -47,9 +50,6 @@ map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 
 # write
 map global user w ':w<ret>' -docstring 'write'
-
-# format
-map global user f ':format-buffer<ret>' -docstring 'format'
 
 # grep
 map global user g ':grep ' -docstring 'grep'
