@@ -1,28 +1,30 @@
-_zoxide_precmd() {
-    zoxide add
+_z_cd() {
+    cd "$@" || return "$?"
+    if [ -n "$_ZO_ECHO" ]; then
+        echo "$PWD"
+    fi
 }
-
-[[ -n "${precmd_functions[(r)_zoxide_precmd]}" ]] || {
-    precmd_functions+=_zoxide_precmd
-}
-
 j() {
-    if [ $# -ne 0 ]; then
-        _Z_RESULT=$(zoxide query "$@")
-        case $_Z_RESULT in
+    if [ "$#" -eq 0 ]; then
+        _z_cd ~ || return "$?"
+    elif [ "$#" -eq 1 ] && [ "$1" = '-' ]; then
+        if [ -n "$OLDPWD" ]; then
+            _z_cd "$OLDPWD" || return "$?"
+        else
+            echo "zoxide: \$OLDPWD is not set"
+            return 1
+        fi
+    else
+        result="$(zoxide query "$@")" || return "$?"
+        case "$result" in
             "query: "*)
-                cd "${_Z_RESULT:7}"
+                _z_cd "${result#query: }" || return "$?"
                 ;;
             *)
-                echo "${_Z_RESULT}"
+                if [ -n "$result" ]; then
+                    echo "$result"
+                fi
                 ;;
         esac
     fi
 }
-
-# requires fzf currently
-# alias zi="z -i"
-
-# alias za="zoxide add"
-# alias zq="zoxide query"
-# alias zr="zoxide remove"
