@@ -63,6 +63,9 @@ source $ZDOTDIR/jump.zsh
 # load aliases
 source $ZDOTDIR/aliases.zsh
 
+# get colorful man pages with less
+source $ZDOTDIR/man.zsh
+
 # initalize powerlevel10k prompt
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $ZDOTDIR/p10k.zsh
