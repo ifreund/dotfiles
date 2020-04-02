@@ -55,7 +55,7 @@ map global user w ':w<ret>' -docstring 'write'
 map global user g ':grep ' -docstring 'grep'
 
 # easymotion
-map global user e ':enter-user-mode easymotion<ret>' -docstring 'easymotion'
+map global normal  '''' ':enter-user-mode easymotion<ret>' -docstring 'easymotion'
 
 # fuzzy stuff
 map global user p ':fuzzy-open-file<ret>' -docstring 'open file'
