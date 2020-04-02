@@ -41,7 +41,7 @@ face global LineNumbersWrapped black,black
 face global MenuForeground     bright-black,yellow
 face global MenuBackground     bright-cyan,black
 face global MenuInfo           bright-green
-face global Information        black,bright-cyan
+face global Information        bright-cyan,black
 face global Error              red,default+b
 face global StatusLine         bright-cyan,black+b
 face global StatusLineMode     bright-red
