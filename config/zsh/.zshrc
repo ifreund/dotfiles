@@ -58,7 +58,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^n' autosuggest-accept
 
 # initalize jump
-source $ZDOTDIR/jump.zsh
+eval "$(zoxide init --z-cmd j zsh)"
 
 # load aliases
 source $ZDOTDIR/aliases.zsh
