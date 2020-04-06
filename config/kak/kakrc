@@ -68,3 +68,9 @@ map global user t ':ctags-search<ret>' -docstring 'ctag def'
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
+
+# expand with kakoune-expand
+map global user e ':expand<ret>' -docstring 'expand'
+declare-user-mode expand
+map global expand <space> ':expand<ret>' -docstring 'expand'
+map global user E ':expand; enter-user-mode -lock expand<ret>' -docstring 'expand mode'
