@@ -17,7 +17,7 @@ set-option global grepcmd 'rg --column'
 
 colorscheme solarized-dark-termcolors
 
-# add-highlighter global/ number-lines -relative -hlcursor -separator ' '
+add-highlighter global/ number-lines -relative -hlcursor -separator ' '
 add-highlighter global/ show-matching
 
 set-option global scrolloff 3,3
@@ -39,6 +39,12 @@ set-option global em_jumpchars 'fjdkslahgurieowpq'
 
 # format before write
 hook global BufWritePre .* "try %{ format-buffer }"
+
+# Enable kak-lsp for c/cpp files
+evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(c|cpp) %{
+    lsp-enable-window
+}
 
 # key bindings
 # ==============================================================================
