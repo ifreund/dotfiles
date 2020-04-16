@@ -80,3 +80,11 @@ map global user e ':expand<ret>' -docstring 'expand'
 declare-user-mode expand
 map global expand <space> ':expand<ret>' -docstring 'expand'
 map global user E ':expand; enter-user-mode -lock expand<ret>' -docstring 'expand mode'
+
+# spell checking
+declare-user-mode spell
+map global spell s ':spell<ret>' -docstring 'spell'
+map global spell c ':spell-clear<ret>' -docstring 'clear'
+map global spell n ':spell-next<ret>' -docstring 'next'
+map global spell r ':spell-replace<ret>' -docstring 'replace'
+map global user s ':enter-user-mode spell<ret>' -docstring 'spell mode'
