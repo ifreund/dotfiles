@@ -1,141 +1,141 @@
 ## core
 
-    # all hardware
-        base
-        f2fs-tools
-        linux
-        linux-firmware
-        systemd-boot-pacman-hook
+	# all hardware
+		base
+		f2fs-tools
+		linux
+		linux-firmware
+		systemd-boot-pacman-hook
 
-    # amd
-        amd-ucode
-        linux-ck-zen2
-        linux-ck-firmware-zen2
+	# amd
+		amd-ucode
+		linux-ck-zen2
+		linux-ck-firmware-zen2
 
 ## core programs
 
-    # wayland compositor and bar
-        sway
-        swayidle
-        waybar
-        wl-clipboard
-        xorg-server-xwayland
+	# wayland compositor and bar
+		sway
+		swayidle
+		waybar
+		waylock
+		xorg-server-xwayland
 
-    # theme
-        cozette-otb
-        cozett-ttf
-        gtk-theme-solarc-git
-        nerd-fonts-dejavu-complete
-        noto-fonts-cjk
-        noto-fonts-emoji
-        ttf-dejavu
+	# theme
+		cozette-otb
+		cozett-ttf
+		gtk-theme-solarc-git
+		nerd-fonts-dejavu-complete
+		noto-fonts-cjk
+		noto-fonts-emoji
+		ttf-dejavu
 
-    # term and shell
-        alacritty
-        zsh
-        zsh-autosuggestions
-        zsh-completions
-        zsh-syntax-highlighting-git
-        zsh-theme-powerlevel10k-git
+	# term and shell
+		alacritty
+		zsh
+		zsh-autosuggestions
+		zsh-completions
+		zsh-syntax-highlighting-git
+		zsh-theme-powerlevel10k-git
 
-    # editing
-        aspell-en
-        gimp
-        kakoune
-        neovim
-        neovim-symlinks
+	# editing
+		aspell-en
+		gimp
+		kakoune
+		kak-lsp
 
-    # multimedia
-        firefox-developer-edition
-        imv
-        mpv
-        pulseaudio-alsa
-        pulsemixer
-        spotify
-        spicetify-cli
-        zathura-pdf-mupdf
+	# multimedia
+		firefox-developer-edition
+		imv
+		mpv
+		pulseaudio-alsa
+		pulsemixer
+		spotify
+		spicetify-cli
+		zathura-pdf-mupdf
 
-    # chat
-        discord
-        telegram-desktop
-        weechat
-        weechat-vimode-git
+	# chat
+		discord
+		telegram-desktop
+		weechat
+		weechat-vimode-git
 
 ## util
 
-    # docs
-        man-db
-        man-pages
+	# docs
+		man-db
+		man-pages
 
-    # network
-        iwd
+	# network
+		iwd
 
-    # package management/maintenance
-        aurto
-        aurutils
-        etckeeper
-        reflector
+	# package management/maintenance
+		aurto
+		aurutils
+		etckeeper
+		reflector
 
-    # password management
-        bitwarden-cli-bin
-        pass
-        pass-otp
+	# password management
+		bitwarden-cli-bin
+		pass
+		pass-otp
 
-    # screen capture
-        grim
-        slurp
-        wf-recorder-git
+	# screen capture
+		grim
+		slurp
+		wf-recorder-git
 
-    # shell utils
-        exa
-        htop-vim-solarized
-        imagemagick
-        megatools
-        nnn
-        openssh
-        pacman-contrib
-        ripgrep
-        skim
-        stress
-        sudo
-        trash-cli
-        unzip
-        zip
-        zoxide
+	# shell utils
+		exa
+		htop-vim-solarized
+		imagemagick
+		megatools
+		nnn
+		openssh
+		pacman-contrib
+		ripgrep
+		skim
+		stress
+		sudo
+		trash-cli
+		unzip
+		wl-clipboard
+		zip
+		zoxide
 
 ## devtools
 
-    # general
-        ctags
-        devtools
-        docker
-        gdb
-        git
-        hugo
-        perf
-        valgrind
+	# general
+		ctags
+		devtools
+		docker
+		gdb
+		git
+		hugo
+		perf
+		valgrind
 
-    # C++
-        astyle
-        ccache
-        clang
-        gcc
-        make
-        sdl2_image
-        sdl2_mixer
-        sdl2_ttf
+	# C++
+		astyle
+		ccache
+		clang
+		gcc
+		make
+		sdl2_image
+		sdl2_mixer
+		sdl2_ttf
 
-    # python
-        python
-        python-virtualenv
+	# python
+		python
+		python-virtualenv
 
-    # rust
-        rustup
+	# rust
+		rustup
 
-    # TeX
-        texlive-bin
-        texlive-core
-        texlive-localmanager-git
+	# TeX
+		texlive-bin
+		texlive-core
+		texlive-localmanager-git
 
-    # zig
-        zig-git
+	# zig
+		zig
