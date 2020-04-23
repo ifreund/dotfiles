@@ -11,8 +11,8 @@ define-command noexpandtab %{
 define-command expandtab %{
     remove-hooks global expandtab
     hook -group expandtab global InsertChar '\t' %{ execute-keys -draft h@ }
-    hook -group expandtab global InsertKey <backspace> %{ try %{
-        execute-keys -draft <a-h><a-k> "^\h+.\z" <ret>I<space><esc><lt>
+    hook -group expandtab global InsertDelete ' ' %{ try %{
+        execute-keys -draft -itersel "<a-h><a-k>^\h+.\z<ret>I<space><esc><lt>"
     }}
     set-option global aligntab false
     remove-hooks global noexpandtab
@@ -21,7 +21,7 @@ define-command expandtab %{
 
 define-command smarttab %{
     remove-hooks global smarttab
-    hook -group smarttab global InsertKey <tab> %{ try %{
+    hook -group smarttab global InsertChar '\t' %{ try %{
         execute-keys -draft <a-h><a-k> "^\h*.\z" <ret>
     } catch %{
         execute-keys -draft h@
