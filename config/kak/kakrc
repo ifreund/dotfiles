@@ -30,7 +30,9 @@ set-option global startup_info_version 20200116
  
 # fuzzy open file
 define-command fuzzy-open-file -params 0 %{
-    terminal kak_open_file.sh %val{session} %val{client}
+    evaluate-commands %sh{
+        alacritty --class float -e sh -c "kak_open_file.sh $kak_session $kak_client"
+    }
 }
 
 # easymotion
