@@ -3,35 +3,16 @@
 # based off of https://github.com/ziglang/zig.vim/blob/master/syntax/zig.vim
 # as well as https://ziglang.org/documentation/master/#Grammar
 
-# Detection
-# ‾‾‾‾‾‾‾‾‾
-
-hook global BufCreate .*[.]zig %{
-  set-option buffer filetype zig
-}
-
 # Initialization
 # ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
 hook global WinSetOption filetype=zig %<
     set-option window formatcmd 'zig fmt --stdin'
 
-    require-module zig
-
-    hook window ModeChange pop:insert:.* -group zig-trim-indent zig-trim-indent
-    hook window InsertChar \n -group zig-indent zig-indent-on-new-line
-    hook window InsertChar \} -group zig-indent zig-indent-on-closing
-
     hook -once -always window WinSetOption filetype=.* %< remove-hooks window zig-.+ >
 >
 
-hook -group zig-highlight global WinSetOption filetype=zig %{
-    require-module zig
-    add-highlighter window/zig ref zig
-    hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/zig }
-}
-
-provide-module zig %§
+provide-module -override zig %§
 
 # Highlighters
 # ‾‾‾‾‾‾‾‾‾‾‾‾
@@ -107,12 +88,12 @@ add-highlighter shared/zig/code/ regex "@(?:sin|cos|exp|exp2|log|log2|log10|fabs
 # Commands
 # ‾‾‾‾‾‾‾‾
 
-define-command -hidden zig-trim-indent %{
+define-command -override -hidden zig-trim-indent %{
     # delete trailing whitespace
     try %{ execute-keys -draft -itersel <a-x> s \h+$ <ret> d }
 }
 
-define-command -hidden zig-indent-on-new-line %<
+define-command -override -hidden zig-indent-on-new-line %<
     evaluate-commands -draft -itersel %<
         try %<
             # copy // or /// comments prefix and following whitespace
@@ -130,7 +111,7 @@ define-command -hidden zig-indent-on-new-line %<
     >
 >
 
-define-command -hidden zig-indent-on-closing %<
+define-command -override -hidden zig-indent-on-closing %<
     # align lone } to indent level of opening line
     try %< execute-keys -draft -itersel <a-h> <a-k> ^\h*\}$ <ret> h m <a-S> 1<a-&> >
 >
