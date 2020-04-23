@@ -3,11 +3,13 @@
 # editor settings
 # ==============================================================================
 
-# tab size of 4 spaces
+# default tab size of 4 spaces
 set-option global tabstop 4
 
 # load editorconfig for all buffers except special ones like *debug*
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
+
+hook global WinSetOption filetype=(cpp|kak|rust|zig) expandtab
 
 # use ripgrep for grepping
 set-option global grepcmd 'rg --column'
