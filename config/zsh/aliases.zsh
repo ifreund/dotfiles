@@ -12,13 +12,15 @@ alias syu="sudo pacman -Syu"
 
 # git related
 alias ga="git add"
+alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias gf="git fetch"
+alias g="git status"
 alias go="git checkout"
 alias gp="git push"
 alias gr="git rebase"
-alias gs="git status"
+alias gs="git stash"
 
 # zig
 alias zb="zig build"
