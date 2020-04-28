@@ -9,6 +9,8 @@ alias sdm="sudo systemd-mount"
 alias sdum="sudo systemd-umount"
 alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
 alias syu="sudo pacman -Syu"
+alias t="task"
+alias zb="zig build"
 
 # git related
 alias ga="git add"
@@ -17,13 +19,11 @@ alias gc="git commit"
 alias gd="git diff"
 alias gf="git fetch"
 alias g="git status"
+alias gl="git log"
 alias go="git checkout"
 alias gp="git push"
 alias gr="git rebase"
 alias gs="git stash"
-
-# zig
-alias zb="zig build"
 
 # CDDA Compile commands
 function {
