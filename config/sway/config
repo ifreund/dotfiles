@@ -17,9 +17,7 @@
     set $term alacritty
 
     # program launcher
-    set $menu ls /usr/share/applications | sed 's/\.desktop$//' | sk | xargs swaymsg exec gtk-launch
-    set $launcher exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$menu\'
-    for_window [title="^launcher$"] floating enable
+    set $launcher ~/.local/bin/launcher.sh
 
     # solarized dark theme
     set $base03  #002b36
@@ -127,7 +125,7 @@
     bindsym $mod+Shift+0 move container to workspace $ws10
 
     # assign certian applications to workspaces
-    assign [app_id="firefoxdeveloperedition"] $ws3
+    assign [app_id="firefox"] $ws3
     # same thing, but the above doesn't work for spotify and discord
     # probably because they are electron apps running through xwayland
     for_window [class="discord"] move container to workspace $ws8
@@ -251,8 +249,8 @@
 
     workspace 1:term
     exec $term
-    exec firefox-developer-edition
-    exec spotify
+    exec eval "$(dot-desktop Firefox)"
+    exec eval "$(dot-desktop Spotify)"
 
 # Doesn't seem to be anything in this dir yet, but it was in the example config
 # file so I'm keeping it in case packages put things there
