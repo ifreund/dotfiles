@@ -8,10 +8,14 @@ config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 # this sets environment variables required to make things use $XDG_CONFIG_HOME
 ln -s  $dotfiles/pam_environment ~/.pam_environment
 
+# create ~/.config and ~/.local if they don't exist
+mkdir -p "$config_home"
+mkdir -p "~/.local"
+
 # symlink everything in config
 for file in $dotfiles/config/*; do
-    ln -s $file $config_home
+    ln -s "$file" "$config_home"
 done
 
 # symlink to ~/.local/bin
-ln -s $dotfiles/local/bin ~/.local
+ln -s "$dotfiles/local/bin" "~/.local"

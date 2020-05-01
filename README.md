@@ -1,11 +1,11 @@
 # Isaac Freund's dotfiles
 
 This is my relatively minimal configuration for
-[Arch Linux](https://www.archlinux.org/) and [Sway](https://swaywm.org/)
+[Void Linux](https://voidlinux.org/) and [Sway](https://swaywm.org/)
 
 # Installation
 
-If you would like to try out my dotfiles first install Arch Linux and then
+If you would like to try out my dotfiles first install Void Linux and then
 give [packages.txt](packages.txt) a read to see the core packages I use.
 After the desired packages have been installed, clone this repository
 and either run `./install.sh` from the repository root or alternatively

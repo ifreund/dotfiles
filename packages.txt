@@ -1,16 +1,11 @@
+# packages marked with a * are not yet are not available frome the void
+# repos and must be manually installed.
+
 ## core
-
-	# all hardware
-		base
-		f2fs-tools
-		linux
-		linux-firmware
-		systemd-boot-pacman-hook
-
-	# amd
-		amd-ucode
-		linux-ck-zen2
-		linux-ck-firmware-zen2
+	
+	base-voidstrap
+	gummiboot
+	linux
 
 ## core programs
 
@@ -19,13 +14,9 @@
 		swayidle
 		waybar
 		waylock
-		xorg-server-xwayland
 
 	# theme
-		cozette-otb
-		cozett-ttf
-		gtk-theme-solarc-git
-		nerd-fonts-dejavu-complete
+		*cozette
 		noto-fonts-cjk
 		noto-fonts-emoji
 		ttf-dejavu
@@ -35,107 +26,77 @@
 		zsh
 		zsh-autosuggestions
 		zsh-completions
-		zsh-syntax-highlighting-git
-		zsh-theme-powerlevel10k-git
+		zsh-syntax-highlighting
+		*zsh-theme-powerlevel10k-git
 
 	# editing
+		aspell
 		aspell-en
 		gimp
 		kakoune
 		kak-lsp
 
 	# multimedia
-		firefox-developer-edition
+		alsa-plugins-pulseaudio
 		imv
 		mpv
-		pulseaudio-alsa
 		pulsemixer
-		spotify
-		spicetify-cli
 		zathura-pdf-mupdf
 
 	# chat
-		discord
-		telegram-desktop
 		weechat
-		weechat-vimode-git
 
 ## util
 
 	# docs
-		man-db
-		man-pages
+		man-pages-devel
+		man-pages-posix
 
 	# network
 		iwd
-
-	# package management/maintenance
-		aurto
-		aurutils
-		etckeeper
-		reflector
+		openresolv
 
 	# password management
-		bitwarden-cli-bin
 		pass
-		pass-otp
 
 	# screen capture
 		grim
 		slurp
-		wf-recorder-git
 
 	# shell utils
-		exa
-		htop-vim-solarized
-		imagemagick
+		htop
 		megatools
 		nnn
-		openssh
-		pacman-contrib
 		ripgrep
 		skim
-		stress
-		sudo
-		trash-cli
+		opendoas
 		unzip
 		wl-clipboard
 		zip
-		zoxide
+		*zoxide
 
 ## devtools
 
 	# general
 		ctags
-		devtools
-		docker
 		gdb
 		git
 		hugo
 		perf
 		valgrind
+		assorted -devel packages
 
-	# C++
+	# C/C++
 		astyle
 		ccache
 		clang
+		cmake
 		gcc
-		make
-		sdl2_image
-		sdl2_mixer
-		sdl2_ttf
-
-	# python
-		python
-		python-virtualenv
+		meson
 
 	# rust
-		rustup
-
-	# TeX
-		texlive-bin
-		texlive-core
-		texlive-localmanager-git
+		cargo
+		rust
 
 	# zig
 		zig
