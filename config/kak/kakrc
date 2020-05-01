@@ -37,10 +37,6 @@ define-command fuzzy-open-file -params 0 %{
     }
 }
 
-# easymotion
-# the characters chosen are carefully sorted with homerow first, then top row
-set-option global em_jumpchars 'fjdkslahgurieowpq'
-
 # format before write
 hook global BufWritePre .* "try %{ format-buffer }"
 
@@ -65,10 +61,6 @@ map global user w ':w<ret>' -docstring 'write'
 
 # grep
 map global user g ':grep ' -docstring 'grep'
-
-# easymotion
-map global easymotion J ':easy-motion-j<ret>'
-map global normal  '''' '"eZ:enter-user-mode easymotion<ret>' -docstring 'easymotion'
 
 # fuzzy stuff
 map global user p ':fuzzy-open-file<ret>' -docstring 'open file'
