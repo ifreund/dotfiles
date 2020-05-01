@@ -1,14 +1,9 @@
 # aliases to save precious keypresses
 
 # general purpose
-alias ls="exa"
 alias n="nnn"
 alias pastebin="curl --data-binary @- https://paste.rs/"
-alias sc="sudo systemctl"
-alias sdm="sudo systemd-mount"
-alias sdum="sudo systemd-umount"
 alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
-alias syu="sudo pacman -Syu"
 alias t="task"
 alias zb="zig build"
 
