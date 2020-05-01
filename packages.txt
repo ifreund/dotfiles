@@ -33,7 +33,7 @@
 		aspell
 		aspell-en
 		gimp
-		kakoune
+		kakoune (running git master)
 		kak-lsp
 
 	# multimedia
