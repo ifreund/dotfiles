@@ -200,8 +200,8 @@
 #
 # Screenshots:
 #
-    bindsym $mod+p exec /usr/share/sway/scripts/grimshot copy area
-    bindsym $mod+o exec /usr/share/sway/scripts/grimshot copy win
+    bindsym $mod+p exec ~/.local/bin/grimshot copy area
+    bindsym $mod+o exec ~/.local/bin/grimshot copy win
 #
 # Style settings:
 #
