@@ -104,7 +104,7 @@ mouse:
   hide_when_typing: true
   url:
     launcher:
-      program: firefox-developer-edition
+      program: firefox
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
