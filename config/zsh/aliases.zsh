@@ -8,17 +8,18 @@ alias t="task"
 alias zb="zig build"
 
 # git related
+alias g="git status"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
 alias gd="git diff"
 alias gf="git fetch"
-alias g="git status"
 alias gl="git log"
 alias go="git checkout"
 alias gp="git push"
 alias gr="git rebase"
 alias gs="git stash"
+alias gu="git pull"
 
 # CDDA Compile commands
 function {
