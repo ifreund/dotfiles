@@ -46,6 +46,8 @@ hook global WinSetOption filetype=(c|cpp|zig) %{
     lsp-enable-window
 }
 
+set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+
 # key bindings
 # ==============================================================================
 
