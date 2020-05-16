@@ -42,7 +42,7 @@ hook global BufWritePre .* "try %{ format-buffer }"
 
 # Enable kak-lsp for c/cpp files
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(c|cpp) %{
+hook global WinSetOption filetype=(c|cpp|zig) %{
     lsp-enable-window
 }
 
