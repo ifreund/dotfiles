@@ -1,0 +1,26 @@
+# mbsyncrc
+
+# globals used as defaults for any following Channel section that
+# doesn't specify them.
+Expunge Both
+Create Both
+
+IMAPAccount migadu
+Host imap.migadu.com
+User ifreund@ifreund.xyz
+PassCmd "pass ifreund@ifreund.xyz"
+SSLType IMAPS
+
+IMAPStore migadu-remote
+Account migadu
+
+MaildirStore local
+SubFolders Verbatim
+Path ~/mail/
+Inbox ~/mail/inbox
+
+Channel migadu
+Master :migadu-remote:
+Slave :local:
+Pattern *
+SyncState *

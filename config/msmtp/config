@@ -1,0 +1,16 @@
+# msmtp config
+
+defaults
+
+port 465
+tls on
+tls_starttls off
+
+account migadu
+host smtp.migadu.com
+from ifreund@ifreund.xyz
+auth on
+user ifreund@ifreund.xyz
+passwordeval gpg2 --no-tty -q -d ~/.password-store/ifreund@ifreund.xyz.gpg
+
+account default : migadu

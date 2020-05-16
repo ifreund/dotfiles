@@ -1,0 +1,49 @@
+###############################################################################
+# neomuttrc
+
+###############################################################################
+# maildir config
+
+set mbox_type=Maildir
+set folder=~/mail
+set spoolfile=+inbox
+set record=+sent
+set trash=+trash
+set postponed=+drafts
+set header_cache=~/.cache/mutt
+
+###############################################################################
+# pager settings
+
+set pager_stop
+unset markers
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+# multipart/alternative, prefer that alternative.
+alternative_order multipart/mixed multipart/related text/plain
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+###############################################################################
+# index settings
+
+set sidebar_visible
+set sort=threads
+set header_cache="~/.cache/neomutt"
+
+###############################################################################
+# compose settings
+
+set edit_headers
+set mime_type_query_command = "xdg-mime query filetype"
+
+###############################################################################
+# send settings
+
+set sendmail = "/usr/bin/msmtp"
+set use_from=yes
+set realname="Isaac Freund"
+set from="ifreund@ifreund.xyz"
+set envelope_from=yes
