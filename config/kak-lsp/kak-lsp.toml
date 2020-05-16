@@ -2,3 +2,8 @@
 filetypes = ["c", "cpp"]
 roots = ["compile_commands.json", ".clangd"]
 command = "clangd"
+
+[language.zig]
+filetypes = ["zig"]
+roots = ["build.zig"]
+command = "/home/ifreund/projects/zls/zig-cache/bin/zls"
