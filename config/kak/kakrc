@@ -27,6 +27,8 @@ set-option global ui_options ncurses_assistant=none
 
 set-option global startup_info_version 20200116
 
+set-option global gdb_location_symbol ▶
+
 # extra functionality
 # ==============================================================================
  
@@ -74,16 +76,22 @@ map global user t ':ctags-search<ret>' -docstring 'ctag def'
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
 
-# expand with kakoune-expand
-map global user e ':expand<ret>' -docstring 'expand'
-declare-user-mode expand
-map global expand <space> ':expand<ret>' -docstring 'expand'
-map global user E ':expand; enter-user-mode -lock expand<ret>' -docstring 'expand mode'
-
 # spell checking
 declare-user-mode spell
 map global spell s ':spell<ret>' -docstring 'spell'
 map global spell c ':spell-clear<ret>' -docstring 'clear'
 map global spell n ':spell-next<ret>' -docstring 'next'
 map global spell r ':spell-replace<ret>' -docstring 'replace'
-map global user s ':enter-user-mode spell<ret>' -docstring 'spell mode'
+map global user s ':enter-user-mode -lock spell<ret>' -docstring 'spell mode'
+
+# gdb
+declare-user-mode gdb
+map global gdb n ':gdb-next<ret>' -docstring 'next'
+map global gdb s ':gdb-step<ret>' -docstring 'step'
+map global gdb c ':gdb-continue<ret>' -docstring 'continue'
+map global gdb f ':gdb-finish<ret>' -docstring 'finish function'
+map global gdb b ':gdb-toggle-breakpoint<ret>' -docstring 'break'
+map global gdb g ':gdb-jump-to-location<ret>' -docstring 'goto current location'
+map global gdb p ':gdb-print<ret>' -docstring 'print selection'
+map global gdb t ':gdb-backtrace<ret>' -docstring 'print backtrace'
+map global user d ':enter-user-mode -lock gdb<ret>' -docstring 'gdb mode'
