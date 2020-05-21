@@ -1,0 +1,3 @@
+[submodule "config/kak/autoload/gdb"]
+	path = config/kak/autoload/gdb
+	url = https://github.com/occivink/kakoune-gdb
