@@ -6,3 +6,5 @@
 	editor = kak
 [commit]
 	gpgSign = true
+[gpg]
+	program = gpg2
