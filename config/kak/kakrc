@@ -42,13 +42,14 @@ define-command fuzzy-open-file -params 0 %{
 # format before write
 hook global BufWritePre .* "try %{ format-buffer }"
 
-# Enable kak-lsp for c/cpp files
+# Enable kak-lsp for some filetypes
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(c|cpp|zig) %{
     lsp-enable-window
 }
 
-set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+# uncomment to enable debug logging for kak-lsp
+# set-option global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 # key bindings
 # ==============================================================================
@@ -75,6 +76,9 @@ map global user t ':ctags-search<ret>' -docstring 'ctag def'
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
+
+# wrap to 80 characters
+map global user f '|fmt -w 80<ret>' -docstring 'wrap to 80'
 
 # spell checking
 declare-user-mode spell
