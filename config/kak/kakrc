@@ -34,7 +34,7 @@ set-option global gdb_location_symbol ▶
  
 # fuzzy open file
 define-command fuzzy-open-file -params 0 %{
-    %sh{
+    try %sh{
         alacritty --class float -e sh -c "kak_open_file.sh $kak_session $kak_client"
     }
 }
@@ -61,17 +61,12 @@ map global normal <space> , -docstring 'leader'
 map global normal <backspace> <space> -docstring 'remove all sels except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 
-# write
+# general utility
 map global user w ':w<ret>' -docstring 'write'
-
-# grep
 map global user g ':grep ' -docstring 'grep'
-
-# fuzzy stuff
 map global user p ':fuzzy-open-file<ret>' -docstring 'open file'
-
-# ctags goto
 map global user t ':ctags-search<ret>' -docstring 'ctag def'
+map global user d ':db<ret>' -docstring 'close buffer'
 
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
@@ -86,7 +81,7 @@ map global spell s ':spell<ret>' -docstring 'spell'
 map global spell c ':spell-clear<ret>' -docstring 'clear'
 map global spell n ':spell-next<ret>' -docstring 'next'
 map global spell r ':spell-replace<ret>' -docstring 'replace'
-map global user s ':enter-user-mode -lock spell<ret>' -docstring 'spell mode'
+map global user s ':enter-user-mode spell<ret>' -docstring 'spell mode'
 
 # gdb
 declare-user-mode gdb
@@ -98,4 +93,4 @@ map global gdb b ':gdb-toggle-breakpoint<ret>' -docstring 'break'
 map global gdb g ':gdb-jump-to-location<ret>' -docstring 'goto current location'
 map global gdb p ':gdb-print<ret>' -docstring 'print selection'
 map global gdb t ':gdb-backtrace<ret>' -docstring 'print backtrace'
-map global user d ':enter-user-mode -lock gdb<ret>' -docstring 'gdb mode'
+define-command gdb -params 0 'enter-user-mode -lock gdb' -docstring 'gdb mode'

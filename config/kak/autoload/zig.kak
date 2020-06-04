@@ -8,6 +8,7 @@
 
 hook global WinSetOption filetype=zig %<
     set-option window formatcmd 'zig fmt --stdin'
+    set-option window makecmd 'zig build'
 
     hook -once -always window WinSetOption filetype=.* %< remove-hooks window zig-.+ >
 >
