@@ -3,10 +3,9 @@
 # Use the "logo" key as the primary modifier
 mod="Mod4"
 
+# term/close/exit
 riverctl map normal $mod+Shift Return spawn alacritty
-
 riverctl map normal $mod Q close
-
 riverctl map normal $mod E exit
 
 # view focus
@@ -52,6 +51,10 @@ riverctl map normal $mod Left layout left-master
 riverctl declare-mode passthrough
 riverctl map normal $mod F11 enter-mode passthrough
 riverctl map passthrough $mod F11 enter-mode normal
+
+# 8px padding
+riverctl set-option outer_padding 4
+riverctl set-option view_padding 4
 
 # start waybar
 riverctl spawn ~/projects/Waybar/build/waybar -c ~/.config/waybar/config_river -s ~/.config/waybar/style_river.css

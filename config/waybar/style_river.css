@@ -30,8 +30,8 @@ window#waybar {
 }
 
 #tags {
-    margin-top: 16px;
-    margin-left: 16px;
+    margin-top: 8px;
+    margin-left: 8px;
     padding: 1px;
     background-color: #073642; /*base02*/
     border: 2px solid #93a1a1; /*base1*/
@@ -39,7 +39,7 @@ window#waybar {
 
 #tags button {
     margin: 1px;
-    padding: 4px;
+    padding: 0px;
     color: #93a1a1; /*base1*/
     border: 2px solid #073642; /*base02*/
 }
@@ -67,15 +67,15 @@ window#waybar {
 #network,
 #temperature {
     padding: 1px 5px;
-    margin-top: 16px;
-    margin-left: 16px;
+    margin-top: 8px;
+    margin-left: 8px;
     background-color: #073642; /*base02*/
-    color: #839496; /*base0*/
-    border: 2px solid #839496; /*base0*/
+    color: #93a1a1; /*base1*/
+    border: 2px solid #93a1a1; /*base1*/
 }
 
 #temperature {
-    margin-right: 16px;
+    margin-right: 8px;
 }
 
 #clock {
