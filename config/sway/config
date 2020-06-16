@@ -49,7 +49,7 @@
 #
 # Input configuration
 #
-    input * xkb_options caps:swapescape
+    input * xkb_options caps:escape
 #
 # Basics:
 #
