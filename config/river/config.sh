@@ -36,16 +36,20 @@ for i in $(seq 1 9); do
     riverctl map normal $mod+Control $i toggle-focused-tags $tagmask
     riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
 done
-tags1to9=$(((1 << 10) - 1))
+tags1to9=$(((1 << 9) - 1))
 riverctl map normal $mod 0 set-focused-tags $tags1to9
 riverctl map normal $mod+Shift 0 set-view-tags $tags1to9
 
-# layouts
-riverctl map normal $mod F layout full
-riverctl map normal $mod Up layout top-master
-riverctl map normal $mod Right layout right-master
-riverctl map normal $mod Down layout bottom-master
-riverctl map normal $mod Left layout left-master
+# scratchpad
+scratchpad=$((1 << 9))
+riverctl map normal $mod minus toggle-focused-tags $scratchpad
+riverctl set-focused-tags $scratchpad
+riverctl spawn alacritty
+sleep 0.1
+riverctl set-focused-tags 1
+
+# layout
+riverctl layout rivertile left
 
 # passthrough mode for nested sessions
 riverctl declare-mode passthrough

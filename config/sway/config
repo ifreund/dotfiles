@@ -50,6 +50,7 @@
 # Input configuration
 #
     input * xkb_options caps:escape
+    seat * xcursor_theme Vanilla-DMZ-AA
 #
 # Basics:
 #

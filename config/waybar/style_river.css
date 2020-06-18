@@ -39,7 +39,7 @@ window#waybar {
 
 #tags button {
     margin: 1px;
-    padding: 0px;
+    padding: 1px;
     color: #93a1a1; /*base1*/
     border: 2px solid #073642; /*base02*/
 }
