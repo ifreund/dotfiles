@@ -1,6 +1,4 @@
 {
-  "layer": "top",
-  "position": "top",
   "modules-left": [
     "river/tags"
   ],

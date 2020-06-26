@@ -26,7 +26,7 @@
 }
 
 window#waybar {
-    background-color: #002b36; /*base03*/
+    background-color: rgba(0,0,0,0); /* transparent */
 }
 
 #tags {
@@ -58,6 +58,12 @@ window#waybar {
 }
 
 #tags button.occupied {
+    border: 2px solid #93a1a1; /*base1*/
+}
+
+#tags button.focused.occupied {
+    color: #073642; /*base02*/
+    background-color: #93a1a1; /*base1*/
     border: 2px solid #93a1a1; /*base1*/
 }
 
