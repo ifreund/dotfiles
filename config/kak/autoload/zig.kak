@@ -21,6 +21,7 @@ provide-module -override zig %§
 add-highlighter shared/zig regions
 add-highlighter shared/zig/code default-region group
 
+add-highlighter shared/zig/module_comment   region '//!' '$'           fill meta
 add-highlighter shared/zig/doc_comment      region '///[^/]' '$'       fill meta
 add-highlighter shared/zig/comment          region '//' '$'            fill comment
 
