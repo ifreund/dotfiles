@@ -1,3 +1,17 @@
+[server]
+# exit session if no requests were received during given period in seconds
+timeout = 1800 # 30 minutes
+
+[semantic_tokens]
+type = "type"
+#variable = "variable"
+namespace = "module"
+function = "function"
+#string = "string"
+#keyword = "keyword"
+#operator = "operator"
+#comment = "comment"
+
 [language.c_cpp]
 filetypes = ["c", "cpp"]
 roots = ["compile_commands.json", ".clangd"]

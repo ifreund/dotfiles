@@ -40,6 +40,9 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
+# only for testing river, transparency is dumb
+# background_opacity: 0.5
+
 colors:
   primary:
     background: '0x002b36'

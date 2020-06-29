@@ -48,6 +48,16 @@ hook global WinSetOption filetype=(c|cpp|zig) %{
     lsp-enable-window
 }
 
+# Enable semantic highlighting for zig
+hook global WinSetOption filetype=zig %{
+  hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+  hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+  hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+  hook -once -always window WinSetOption filetype=.* %{
+    remove-hooks window semantic-tokens
+  }
+}
+
 # uncomment to enable debug logging for kak-lsp
 # set-option global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 

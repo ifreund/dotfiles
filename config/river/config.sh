@@ -19,8 +19,9 @@ riverctl map normal $mod L mod-master-factor +0.05
 riverctl map normal $mod+Shift H mod-master-count +1
 riverctl map normal $mod+Shift L mod-master-count -1
 
-# toggle float
+# toggle float/fullscreen
 riverctl map normal $mod Space toggle-float
+riverctl map normal $mod F toggle-fullscreen
 
 # multi-output
 riverctl map normal $mod Period focus-output next
