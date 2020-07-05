@@ -50,6 +50,11 @@ add-highlighter shared/zig/code/ regex '\b(?:i0|u0|isize||usize|comptime_int|com
 add-highlighter shared/zig/code/ regex '\b(?:[iu][1-9]\d*)\b' 0:type
 add-highlighter shared/zig/code/ regex '\b(?:c_short|c_ushort|c_int|c_uint|c_long|c_ulong|c_longlong|c_ulonglong|c_longdouble|c_void)\b' 0:type
 
+# other types (any identifier starting with an uppercase letter)
+# This is ugly when working with C code, and will never be as good as semantic
+# highlighting from zls.
+# add-highlighter shared/zig/code/ regex '\b[A-Z]\w*\b' 0:type
+
 # primitive values
 add-highlighter shared/zig/code/ regex '\b(?:true|false|null|undefined)\b' 0:value
 
@@ -86,6 +91,9 @@ add-highlighter shared/zig/code/ regex "@(?:shlWithOverflow|shrExact|sizeOf|bitS
 add-highlighter shared/zig/code/ regex "@(?:truncate|typeId|typeInfo|typeName|TypeOf|atomicRmw|bytesToSlice|sliceToBytes)\b" 0:function
 add-highlighter shared/zig/code/ regex "@(?:intToError|errorToInt|intToEnum|enumToInt|setAlignStack|frame|Frame|frameSize|bitReverse|Vector)\b" 0:function
 add-highlighter shared/zig/code/ regex "@(?:sin|cos|exp|exp2|log|log2|log10|fabs|floor|ceil|trunc|round)\b" 0:function
+
+# all functions
+add-highlighter shared/zig/code/ regex '\b\w*(?=\()' 0:function
 
 # Commands
 # ‾‾‾‾‾‾‾‾

@@ -1,12 +1,18 @@
 [server]
-# exit session if no requests were received during given period in seconds
+# exit session if no requests were received during given period
 timeout = 1800 # 30 minutes
 
+
+# this is just for zls so far, and only for types, the rest of the highlighting
+# is covered by regex and doesn't need semantic analysis.
 [semantic_tokens]
 type = "type"
+struct = "type"
+enum = "type"
+union = "type"
 #variable = "variable"
-namespace = "module"
-function = "function"
+#namespace = "module"
+#function = "function"
 #string = "string"
 #keyword = "keyword"
 #operator = "operator"
