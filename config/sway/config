@@ -246,14 +246,6 @@
     # gets sent to the scatchpad
     exec $term --class scratch
 
-    workspace 7:irc
-    exec WEECHAT_PASSPHRASE=$(pass weechat) $term -e weechat
-
-    workspace 1:term
-    exec $term
-    exec eval "$(dot-desktop Firefox)"
-    exec eval "$(dot-desktop Spotify)"
-
 # Doesn't seem to be anything in this dir yet, but it was in the example config
 # file so I'm keeping it in case packages put things there
 include /etc/sway/config.d/*
