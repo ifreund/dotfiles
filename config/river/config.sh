@@ -8,6 +8,9 @@ riverctl map normal $mod+Shift Return spawn alacritty
 riverctl map normal $mod Q close
 riverctl map normal $mod E exit
 
+# launcher
+riverctl map normal $mod D spawn launcher.sh
+
 # view focus
 riverctl map normal $mod Return zoom
 riverctl map normal $mod J focus-view next
@@ -41,15 +44,7 @@ tags1to9=$(((1 << 9) - 1))
 riverctl map normal $mod 0 set-focused-tags $tags1to9
 riverctl map normal $mod+Shift 0 set-view-tags $tags1to9
 
-# scratchpad
-scratchpad=$((1 << 9))
-riverctl map normal $mod minus toggle-focused-tags $scratchpad
-riverctl set-focused-tags $scratchpad
-riverctl spawn alacritty
-sleep 0.1
-riverctl set-focused-tags 1
-
-# layout
+# default layout
 riverctl layout rivertile left
 
 # passthrough mode for nested sessions
