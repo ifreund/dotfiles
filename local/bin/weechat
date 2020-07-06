@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# start weechat in a detach session or connect to an existing session
+dtach -A /tmp/dtach-weechat -Ez /usr/bin/weechat
