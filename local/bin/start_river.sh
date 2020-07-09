@@ -1,6 +1,8 @@
 #!/bin/sh
 
 export XKB_DEFAULT_OPTIONS="caps:escape"
-[ "$1" = "cole" ] && export XKB_DEFAULT_LAYOUT="us(colemak)"
+export XKB_DEFAULT_LAYOUT="us(colemak)"
+
+export MOZ_ENABLE_WAYLAND=1
 
 river -l 7 -c ~/.config/river/config.sh

@@ -6,21 +6,21 @@ mod="Mod4"
 # term/close/exit
 riverctl map normal $mod+Shift Return spawn alacritty
 riverctl map normal $mod Q close
-riverctl map normal $mod E exit
+riverctl map normal $mod K exit
 
 # launcher
-riverctl map normal $mod D spawn launcher.sh
+riverctl map normal $mod S spawn launcher.sh
 
 # view focus
 riverctl map normal $mod Return zoom
-riverctl map normal $mod J focus-view next
-riverctl map normal $mod K focus-view previous
+riverctl map normal $mod N focus-view next
+riverctl map normal $mod E focus-view previous
 
 # master count/size
 riverctl map normal $mod H mod-master-factor -0.05
-riverctl map normal $mod L mod-master-factor +0.05
+riverctl map normal $mod I mod-master-factor +0.05
 riverctl map normal $mod+Shift H mod-master-count +1
-riverctl map normal $mod+Shift L mod-master-count -1
+riverctl map normal $mod+Shift I mod-master-count -1
 
 # toggle float/fullscreen
 riverctl map normal $mod Space toggle-float
@@ -49,8 +49,8 @@ riverctl layout rivertile left
 
 # passthrough mode for nested sessions
 riverctl declare-mode passthrough
-riverctl map normal $mod F11 enter-mode passthrough
-riverctl map passthrough $mod F11 enter-mode normal
+riverctl map normal $mod F12 enter-mode passthrough
+riverctl map passthrough $mod F12 enter-mode normal
 
 # 8px padding
 riverctl set-option outer_padding 4
