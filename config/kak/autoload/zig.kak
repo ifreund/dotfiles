@@ -21,14 +21,17 @@ provide-module -override zig %§
 add-highlighter shared/zig regions
 add-highlighter shared/zig/code default-region group
 
-add-highlighter shared/zig/module_comment   region '//!' '$'           fill meta
-add-highlighter shared/zig/doc_comment      region '///[^/]' '$'       fill meta
+add-highlighter shared/zig/module_comment   region '//!' '$'           fill comment
+add-highlighter shared/zig/doc_comment      region '///[^/]' '$'       fill comment
 add-highlighter shared/zig/comment          region '//' '$'            fill comment
 
 # TODO: highlight escape sequences within strings
 add-highlighter shared/zig/string_double    region '"' (?<!\\)(\\\\)*" fill string
 add-highlighter shared/zig/string_single    region "'" (?<!\\)(\\\\)*' fill string
 add-highlighter shared/zig/string_multiline region '\\\\' '$'          fill string
+
+# all functions (must be before callconv)
+add-highlighter shared/zig/code/ regex '\b\w*(?=\()' 0:function
 
 # attributes
 add-highlighter shared/zig/code/ regex '\b(?:const|var|extern|packed|export|pub|noalias|inline|noinline|comptime|callconv|volatile|allowzero|align|linksection|threadlocal)\b' 0:attribute
@@ -91,9 +94,6 @@ add-highlighter shared/zig/code/ regex "@(?:shlWithOverflow|shrExact|sizeOf|bitS
 add-highlighter shared/zig/code/ regex "@(?:truncate|typeId|typeInfo|typeName|TypeOf|atomicRmw|bytesToSlice|sliceToBytes)\b" 0:function
 add-highlighter shared/zig/code/ regex "@(?:intToError|errorToInt|intToEnum|enumToInt|setAlignStack|frame|Frame|frameSize|bitReverse|Vector)\b" 0:function
 add-highlighter shared/zig/code/ regex "@(?:sin|cos|exp|exp2|log|log2|log10|fabs|floor|ceil|trunc|round)\b" 0:function
-
-# all functions
-add-highlighter shared/zig/code/ regex '\b\w*(?=\()' 0:function
 
 # Commands
 # ‾‾‾‾‾‾‾‾
