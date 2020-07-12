@@ -32,6 +32,9 @@ riverctl map normal $mod Comma focus-output previous
 riverctl map normal $mod+Shift Period send-to-output next
 riverctl map normal $mod+Shift Comma send-to-output previous
 
+# screenshots
+riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
+
 # tags
 for i in $(seq 1 9); do
     tagmask=$((1 << ($i - 1)))
