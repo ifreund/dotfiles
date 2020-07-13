@@ -8,6 +8,8 @@
 # General
 ################################################################################
 
+include = colemak_command_keys.txt
+
 default_manual_training = true
 # This should choose the oldest non-rotten chunk automatically
 easy_eat_chunks = true
