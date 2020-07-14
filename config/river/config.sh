@@ -59,5 +59,8 @@ riverctl map passthrough $mod F12 enter-mode normal
 riverctl set-option outer_padding 4
 riverctl set-option view_padding 4
 
+# cursor theme
+riverctl xcursor-theme Vanilla-DMZ-AA
+
 # start waybar
 riverctl spawn ~/projects/Waybar/build/waybar -c ~/.config/waybar/config_river -s ~/.config/waybar/style_river.css
