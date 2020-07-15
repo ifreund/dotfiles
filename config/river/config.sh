@@ -56,8 +56,8 @@ riverctl map normal $mod F12 enter-mode passthrough
 riverctl map passthrough $mod F12 enter-mode normal
 
 # 8px padding
-riverctl set-option outer_padding 4
-riverctl set-option view_padding 4
+riverctl outer-padding 4
+riverctl view-padding 4
 
 # cursor theme
 riverctl xcursor-theme Vanilla-DMZ-AA
