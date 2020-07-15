@@ -1,7 +1,8 @@
 # Isaac Freund's dotfiles
 
 This is my relatively minimal configuration for
-[Void Linux](https://voidlinux.org/) and [Sway](https://swaywm.org/)
+[void linux](https://voidlinux.org/) and
+[river](https://github.com/ifreund/river)
 
 # Installation
 
