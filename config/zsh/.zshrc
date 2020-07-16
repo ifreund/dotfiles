@@ -1,11 +1,5 @@
 # .zshrc
 
-# setup path
-path=("$HOME/.local/bin" $path)
-# cargo why are you dumb
-path=("$HOME/.cargo/bin" $path)
-export PATH
-
 export GPG_TTY=$(tty)
 
 # essentially syncs history between shells

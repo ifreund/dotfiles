@@ -5,4 +5,4 @@ export XKB_DEFAULT_LAYOUT="us(colemak)"
 
 export MOZ_ENABLE_WAYLAND=1
 
-river -l 7 -c ~/.config/river/config.sh
+exec dbus-run-session river -l 7 -c ~/.config/river/config.sh
