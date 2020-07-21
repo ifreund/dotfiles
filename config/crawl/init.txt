@@ -2,7 +2,7 @@
 # Dungeon Crawl Stone Soup config file
 ################################################################################
 
-# See /usr/share/stone-soup/data/docs/options_guide.txt
+# See /usr/share/crawl/docs/options_guide.txt
 
 ################################################################################
 # General
@@ -11,9 +11,14 @@
 include = colemak_command_keys.txt
 
 default_manual_training = true
-# This should choose the oldest non-rotten chunk automatically
-easy_eat_chunks = true
-auto_butcher = true
+
+################################################################################
+# Notifications
+################################################################################
+
+runrest_stop_message += Your transformation is almost over
+
+confirm_action += Death's Door
 
 ################################################################################
 # Autopickup
