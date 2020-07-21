@@ -62,5 +62,8 @@ riverctl view-padding 4
 # cursor theme
 riverctl xcursor-theme Vanilla-DMZ-AA
 
+# float stuff with app_id "float"
+riverctl float-filter-add float
+
 # start waybar
 riverctl spawn ~/projects/Waybar/build/waybar -c ~/.config/waybar/config_river -s ~/.config/waybar/style_river.css
