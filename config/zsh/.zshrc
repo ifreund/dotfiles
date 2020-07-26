@@ -46,7 +46,8 @@ source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/man.zsh
 
 # custom prompt (isn't this syntax just lovely?)
-PROMPT="%F{blue}%~%f
+PROMPT="
+%F{blue}%~%f
 %F{cyan}%(1j.+%j .)%f%F{yellow}❯%f "
 
 # initalize syntax highlighting and customize colors
