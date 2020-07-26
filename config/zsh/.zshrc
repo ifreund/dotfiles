@@ -45,9 +45,9 @@ source $ZDOTDIR/aliases.zsh
 # get colorful man pages with less
 source $ZDOTDIR/man.zsh
 
-# initalize powerlevel10k prompt
-source ~/projects/powerlevel10k/powerlevel10k.zsh-theme
-source $ZDOTDIR/p10k.zsh
+# custom prompt (isn't this syntax just lovely?)
+PROMPT="%F{blue}%~%f
+%F{cyan}%(1j.+%j .)%f%F{yellow}❯%f "
 
 # initalize syntax highlighting and customize colors
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
