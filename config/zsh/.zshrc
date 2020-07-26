@@ -16,19 +16,8 @@ SAVEHIST=10000
 # disable ctrl-S/ctrl-Q for START/STOP
 stty -ixon -ixoff
 
-# vi bindings
-bindkey -v
-
-# ergonomic homerow beginning and end of line bindings
-bindkey -M vicmd H vi-beginning-of-line
-bindkey -M vicmd L vi-end-of-line
-
-# reduce delay entering vi mode to 0.1 s
-KEYTIMEOUT=1
-
 # init some custom behavior
 source $ZDOTDIR/better_ctrl_z.zsh
-source $ZDOTDIR/vi_modal_cursor.zsh
 
 # add completion functions from zsh-completions packages to fpath so compinit
 # can find them
