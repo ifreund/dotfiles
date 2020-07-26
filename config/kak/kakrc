@@ -35,7 +35,7 @@ set-option global gdb_location_symbol ▶
 # fuzzy open file
 define-command fuzzy-open-file -params 0 %{
     try %sh{
-        alacritty --class float -e sh -c "kak_open_file.sh $kak_session $kak_client"
+        footclient --app-id=float sh -c "kak_open_file.sh $kak_session $kak_client"
     }
 }
 

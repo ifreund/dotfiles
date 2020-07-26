@@ -4,7 +4,7 @@
 mod="Mod4"
 
 # term/close/exit
-riverctl map normal $mod+Shift Return spawn alacritty
+riverctl map normal $mod+Shift Return spawn footclient
 riverctl map normal $mod Q close
 riverctl map normal $mod K exit
 
@@ -65,5 +65,7 @@ riverctl xcursor-theme Vanilla-DMZ-AA
 # float stuff with app_id "float"
 riverctl float-filter-add float
 
-# start waybar
+# start long running programs
+# TODO: use runit for supervision
 riverctl spawn ~/projects/Waybar/build/waybar -c ~/.config/waybar/config_river -s ~/.config/waybar/style_river.css
+riverctl spawn foot --server
