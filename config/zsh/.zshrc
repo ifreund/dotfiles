@@ -19,6 +19,11 @@ stty -ixon -ixoff
 # init some custom behavior
 source $ZDOTDIR/better_ctrl_z.zsh
 
+# nnn config
+export NNN_USE_EDITOR=1          # use the $EDITOR when opening text files
+export NNN_CONTEXT_COLORS="5132" # use a different color for each context
+export NNN_TRASH=1               # trash (needs trash-cli) instead of delete
+
 # add completion functions from zsh-completions packages to fpath so compinit
 # can find them
 fpath=(/usr/share/zsh/site-functions $fpath)

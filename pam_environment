@@ -1,6 +1,7 @@
-EDITOR          DEFAULT=/usr/local/bin/kak
-XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
+EDITOR          DEFAULT=@{HOME}/.local/bin/kak
+MANPATH         DEFAULT=@{HOME}/.local/share/man:
 
+XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
 CRAWL_DIR       DEFAULT=${XDG_CONFIG_HOME}/crawl/
 GNUPGHOME       DEFAULT=${XDG_CONFIG_HOME}/gnupg
 GTK2_RC_FILES   DEFAULT=${XDG_CONFIG_HOME}/gtk-2.0/config

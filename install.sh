@@ -8,12 +8,12 @@ ln -s  ${dotfiles}/pam_environment ~/.pam_environment
 
 # create ~/.config and ~/.local if they don't exist
 mkdir -p ~/.config
-mkdir -p ~/.local
+mkdir -p ~/.local/bin
 
-# symlink everything in config
+# symlink everything in config and local/bin
 for file in ${dotfiles}/config/*; do
 	ln -s ${file} ~/.config/
 done
-
-# symlink to ~/.local/bin
-ln -s ${dotfiles}/local/bin ~/.local/
+for file in ${dotfiles}/local/bin/*; do
+	ln -s ${file} ~/.local/bin/
+done
