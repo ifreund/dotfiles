@@ -9,7 +9,7 @@ riverctl map normal $mod Q close
 riverctl map normal $mod K exit
 
 # launcher
-riverctl map normal $mod S spawn launcher.sh
+riverctl map normal $mod S spawn fuzzel.sh
 
 # view focus
 riverctl map normal $mod Return zoom
