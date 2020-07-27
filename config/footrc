@@ -28,4 +28,4 @@ bright6    = 93a1a1
 bright7    = fdf6e3
 
 [key-bindings]
-pipe-visible=[sh -c "xurls | fuzzel.sh -d | xargs -r firefox"] Control+Shift+U
+pipe-visible=[sh -c "xurls | tac | fuzzel.sh -d | xargs -r firefox"] Control+Shift+U
