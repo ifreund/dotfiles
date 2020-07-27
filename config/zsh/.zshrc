@@ -51,9 +51,16 @@ source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/man.zsh
 
 # custom prompt (isn't this syntax just lovely?)
-PROMPT="
-%F{blue}%~%f
-%F{cyan}%(1j.+%j .)%f%F{yellow}❯%f "
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=(precmd_vcs_info)
+zstyle ':vcs_info:*' formats 'on %F{green}%b%f'
+zstyle ':vcs_info:*' actionformats 'on %F{green}%b%f(%F{red}%a%f)'
+zstyle ':vcs_info:*' enable git
+setopt prompt_subst
+PROMPT='
+%F{blue}%~%f ${vcs_info_msg_0_}
+%F{cyan}%(1j.+%j .)%f%F{yellow}❯%f '
 
 # initalize syntax highlighting and customize colors
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
