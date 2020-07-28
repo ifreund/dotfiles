@@ -1,4 +1,8 @@
 EDITOR          DEFAULT=@{HOME}/.local/bin/kak
+
+C_INCLUDE_PATH  DEFAULT=@{HOME}/.local/include
+LD_LIBRARY_PATH DEFAULT=@{HOME}/.local/lib
+PKG_CONFIG_PATH DEFAULT=@{HOME}/.local/lib/pkgconfig
 MANPATH         DEFAULT=@{HOME}/.local/share/man:
 
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
