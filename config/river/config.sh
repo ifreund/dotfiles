@@ -3,10 +3,9 @@
 # Use the "logo" key as the primary modifier
 mod="Mod4"
 
-# term/close/exit
+# term/close
 riverctl map normal $mod+Shift Return spawn footclient
 riverctl map normal $mod Q close
-riverctl map normal $mod K exit
 
 # launcher
 riverctl map normal $mod S spawn fuzzel.sh
