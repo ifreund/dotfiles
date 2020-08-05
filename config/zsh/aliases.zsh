@@ -3,7 +3,6 @@
 # general purpose
 alias n="nnn"
 alias pastebin="curl --data-binary @- https://paste.rs/"
-alias skrg="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
 alias t="task"
 alias zb="zig build"
 alias ls="ls --color=auto --group-directories-first -h"

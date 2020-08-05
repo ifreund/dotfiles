@@ -1,5 +1,5 @@
 #!/bin/sh
 session_id=$1
 client_id=$2
-target=$(rg --files | sk)
+target=$(rg --files --hidden | fzy -l 32)
 echo "eval -client ${client_id} edit -existing ${target}" | kak -p "${session_id}"
