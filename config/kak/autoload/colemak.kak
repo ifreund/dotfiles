@@ -5,7 +5,7 @@
 # j -> n
 map global normal n j
 map global goto n j
-map global normal N J<a-x> # selecting the whole line is nicer
+map global normal N J
 map global normal <a-n> <a-j>
 map global normal <a-N> <a-J>
 map global normal j n
@@ -16,7 +16,7 @@ map global normal <a-J> <a-N>
 # k -> e
 map global normal e k
 map global goto e k
-map global normal E K<a-x> # selecting the whole line is nicer
+map global normal E K
 map global normal <a-e> <a-k>
 map global normal <a-E> <a-K>
 map global normal k e
