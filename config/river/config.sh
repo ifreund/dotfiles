@@ -59,7 +59,7 @@ riverctl outer-padding 4
 riverctl view-padding 4
 
 # cursor theme
-riverctl xcursor-theme Vanilla-DMZ-AA
+riverctl xcursor-theme Adwaita
 
 # float stuff with app_id "float"
 riverctl float-filter-add float
