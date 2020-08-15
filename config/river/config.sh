@@ -4,7 +4,8 @@
 mod="Mod4"
 
 # term/close
-riverctl map normal $mod+Shift Return spawn footclient
+#riverctl map normal $mod+Shift Return spawn footclient
+riverctl map normal $mod+Shift Return spawn foot
 riverctl map normal $mod Q close
 
 # launcher
@@ -66,5 +67,5 @@ riverctl float-filter-add float
 
 # start long running programs
 # TODO: use runit for supervision
-riverctl spawn ~/projects/Waybar/build/waybar -c ~/.config/waybar/config_river -s ~/.config/waybar/style_river.css
+riverctl spawn waybar
 riverctl spawn foot --server

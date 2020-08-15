@@ -1,0 +1,62 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "custom/pacman",
+        "network",
+        "memory",
+        "cpu",
+        "temperature"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+    "clock": {
+        "format": "{:%a %d-%m %T}",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/pacman": {
+        "exec": "~/.config/waybar/pacman.sh",
+        "return-type": "json",
+        "interval": 3600, // 1 hour
+        "signal": 1, // Can use `pkill -SIGRTMIN+1 waybar` to refresh
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "{essid} {signalStrength}%",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "mem {}%",
+        "interval": 1,
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "cpu{usage:3}%",
+        "interval": 1,
+        "states": {
+            "warning": 50,
+            "critical": 90
+        },
+        "tooltip": false
+    },
+    "temperature": {
+        "format": "{temperatureC}°C",
+        "interval": 1,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "tooltip": false
+    }
+}

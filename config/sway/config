@@ -231,7 +231,7 @@
 # Status Bar:
 #
     bar {
-        swaybar_command waybar
+        swaybar_command waybar -c ~/.config/waybar/config_sway -s ~/.config/waybar/style_sway.css
     }
 #
 # Notifications:

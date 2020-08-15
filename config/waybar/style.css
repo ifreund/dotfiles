@@ -20,62 +20,82 @@
  */
 
 * {
-    border: none;
     border-radius: 0;
     font-family: cozette;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: #002b36; /*base03*/
-    border-top: 2px solid #586e75; /*base01*/
-    color: #839496; /*base0*/
+    background-color: rgba(0,0,0,0); /* transparent */
 }
 
-#clock,
-#cpu,
-#custom-pacman,
-#memory,
-#network,
-#mode,
-#temperature,
-#tray,
-#workspaces button {
-    padding: 1px 5px;
-    margin: 0px 4px;
-    color: #839496; /*base0*/
+#tags {
+    margin-top: 8px;
+    margin-left: 8px;
+    padding: 1px;
     background-color: #073642; /*base02*/
-    border-top: 2px solid #839496; /*base0*/
-    border-bottom: 2px solid #073642; /*base02*/
+    border: 2px solid #93a1a1; /*base1*/
+}
+
+#tags button {
+    margin: 1px;
+    padding: 1px;
+    color: #93a1a1; /*base1*/
+    border: 2px solid #073642; /*base02*/
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
+#tags button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
     background: #073642; /*base02*/
 }
 
-#workspaces button.focused {
+#tags button.focused {
+    color: #073642; /*base02*/
+    background-color: #93a1a1; /*base1*/
+    border: 2px solid #073642; /*base02*/
+}
+
+#tags button.occupied {
+    border: 2px solid #93a1a1; /*base1*/
+}
+
+#tags button.focused.occupied {
+    color: #073642; /*base02*/
+    background-color: #93a1a1; /*base1*/
+    border: 2px solid #93a1a1; /*base1*/
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#temperature {
+    padding: 1px 5px;
+    margin-top: 8px;
+    margin-left: 8px;
+    background-color: #073642; /*base02*/
     color: #93a1a1; /*base1*/
-    border-top: 2px solid #93a1a1; /*base1*/
-    border-bottom: 2px solid #839496; /*base1*/
+    border: 2px solid #93a1a1; /*base1*/
+}
+
+#temperature {
+    margin-right: 8px;
+}
+
+#clock {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #cpu.warning,
-#custom-pacman.warning,
 #memory.warning {
-    color: #93a1a1; /*base1*/
-    border-top: 2px solid #b58900; /*yellow*/
-    border-bottom: 2px solid #b58900; /*yellow*/
+    border: 2px solid #b58900; /*yellow*/
 }
 
 #cpu.critical,
 #memory.critical,
-#mode,
-#temperature.critical,
-#workspaces button.urgent {
-    color: #93a1a1; /*base1*/
-    border-top: 2px solid #dc322f; /*red*/
-    border-bottom: 2px solid #dc322f; /*red*/
+#temperature.critical {
+    border: 2px solid #dc322f; /*red*/
 }
