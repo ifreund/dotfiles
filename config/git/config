@@ -10,3 +10,5 @@
 	program = gpg2
 [pull]
 	ff = only
+[sendemail]
+	smtpserver = /usr/bin/msmtp
