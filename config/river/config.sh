@@ -22,6 +22,10 @@ riverctl map normal $mod I mod-master-factor +0.05
 riverctl map normal $mod+Shift H mod-master-count +1
 riverctl map normal $mod+Shift I mod-master-count -1
 
+# move/resize
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+
 # toggle float/fullscreen
 riverctl map normal $mod Space toggle-float
 riverctl map normal $mod F toggle-fullscreen
