@@ -33,9 +33,9 @@ set-option global gdb_location_symbol ▶
 # ==============================================================================
  
 # fuzzy open file
-define-command fuzzy-open-file -params 0 %{
+define-command fuzzy-open-file %{
     try %sh{
-        foot -g 500x320 --app-id=float sh -c "kak_open_file.sh $kak_session $kak_client"
+        foot -w 500x320 --app-id=float sh -c "kak_open_file.sh $kak_session $kak_client"
     }
 }
 
