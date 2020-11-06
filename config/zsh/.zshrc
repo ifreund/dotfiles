@@ -42,7 +42,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^n' autosuggest-accept
 
 # initalize jump
-eval "$(zoxide init --z-cmd j zsh)"
+eval "$(zoxide init --cmd j zsh)"
 
 # load aliases
 source $ZDOTDIR/aliases.zsh
@@ -95,3 +95,5 @@ ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=1' # red
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=2' # green
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(direnv hook zsh)"
