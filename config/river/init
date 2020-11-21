@@ -56,8 +56,8 @@ riverctl layout rivertile left
 
 # passthrough mode for nested sessions
 riverctl declare-mode passthrough
-riverctl map normal $mod F12 enter-mode passthrough
-riverctl map passthrough $mod F12 enter-mode normal
+riverctl map normal $mod Semicolon enter-mode passthrough
+riverctl map passthrough $mod Semicolon enter-mode normal
 
 # 8px padding
 riverctl outer-padding 4
