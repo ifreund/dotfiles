@@ -9,9 +9,9 @@
 
     # vikeys
     set $left  h
-    set $down  j
-    set $up    k
-    set $right l
+    set $down  n
+    set $up    e
+    set $right i
 
     # terminal emulator
     set $term alacritty
@@ -49,8 +49,8 @@
 #
 # Input configuration
 #
-    input * xkb_options caps:escape
-    input * xkb_layout us,us(colemak)
+    #input * xkb_options caps:escape
+    #input * xkb_layout us(colemak)
     seat * xcursor_theme Vanilla-DMZ-AA
 #
 # Basics:
