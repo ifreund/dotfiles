@@ -1,6 +1,6 @@
 {
 	"enable_snippets": false,
-	"zig_exe_path": "/usr/bin/zig",
 	"warn_style": false,
-	"enable_semantic_tokens": true
+	"enable_semantic_tokens": true,
+	"build_runner_path": "/tmp/"
 }

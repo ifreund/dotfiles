@@ -3,20 +3,20 @@
 timeout = 1800 # 30 minutes
 
 
-# this is just for zls so far, and only for types, the rest of the highlighting
-# is covered by regex and doesn't need semantic analysis.
+# this is just for zls  and only for types/functions, the rest of the
+# highlighting is covered by regex and doesn't need semantic analysis.
 [semantic_tokens]
 type = "type"
-struct = "type"
-enum = "type"
-union = "type"
 #variable = "variable"
 #namespace = "module"
-#function = "function"
+function = "function"
 #string = "string"
 #keyword = "keyword"
 #operator = "operator"
 #comment = "comment"
+
+[semantic_token_modifiers]
+namespace = "module"
 
 [language.c_cpp]
 filetypes = ["c", "cpp"]
@@ -26,4 +26,4 @@ command = "clangd"
 [language.zig]
 filetypes = ["zig"]
 roots = ["build.zig"]
-command = "/home/ifreund/projects/zls/zig-cache/bin/zls"
+command = "zls"
