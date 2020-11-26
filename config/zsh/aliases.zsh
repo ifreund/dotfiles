@@ -2,7 +2,8 @@
 
 # general purpose
 alias n="nnn"
-alias pastebin="curl --data-binary @- https://paste.rs/"
+#alias pastebin="curl --data-binary @- https://paste.rs/"
+alias pastebin="curl -F'file=@-' https://0x0.st"
 alias t="task"
 alias zb="zig build"
 alias ls="ls --color=auto --group-directories-first -h"
@@ -15,7 +16,7 @@ alias gc="git commit"
 alias gd="git diff"
 alias gf="git fetch"
 alias gl="git log"
-alias go="git checkout"
+alias gco="git checkout"
 alias gp="git push"
 alias gr="git rebase"
 alias gs="git stash"
