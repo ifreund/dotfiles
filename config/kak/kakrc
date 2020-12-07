@@ -9,7 +9,7 @@ set-option global tabstop 4
 # load editorconfig for all buffers except special ones like *debug*
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
 
-hook global WinSetOption filetype=(cpp|kak|python|rust|xml|yml|zig) expandtab
+hook global WinSetOption filetype=(cpp|kak|python|rust|xml|yml) expandtab
 
 # use ripgrep for grepping
 set-option global grepcmd 'rg --column'
@@ -44,18 +44,8 @@ hook global BufWritePre .* "try %{ format-buffer }"
 
 # Enable kak-lsp for some filetypes
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(c|cpp|zig) %{
+hook global WinSetOption filetype=(c|cpp) %{
     lsp-enable-window
-}
-
-# Enable semantic highlighting for zig
-hook global WinSetOption filetype=zig %{
-  hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
-  hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
-  hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
-  hook -once -always window WinSetOption filetype=.* %{
-    remove-hooks window semantic-tokens
-  }
 }
 
 # uncomment to enable debug logging for kak-lsp
