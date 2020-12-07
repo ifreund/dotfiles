@@ -59,7 +59,7 @@ hook global WinSetOption filetype=zig %{
 }
 
 # uncomment to enable debug logging for kak-lsp
-# set-option global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+#set-option global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 # key bindings
 # ==============================================================================
@@ -88,6 +88,9 @@ map global user f '|fmt -w 80<ret>' -docstring 'wrap to 80'
 
 # wrap to 80 with comments and shit
 map global user F '<a-x>Z<a-;>;Wyzs^<c-r>"<ret>dz|fmt -w 77<ret><a-s>ghP<space>'
+
+# lsp mode
+map global user l ':enter-user-mode lsp<ret>' -docstring 'lsp mode'
 
 # spell checking
 declare-user-mode spell
