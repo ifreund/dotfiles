@@ -62,12 +62,12 @@ map global normal <backspace> <space> -docstring 'remove all sels except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 
 # general utility
-map global user w ':w<ret>' -docstring 'write'
-map global user g ':grep ' -docstring 'grep'
-map global user p ':fuzzy-open-file<ret>' -docstring 'open file'
-map global user t ':ctags-search<ret>' -docstring 'ctag def'
-map global user d ':db<ret>' -docstring 'close buffer'
-map global user m ':make<ret>' -docstring 'make'
+map global user w ': w<ret>' -docstring 'write'
+map global user g ': grep ' -docstring 'grep'
+map global user p ': fuzzy-open-file<ret>' -docstring 'open file'
+map global user t ': ctags-search<ret>' -docstring 'ctag def'
+map global user d ': db<ret>' -docstring 'close buffer'
+map global user m ': make<ret>' -docstring 'make'
 
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
@@ -80,24 +80,24 @@ map global user f '|fmt -w 80<ret>' -docstring 'wrap to 80'
 map global user F '<a-x>Z<a-;>;Wyzs^<c-r>"<ret>dz|fmt -w 77<ret><a-s>ghP<space>'
 
 # lsp mode
-map global user l ':enter-user-mode lsp<ret>' -docstring 'lsp mode'
+map global user l ': enter-user-mode lsp<ret>' -docstring 'lsp mode'
 
 # spell checking
 declare-user-mode spell
-map global spell s ':spell<ret>' -docstring 'spell'
-map global spell c ':spell-clear<ret>' -docstring 'clear'
-map global spell n ':spell-next<ret>' -docstring 'next'
-map global spell r ':spell-replace<ret>' -docstring 'replace'
-map global user s ':enter-user-mode spell<ret>' -docstring 'spell mode'
+map global spell s ': spell<ret>' -docstring 'spell'
+map global spell c ': spell-clear<ret>' -docstring 'clear'
+map global spell n ': spell-next<ret>' -docstring 'next'
+map global spell r ': spell-replace<ret>' -docstring 'replace'
+map global user s ': enter-user-mode spell<ret>' -docstring 'spell mode'
 
 # gdb
 declare-user-mode gdb
-map global gdb n ':gdb-next<ret>' -docstring 'next'
-map global gdb s ':gdb-step<ret>' -docstring 'step'
-map global gdb c ':gdb-continue<ret>' -docstring 'continue'
-map global gdb f ':gdb-finish<ret>' -docstring 'finish function'
-map global gdb b ':gdb-toggle-breakpoint<ret>' -docstring 'break'
-map global gdb g ':gdb-jump-to-location<ret>' -docstring 'goto current location'
-map global gdb p ':gdb-print<ret>' -docstring 'print selection'
-map global gdb t ':gdb-backtrace<ret>' -docstring 'print backtrace'
+map global gdb n ': gdb-next<ret>' -docstring 'next'
+map global gdb s ': gdb-step<ret>' -docstring 'step'
+map global gdb c ': gdb-continue<ret>' -docstring 'continue'
+map global gdb f ': gdb-finish<ret>' -docstring 'finish function'
+map global gdb b ': gdb-toggle-breakpoint<ret>' -docstring 'break'
+map global gdb g ': gdb-jump-to-location<ret>' -docstring 'goto current location'
+map global gdb p ': gdb-print<ret>' -docstring 'print selection'
+map global gdb t ': gdb-backtrace<ret>' -docstring 'print backtrace'
 define-command gdb -params 0 'enter-user-mode -lock gdb' -docstring 'gdb mode'
