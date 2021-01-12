@@ -4,7 +4,7 @@
 dotfiles=$(pwd)
 
 # this sets environment variables required to make things use $XDG_CONFIG_HOME
-ln -s  ${dotfiles}/pam_environment ~/.pam_environment
+ln -s  ${dotfiles}/zshenv ~/.zshenv
 
 # create ~/.config and ~/.local if they don't exist
 mkdir -p ~/.config
