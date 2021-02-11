@@ -6,6 +6,24 @@
 # default tab size of 4 spaces
 set-option global tabstop 4
 
+# disable all default indent hooks
+set-option global disabled_hooks '.*-indent'
+
+# preserve indent level
+hook global InsertChar \n %{
+    try %{ execute-keys -draft <semicolon> K <a-&> }
+}
+
+# trim trailing whitespace on leaving insert mode
+hook global ModeChange pop:insert:.* %{
+    try %{ execute-keys -draft '%s\h+$<ret>d' }
+}
+
+# run the formatcmd for the current filetype on write
+hook global BufWritePre .* %{
+    try %{ format-buffer }
+}
+
 # load editorconfig for all buffers except special ones like *debug*
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
 
@@ -13,6 +31,9 @@ hook global WinSetOption filetype=(cpp|kak|python|rust|xml|yml) expandtab
 
 # use ripgrep for grepping
 set-option global grepcmd 'rg --column'
+
+# use foot as the terminal
+set-option global windowing_modules 'wayland'
 
 # ui settings
 # ==============================================================================
@@ -31,7 +52,7 @@ set-option global gdb_location_symbol ▶
 
 # extra functionality
 # ==============================================================================
- 
+
 # fuzzy open file
 define-command fuzzy-open-file %{
     try %sh{
@@ -39,8 +60,6 @@ define-command fuzzy-open-file %{
     }
 }
 
-# format before write
-hook global BufWritePre .* "try %{ format-buffer }"
 
 # Enable kak-lsp for some filetypes
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
