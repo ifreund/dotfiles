@@ -4,6 +4,7 @@
 	signingkey = 5FBDF84DD2278DB2B8AD8A5286DED400DDFD7A11
 [core]
 	editor = kak
+	autocrlf = false
 [commit]
 	gpgSign = true
 [gpg]
