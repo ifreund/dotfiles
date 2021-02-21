@@ -4,8 +4,7 @@
 mod="Mod4"
 
 # term/close
-#riverctl map normal $mod+Shift Return spawn footclient
-riverctl map normal $mod+Shift Return spawn foot
+riverctl map normal $mod+Shift Return spawn footclient
 riverctl map normal $mod Q close
 
 # launcher
@@ -41,35 +40,39 @@ riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
 
 # tags
 for i in $(seq 1 9); do
-    tagmask=$((1 << ($i - 1)))
-    riverctl map normal $mod $i set-focused-tags $tagmask
-    riverctl map normal $mod+Shift $i set-view-tags $tagmask
-    riverctl map normal $mod+Control $i toggle-focused-tags $tagmask
-    riverctl map normal $mod+Shift+Control $i toggle-view-tags $tagmask
+    tags=$((1 << ($i - 1)))
+    riverctl map normal $mod $i set-focused-tags $tags
+    riverctl map normal $mod+Shift $i set-view-tags $tags
+    riverctl map normal $mod+Control $i toggle-focused-tags $tags
+    riverctl map normal $mod+Shift+Control $i toggle-view-tags $tags
 done
 tags1to9=$(((1 << 9) - 1))
 riverctl map normal $mod 0 set-focused-tags $tags1to9
 riverctl map normal $mod+Shift 0 set-view-tags $tags1to9
-
-# default layout
-riverctl layout rivertile left
 
 # passthrough mode for nested sessions
 riverctl declare-mode passthrough
 riverctl map normal $mod Semicolon enter-mode passthrough
 riverctl map passthrough $mod Semicolon enter-mode normal
 
-# 8px padding
-riverctl outer-padding 4
-riverctl view-padding 4
+riverctl set-repeat 80 300
 
-# cursor theme
 riverctl xcursor-theme Adwaita
 
 # float stuff with app_id "float"
 riverctl float-filter-add float
 
-# start long running programs
-# TODO: use runit for supervision
-riverctl spawn waybar
-riverctl spawn foot --server
+# run an svdir to supervise stuff like rivertile, foot --server, etc
+
+# TODO: /run is mounted noexec so can't use XDG_RUNTIME_DIR
+svdir="/tmp/$(id -u)-sv-${WAYLAND_DISPLAY}"
+
+pgrep -f "^runsvdir ${svdir}" &&
+    exec echo "runsvdir already running for wayland session"
+
+# recursive, deref links, preserve mode, if target is a dir, overwrite
+# instead of copying into it
+cp -rLpT ~/.local/sv $svdir
+
+exec runsvdir $svdir \
+    'log: ...........................................................................................................................................................................................................................................................................................................................................................................................................'

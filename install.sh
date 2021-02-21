@@ -17,3 +17,5 @@ done
 for file in ${dotfiles}/local/bin/*; do
 	ln -s ${file} ~/.local/bin/
 done
+
+ln -sT ${dotfiles}/local/sv ~/.local/sv
