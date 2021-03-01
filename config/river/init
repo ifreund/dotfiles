@@ -15,11 +15,11 @@ riverctl map normal $mod Return zoom
 riverctl map normal $mod N focus-view next
 riverctl map normal $mod E focus-view previous
 
-# master count/size
-riverctl map normal $mod H mod-master-factor -0.05
-riverctl map normal $mod I mod-master-factor +0.05
-riverctl map normal $mod+Shift H mod-master-count +1
-riverctl map normal $mod+Shift I mod-master-count -1
+# main factor/count
+riverctl map normal $mod H spawn riverctl mod-option -focused-output main_factor -0.05
+riverctl map normal $mod I spawn riverctl mod-option -focused-output main_factor +0.05
+riverctl map normal $mod+Shift H spawn riverctl mod-option -focused-output main_count +1
+riverctl map normal $mod+Shift I spawn riverctl mod-option -focused-output main_count -1
 
 # move/resize
 riverctl map-pointer normal $mod BTN_LEFT move-view
