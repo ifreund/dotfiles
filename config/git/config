@@ -15,3 +15,5 @@
 	smtpserver = /usr/bin/msmtp
 [init]
 	defaultBranch = trunk
+[submodule]
+	recurse = true
