@@ -4,7 +4,7 @@
 mod="Mod4"
 
 # term/close
-riverctl map normal $mod+Shift Return spawn footclient
+riverctl map normal $mod+Shift Return spawn foot
 riverctl map normal $mod Q close
 
 # launcher
@@ -16,10 +16,10 @@ riverctl map normal $mod N focus-view next
 riverctl map normal $mod E focus-view previous
 
 # main factor/count
-riverctl map normal $mod H spawn riverctl mod-option -focused-output main_factor -0.05
-riverctl map normal $mod I spawn riverctl mod-option -focused-output main_factor +0.05
-riverctl map normal $mod+Shift H spawn riverctl mod-option -focused-output main_count +1
-riverctl map normal $mod+Shift I spawn riverctl mod-option -focused-output main_count -1
+riverctl map normal $mod H mod-layout-value rivertile fixed main_factor -0.05
+riverctl map normal $mod I mod-layout-value rivertile fixed main_factor +0.05
+riverctl map normal $mod+Shift H mod-layout-value rivertile int main_count +1
+riverctl map normal $mod+Shift I mod-layout-value rivertile int main_count -1
 
 # move/resize
 riverctl map-pointer normal $mod BTN_LEFT move-view
@@ -61,6 +61,8 @@ riverctl xcursor-theme Adwaita
 
 # float stuff with app_id "float"
 riverctl float-filter-add float
+
+riverctl default-layout rivertile
 
 # run an svdir to supervise stuff like rivertile, foot --server, etc
 

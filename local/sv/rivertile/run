@@ -1,2 +1,2 @@
 #!/bin/sh
-exec rivertile
+exec rivertile -view-padding 4 -outer-padding 4
