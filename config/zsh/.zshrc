@@ -27,6 +27,7 @@ export NNN_TRASH=1               # trash (needs trash-cli) instead of delete
 # add completion functions from zsh-completions packages to fpath so compinit
 # can find them
 fpath=(/usr/share/zsh/site-functions $fpath)
+fpath=(${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions $fpath)
 # initialize completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
