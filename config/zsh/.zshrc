@@ -59,8 +59,13 @@ zstyle ':vcs_info:*' formats 'on %F{green}%b%f'
 zstyle ':vcs_info:*' actionformats 'on %F{green}%b%f(%F{red}%a%f)'
 zstyle ':vcs_info:*' enable git
 setopt prompt_subst
+if [ -z $IN_NIX_SHELL ]; then
+    prompt_env=""
+else
+    prompt_env=" (nix-shell)"
+fi
 PROMPT='
-%F{blue}%~%f ${vcs_info_msg_0_}
+%F{blue}%~%f ${vcs_info_msg_0_}${prompt_env}
 %F{cyan}%(1j.+%j .)%f%F{yellow}❯%f '
 
 # initalize syntax highlighting and customize colors
@@ -97,4 +102,4 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=2' # green
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(direnv hook zsh)"
+source ~/projects/zsh-nix-shell/nix-shell.plugin.zsh
