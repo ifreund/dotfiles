@@ -1,0 +1,16 @@
+#!/bin/sh
+river-tag-overlay \
+    --background-colour=0x002b36 \
+    --border-colour=0x93a1a1 \
+    --border-width=3 \
+    --square-active-background-colour=0x002b36 \
+    --square-active-border-colour=0x93a1a1 \
+    --square-active-occupied-colour=0x93a1a1 \
+    --square-border-width=3 \
+    --square-inactive-background-colour=0x002b36 \
+    --square-inactive-border-colour=0x002b36 \
+    --square-inactive-occupied-colour=0x93a1a1 \
+    --square-inner-padding=7 \
+    --square-padding=3 \
+    --square-size=28 \
+    --tag-amount=9
