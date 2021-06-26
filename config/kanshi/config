@@ -1,0 +1,4 @@
+profile {
+	output HDMI-A-1 enable position 0,0 transform 90
+	output DVI-D-1 enable position 1080,420
+}
