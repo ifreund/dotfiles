@@ -17,3 +17,5 @@
 	defaultBranch = trunk
 [submodule]
 	recurse = true
+[advice]
+	detachedHead = false
