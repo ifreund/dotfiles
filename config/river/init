@@ -57,6 +57,9 @@ riverctl map passthrough $mod Semicolon enter-mode normal
 
 riverctl set-repeat 80 300
 
+# enable tap to click on macbook trackpad
+riverctl input 1452:656:bcm5974 tap enabled
+
 riverctl xcursor-theme Adwaita
 
 # float stuff with app_id "float"
