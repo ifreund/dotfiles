@@ -16,10 +16,10 @@ riverctl map normal $mod N focus-view next
 riverctl map normal $mod E focus-view previous
 
 # main factor/count
-riverctl map normal $mod H mod-layout-value rivertile fixed main_factor -0.05
-riverctl map normal $mod I mod-layout-value rivertile fixed main_factor +0.05
-riverctl map normal $mod+Shift H mod-layout-value rivertile int main_count +1
-riverctl map normal $mod+Shift I mod-layout-value rivertile int main_count -1
+riverctl map normal $mod H send-layout-cmd rivertile 'main-ratio -0.05'
+riverctl map normal $mod I send-layout-cmd rivertile 'main-ratio +0.05'
+riverctl map normal $mod+Shift H send-layout-cmd rivertile 'main-count +1'
+riverctl map normal $mod+Shift I send-layout-cmd rivertile 'main-count -1'
 
 # move/resize
 riverctl map-pointer normal $mod BTN_LEFT move-view
