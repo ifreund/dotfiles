@@ -3,8 +3,10 @@
 # Use the "logo" key as the primary modifier
 mod="Mod4"
 
-# term/close
-riverctl map normal $mod+Shift Return spawn foot
+# Normal terminal and version with large ttf font for screenshare
+riverctl map normal $mod+Shift Return spawn 'foot --log-level=warning'
+riverctl map normal Mod4+Shift+Control Return spawn 'foot --font=dejavusansmono:size=12 --log-level=warning'
+
 riverctl map normal $mod Q close
 
 # launcher
