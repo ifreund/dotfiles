@@ -6,17 +6,18 @@
 # default tab size of 4 spaces
 set-option global tabstop 4
 
-# disable all default indent hooks
+# disable all default indent and insert hooks
 set-option global disabled_hooks '.*-indent'
+set-option global disabled_hooks '.*-insert'
 
 # preserve indent level
 hook global InsertChar \n %{
     try %{ execute-keys -draft <semicolon> K <a-&> }
 }
 
-# trim trailing whitespace on leaving insert mode
+# trim trailing whitespace on the current line when leaving insert mode
 hook global ModeChange pop:insert:.* %{
-    try %{ execute-keys -draft '%s\h+$<ret>d' }
+    try %{ execute-keys -draft '<a-x>s\h+$<ret>d' }
 }
 
 # run the formatcmd for the current filetype on write
@@ -46,7 +47,7 @@ add-highlighter global/ show-matching
 set-option global scrolloff 3,3
 set-option global ui_options ncurses_assistant=none
 
-set-option global startup_info_version 20200116
+set-option global startup_info_version 20210828
 
 set-option global gdb_location_symbol ▶
 
@@ -56,7 +57,7 @@ set-option global gdb_location_symbol ▶
 # fuzzy open file
 define-command fuzzy-open-file %{
     try %sh{
-        foot -w 500x320 --app-id=float sh -c "kak_open_file.sh $kak_session $kak_client"
+        foot -d error --app-id=float sh -c "kak_open_file.sh $kak_session $kak_client"
     }
 }
 
@@ -79,6 +80,8 @@ map global normal <space> , -docstring 'leader'
 # use backspace to do what space used to do
 map global normal <backspace> <space> -docstring 'remove all sels except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
+
+map global insert <c-p> <a-semicolon>P
 
 # general utility
 map global user w ': w<ret>' -docstring 'write'
