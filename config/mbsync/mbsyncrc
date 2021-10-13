@@ -5,22 +5,23 @@
 Expunge Both
 Create Both
 
-IMAPAccount migadu
+IMAPAccount main
 Host imap.migadu.com
-User ifreund@ifreund.xyz
-PassCmd "pass ifreund@ifreund.xyz"
+User mail@isaacfreund.com
+PassCmd "pass mail@isaacfreund.com"
 SSLType IMAPS
 
-IMAPStore migadu-remote
-Account migadu
+IMAPStore main-remote
+Account main
 
-MaildirStore local
+MaildirStore main-local
 SubFolders Verbatim
-Path ~/mail/
-Inbox ~/mail/inbox
+Path ~/mail/main
+Inbox ~/mail/main/Inbox
 
-Channel migadu
-Master :migadu-remote:
-Slave :local:
+Channel main
+Far :main-remote:
+Near :main-local:
 Pattern *
 SyncState *
+CopyArrivalDate yes
