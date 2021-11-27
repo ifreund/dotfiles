@@ -61,6 +61,14 @@ window#waybar {
     border: 2px solid #93a1a1; /*base1*/
 }
 
+#tags button.urgent {
+    border: 2px solid #dc322f; /*red*/
+}
+
+#tags button.occupied.urgent {
+    border: 2px solid #dc322f; /*red*/
+}
+
 #tags button.focused.occupied {
     color: #073642; /*base02*/
     background-color: #93a1a1; /*base1*/
