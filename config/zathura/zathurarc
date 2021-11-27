@@ -40,7 +40,7 @@ set highlight-color "#859900"
 set highlight-active-color "#859900"
 set highlight-transparency 0.5
 
-set recolor true
+set recolor false
 set recolor-darkcolor "#839496"
 set recolor-lightcolor "#002b36"
 
