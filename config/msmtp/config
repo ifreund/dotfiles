@@ -6,11 +6,11 @@ port 465
 tls on
 tls_starttls off
 
-account migadu
+account main
 host smtp.migadu.com
-from ifreund@ifreund.xyz
+from mail@isaacfreund.com
 auth on
-user ifreund@ifreund.xyz
-passwordeval gpg2 --no-tty -q -d ~/.password-store/ifreund@ifreund.xyz.gpg
+user mail@isaacfreund.com
+passwordeval gpg2 --no-tty -q -d ~/.password-store/mail@isaacfreund.com.gpg
 
-account default : migadu
+account default : main
