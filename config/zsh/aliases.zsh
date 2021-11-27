@@ -7,7 +7,7 @@ alias pastebin="curl -F'file=@-' https://0x0.st"
 alias zigbin="curl -F'file=@-' https://zigbin.io"
 alias t="task"
 alias zb="zig build"
-alias ls="ls --color=auto --group-directories-first -h"
+alias ls="ls --color=auto --hyperlink=auto --group-directories-first -h"
 
 # git related
 alias g="git status"
