@@ -91,6 +91,8 @@ map global user t ': ctags-search<ret>' -docstring 'ctag def'
 map global user d ': db<ret>' -docstring 'close buffer'
 map global user m ': make<ret>' -docstring 'make'
 
+map global user j 'iCo-authored-by: Joran Dirk Greef <lt>joran@coil.com<gt><esc>'
+
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
