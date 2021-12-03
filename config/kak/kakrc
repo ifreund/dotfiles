@@ -7,8 +7,7 @@
 set-option global tabstop 4
 
 # disable all default indent and insert hooks
-set-option global disabled_hooks '.*-indent'
-set-option global disabled_hooks '.*-insert'
+set-option global disabled_hooks '.*-indent.*|.*-insert.*'
 
 # preserve indent level
 hook global InsertChar \n %{
