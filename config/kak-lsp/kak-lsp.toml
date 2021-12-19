@@ -5,18 +5,18 @@ timeout = 1800 # 30 minutes
 
 # this is just for zls  and only for types/functions, the rest of the
 # highlighting is covered by regex and doesn't need semantic analysis.
-[semantic_tokens]
-type = "type"
-#variable = "variable"
-#namespace = "module"
-function = "function"
-#string = "string"
-#keyword = "keyword"
-#operator = "operator"
-#comment = "comment"
+[[semantic_tokens]]
+token = "type"
+face = "module"
+modifiers = ["namespace"]
 
-[semantic_token_modifiers]
-namespace = "module"
+[[semantic_tokens]]
+token = "type"
+face = "type"
+
+[[semantic_tokens]]
+token = "function"
+face = "function"
 
 [language.c_cpp]
 filetypes = ["c", "cpp"]
