@@ -9,7 +9,6 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export JANET_PATH="${HOME}/.local/lib/janet"
 export JANET_BINPATH="${HOME}/.local/bin"
 
-export C_INCLUDE_PATH="${HOME}/.local/include"
 export LD_LIBRARY_PATH="${HOME}/.local/lib"
 export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig"
 export MANPATH="${HOME}/.local/share/man:/usr/share/man:"
