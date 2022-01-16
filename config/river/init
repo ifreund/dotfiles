@@ -1,41 +1,41 @@
 #!/bin/sh
 
-# Use the "logo" key as the primary modifier
+# Note that I use a rather unique keyboard/layout so don't expect this to
+# necessarily make sense on normal keyboards.
+
 mod="Mod4"
 
 # Normal terminal and version with large ttf font for screenshare
-riverctl map normal $mod+Shift Return spawn 'foot --log-level=warning'
-riverctl map normal Mod4+Shift+Control Return spawn 'foot --font=dejavusansmono:size=16 --log-level=warning'
+riverctl map normal $mod+Mod1 Space spawn 'foot --log-level=warning'
+riverctl map normal Mod4+Mod1+Shift Space spawn 'foot --font=dejavusansmono:size=16 --log-level=warning'
 
-riverctl map normal $mod Q close
-
-# launcher
-riverctl map normal $mod S spawn fuzzel.sh
+riverctl map normal $mod L spawn fuzzel.sh
+riverctl map normal $mod U close
 
 # view focus
-riverctl map normal $mod Return zoom
-riverctl map normal $mod N focus-view next
-riverctl map normal $mod E focus-view previous
+riverctl map normal $mod Space zoom
+riverctl map normal $mod E focus-view next
+riverctl map normal $mod I focus-view previous
+
+# output focus, etc.
+riverctl map normal $mod N focus-output left
+riverctl map normal $mod O focus-output right
+riverctl map normal $mod+Mod1 N send-to-output left
+riverctl map normal $mod+Mod1 O send-to-output right
 
 # main factor/count
-riverctl map normal $mod H send-layout-cmd rivertile 'main-ratio -0.05'
-riverctl map normal $mod I send-layout-cmd rivertile 'main-ratio +0.05'
-riverctl map normal $mod+Shift H send-layout-cmd rivertile 'main-count +1'
-riverctl map normal $mod+Shift I send-layout-cmd rivertile 'main-count -1'
+riverctl map normal $mod M send-layout-cmd rivertile 'main-ratio -0.05'
+riverctl map normal $mod slash send-layout-cmd rivertile 'main-ratio +0.05'
+riverctl map normal $mod+Mod1 M send-layout-cmd rivertile 'main-count +1'
+riverctl map normal $mod+Mod1 slash send-layout-cmd rivertile 'main-count -1'
 
 # move/resize
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 
-# toggle float/fullscreen
-riverctl map normal $mod Space toggle-float
+# fullscreen/float
 riverctl map normal $mod F toggle-fullscreen
-
-# multi-output
-riverctl map normal $mod Period focus-output next
-riverctl map normal $mod Comma focus-output previous
-riverctl map normal $mod+Shift Period send-to-output next
-riverctl map normal $mod+Shift Comma send-to-output previous
+riverctl map normal $mod+Mod1 F toggle-float
 
 # screenshots
 riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
@@ -44,18 +44,20 @@ riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
 for i in $(seq 1 9); do
     tags=$((1 << ($i - 1)))
     riverctl map normal $mod $i set-focused-tags $tags
-    riverctl map normal $mod+Shift $i set-view-tags $tags
-    riverctl map normal $mod+Control $i toggle-focused-tags $tags
-    riverctl map normal $mod+Shift+Control $i toggle-view-tags $tags
+    riverctl map normal $mod+Mod1 $i set-view-tags $tags
+    riverctl map normal $mod+Mod1+Shift $i toggle-focused-tags $tags
+    riverctl map normal $mod+Mod1+Shift+Control $i toggle-view-tags $tags
 done
 tags1to9=$(((1 << 9) - 1))
 riverctl map normal $mod 0 set-focused-tags $tags1to9
-riverctl map normal $mod+Shift 0 set-view-tags $tags1to9
+riverctl map normal $mod+Mod1 0 set-view-tags $tags1to9
+riverctl map normal $mod Tab focus-previous-tags
+riverctl map normal $mod+Mod1 Tab send-to-previous-tags
 
 # passthrough mode for nested sessions
 riverctl declare-mode passthrough
-riverctl map normal $mod Semicolon enter-mode passthrough
-riverctl map passthrough $mod Semicolon enter-mode normal
+riverctl map normal $mod+Mod1+Shift+Control Escape enter-mode passthrough
+riverctl map passthrough $mod+Mod1+Shift+Control Escape enter-mode normal
 
 riverctl set-repeat 80 300
 
