@@ -10,7 +10,7 @@ riverctl map normal $mod+Mod1 Space spawn 'foot --log-level=warning'
 riverctl map normal Mod4+Mod1+Shift Space spawn 'foot --font=dejavusansmono:size=16 --log-level=warning'
 
 riverctl map normal $mod L spawn fuzzel.sh
-riverctl map normal $mod U close
+riverctl map normal $mod+Mod1 U close
 
 # view focus
 riverctl map normal $mod Space zoom
