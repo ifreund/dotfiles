@@ -13,6 +13,7 @@
 	ff = only
 [sendemail]
 	smtpserver = /usr/bin/msmtp
+	annotate = yes
 [init]
 	defaultBranch = trunk
 [submodule]
