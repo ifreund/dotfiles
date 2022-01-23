@@ -60,6 +60,7 @@ define-command fuzzy-open-file %{
     }
 }
 
+define-command find -menu -params 1 -shell-script-candidates %{ rg --files } %{ edit %arg{1} }
 
 # Enable kak-lsp for some filetypes
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
