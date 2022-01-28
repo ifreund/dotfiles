@@ -14,10 +14,10 @@
     set $right i
 
     # terminal emulator
-    set $term alacritty
+    set $term foot
 
     # program launcher
-    set $launcher ~/.local/bin/launcher.sh
+    set $launcher fuzzel.sh
 
     # solarized dark theme
     set $base03  #002b36
