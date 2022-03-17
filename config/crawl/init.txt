@@ -1,14 +1,93 @@
 ################################################################################
-# Dungeon Crawl Stone Soup config file
-################################################################################
+# Dungeon Crawl Stone Soup config file ################################################################################
 
 # See /usr/share/crawl/docs/options_guide.txt
 
 ################################################################################
 # General
 ################################################################################
+# keymap with working vi keys for colemak keyboards
 
-include = colemak_command_keys.txt
+bindkey = [n] CMD_MOVE_LEFT
+bindkey = [e] CMD_MOVE_DOWN
+bindkey = [i] CMD_MOVE_UP
+bindkey = [o] CMD_MOVE_RIGHT
+bindkey = [j] CMD_MOVE_UP_LEFT
+bindkey = [l] CMD_MOVE_UP_RIGHT
+bindkey = [k] CMD_MOVE_DOWN_LEFT
+bindkey = [m] CMD_MOVE_DOWN_RIGHT
+
+bindkey = [N] CMD_RUN_LEFT
+bindkey = [E] CMD_RUN_DOWN
+bindkey = [I] CMD_RUN_UP
+bindkey = [O] CMD_RUN_RIGHT
+bindkey = [J] CMD_RUN_UP_LEFT
+bindkey = [L] CMD_RUN_UP_RIGHT
+bindkey = [K] CMD_RUN_DOWN_LEFT
+bindkey = [M] CMD_RUN_DOWN_RIGHT
+
+bindkey = [n] CMD_TARGET_LEFT
+bindkey = [e] CMD_TARGET_DOWN
+bindkey = [i] CMD_TARGET_UP
+bindkey = [o] CMD_TARGET_RIGHT
+bindkey = [j] CMD_TARGET_UP_LEFT
+bindkey = [l] CMD_TARGET_UP_RIGHT
+bindkey = [k] CMD_TARGET_DOWN_LEFT
+bindkey = [m] CMD_TARGET_DOWN_RIGHT
+
+bindkey = [N] CMD_TARGET_DIR_LEFT
+bindkey = [E] CMD_TARGET_DIR_DOWN
+bindkey = [I] CMD_TARGET_DIR_UP
+bindkey = [O] CMD_TARGET_DIR_RIGHT
+bindkey = [J] CMD_TARGET_DIR_UP_LEFT
+bindkey = [L] CMD_TARGET_DIR_UP_RIGHT
+bindkey = [K] CMD_TARGET_DIR_DOWN_LEFT
+bindkey = [M] CMD_TARGET_DIR_DOWN_RIGHT
+
+bindkey = [n] CMD_MAP_MOVE_LEFT
+bindkey = [e] CMD_MAP_MOVE_DOWN
+bindkey = [i] CMD_MAP_MOVE_UP
+bindkey = [o] CMD_MAP_MOVE_RIGHT
+bindkey = [j] CMD_MAP_MOVE_UP_LEFT
+bindkey = [l] CMD_MAP_MOVE_UP_RIGHT
+bindkey = [k] CMD_MAP_MOVE_DOWN_LEFT
+bindkey = [m] CMD_MAP_MOVE_DOWN_RIGHT
+
+bindkey = [N] CMD_MAP_JUMP_LEFT
+bindkey = [E] CMD_MAP_JUMP_DOWN
+bindkey = [I] CMD_MAP_JUMP_UP
+bindkey = [O] CMD_MAP_JUMP_RIGHT
+bindkey = [J] CMD_MAP_JUMP_UP_LEFT
+bindkey = [L] CMD_MAP_JUMP_UP_RIGHT
+bindkey = [K] CMD_MAP_JUMP_DOWN_LEFT
+bindkey = [M] CMD_MAP_JUMP_DOWN_RIGHT
+
+# replace (e) with (u)
+bindkey = [u] CMD_TARGET_EXCLUDE
+bindkey = [u] CMD_MAP_EXCLUDE_AREA
+bindkey = [U] CMD_EXPERIENCE_CHECK
+bindkey = [U] CMD_MAP_FIND_EXCLUDED
+bindkey = [^U] CMD_TOGGLE_TRAVEL_SPEED
+bindkey = [^U] CMD_MAP_CLEAR_EXCLUDES
+
+# fix overwrite on ^U
+bindkey = [F] CMD_MAP_UNFORGET
+
+# replace (i) with (y)
+bindkey = [y] CMD_DISPLAY_INVENTORY
+bindkey = [Y] CMD_DISPLAY_SPELLS
+bindkey = [Y] CMD_MAP_FIND_STASH
+bindkey = [^Y] CMD_AUTOFIGHT
+
+# replace (o) with (h)
+bindkey = [h] CMD_EXPLORE
+bindkey = [H] CMD_OPEN_DOOR
+bindkey = [^H] CMD_DISPLAY_OVERMAP
+
+# replace (m) with (b)
+bindkey = [b] CMD_DISPLAY_SKILLS
+bindkey = [B] CMD_MEMORISE_SPELL
+
 
 default_manual_training = true
 
