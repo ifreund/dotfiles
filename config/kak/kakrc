@@ -40,7 +40,7 @@ set-option global windowing_modules 'wayland'
 
 colorscheme solarized-dark-termcolors
 
-add-highlighter global/ number-lines -relative -hlcursor -separator ' '
+add-highlighter global/ number-lines -hlcursor -separator ' '
 add-highlighter global/ show-matching
 
 set-option global scrolloff 3,3
@@ -81,15 +81,15 @@ map global normal <space> , -docstring 'leader'
 map global normal <backspace> <space> -docstring 'remove all sels except main'
 map global normal <a-backspace> <a-space> -docstring 'remove main sel'
 
-map global insert <c-p> <a-semicolon>P
+# this particular readline style binding is quite nice
+map global insert <c-w> <esc>bdi
 
 # general utility
 map global user w ': w<ret>' -docstring 'write'
 map global user g ':grep ' -docstring 'grep'
 map global user p ': fuzzy-open-file<ret>' -docstring 'open file'
-map global user t ': ctags-search<ret>' -docstring 'ctag def'
 map global user d ': db<ret>' -docstring 'close buffer'
-map global user m ': make<ret>' -docstring 'make'
+map global user b ': make<ret>' -docstring 'make'
 
 map global user j 'iCo-authored-by: Joran Dirk Greef <lt>joran@coil.com<gt><esc>'
 
@@ -125,3 +125,10 @@ map global gdb g ': gdb-jump-to-location<ret>' -docstring 'goto current location
 map global gdb p ': gdb-print<ret>' -docstring 'print selection'
 map global gdb t ': gdb-backtrace<ret>' -docstring 'print backtrace'
 define-command gdb -params 0 'enter-user-mode -lock gdb' -docstring 'gdb mode'
+
+define-command gdb-connect-clipboard %{
+    evaluate-commands gdb-session-connect
+    %sh{
+        wl-copy -o "new-ui mi3 ${kak_opt_gdb_dir}/pty"
+    }
+}
