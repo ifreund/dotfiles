@@ -1,0 +1,6 @@
+#!/bin/sh
+
+timestamp=$(date +%F-%R)
+exec swayidle -w \
+	timeout 300 "setsid -f sh -c 'waylock > /tmp/waylock-${timestamp}.log 2>&1'" \
+	timeout 600 "wlopm --off '*'" resume "wlopm --on '*'"
