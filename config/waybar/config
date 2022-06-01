@@ -6,6 +6,7 @@
     "clock"
   ],
   "modules-right": [
+    "river/mode",
     "network",
     "cpu",
     "memory",
