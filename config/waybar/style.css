@@ -42,6 +42,9 @@ window#waybar {
     padding: 1px;
     color: #93a1a1; /*base1*/
     border: 2px solid #073642; /*base02*/
+    
+    /* Disable animation on click, GTK has the stupidest defaults */
+    transition-property: none;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
