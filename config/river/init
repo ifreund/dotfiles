@@ -63,8 +63,8 @@ riverctl set-repeat 80 300
 
 riverctl xcursor-theme Adwaita
 
-# float stuff with app-id "float"
-riverctl float-filter-add app-id float
+riverctl rule-add ssd
+riverctl rule-add float -app-id float
 
 riverctl default-layout rivertile
 
