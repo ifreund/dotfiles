@@ -38,7 +38,7 @@ set-option global windowing_modules 'wayland'
 # ui settings
 # ==============================================================================
 
-colorscheme solarized-dark-termcolors
+colorscheme solarized-dark
 
 add-highlighter global/ number-lines -hlcursor -separator ' '
 add-highlighter global/ show-matching
