@@ -36,12 +36,6 @@ compinit
 # allow completion of hidden files
 _comp_options+=(globdots)
 
-# intialize autosuggestions plugin with base01 as color and ctrl-N to accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^n' autosuggest-accept
-
 # initalize jump
 eval "$(zoxide init --cmd j zsh)"
 
@@ -59,47 +53,6 @@ zstyle ':vcs_info:*' formats 'on %F{green}%b%f'
 zstyle ':vcs_info:*' actionformats 'on %F{green}%b%f(%F{red}%a%f)'
 zstyle ':vcs_info:*' enable git
 setopt prompt_subst
-if [ -z $IN_NIX_SHELL ]; then
-    prompt_env=""
-else
-    prompt_env=" (nix-shell)"
-fi
 PROMPT='
-%F{blue}%~%f ${vcs_info_msg_0_}${prompt_env}
+%F{blue}%~%f ${vcs_info_msg_0_}
 %F{cyan}%(1j.+%j .)%f%F{yellow}❯%f '
-
-# initalize syntax highlighting and customize colors
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
-typeset -A ZSH_HIGHLIGHT_STYLES
-
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=2' # green
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=2' # green
-ZSH_HIGHLIGHT_STYLES[path]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=3' # yellow
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[command-substitution]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=12' # base0
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-unclosed]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=6' # cyan
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=9' # orange
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=1' # red
-ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=1' # red
-ZSH_HIGHLIGHT_STYLES[redirection]='fg=2' # green
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source ~/projects/zsh-nix-shell/nix-shell.plugin.zsh

@@ -15,7 +15,7 @@ riverctl map normal $mod+Mod1 U close
 # view focus
 riverctl map normal $mod Space zoom
 riverctl map normal $mod E focus-view next
-riverctl map normal $mod I focus-view previous
+riverctl map normal $mod A focus-view previous
 
 # output focus, etc.
 riverctl map normal $mod H focus-output left

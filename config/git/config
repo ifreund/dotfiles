@@ -15,7 +15,7 @@
 	smtpserver = /usr/bin/msmtp
 	annotate = yes
 [init]
-	defaultBranch = trunk
+	defaultBranch = main
 [submodule]
 	recurse = true
 [advice]

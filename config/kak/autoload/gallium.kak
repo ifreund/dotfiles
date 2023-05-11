@@ -55,3 +55,6 @@ map global normal L I
 map global normal <a-l> <a-i>
 map global normal <a-L> <a-I>
 unmap global goto l
+
+# comfier than k
+map global goto n a
