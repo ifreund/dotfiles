@@ -25,7 +25,7 @@ hook global BufWritePre .* %{
 }
 
 # load editorconfig for all buffers except special ones like *debug*
-hook global WinCreate ^[^*]+$ %{editorconfig-load}
+hook global WinCreate ^[^*]+$ %{my-editorconfig-load}
 
 hook global WinSetOption filetype=(cpp|kak|python|rust|xml|yml) expandtab
 
@@ -90,8 +90,6 @@ map global user g ':grep ' -docstring 'grep'
 map global user p ': fuzzy-open-file<ret>' -docstring 'open file'
 map global user d ': db<ret>' -docstring 'close buffer'
 map global user b ': make<ret>' -docstring 'make'
-
-map global user j 'iCo-authored-by: Joran Dirk Greef <lt>joran@coil.com<gt><esc>'
 
 # system clipboard
 map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
