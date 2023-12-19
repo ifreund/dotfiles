@@ -64,21 +64,12 @@ riverctl set-repeat 80 300
 riverctl xcursor-theme Adwaita
 
 riverctl rule-add ssd
-riverctl rule-add float -app-id float
+riverctl rule-add -app-id float float
 
 riverctl default-layout rivertile
 
-# run an svdir to supervise stuff like rivertile, foot --server, etc
-
-# TODO: /run is mounted noexec so can't use XDG_RUNTIME_DIR
-svdir="/tmp/$(id -u)-sv-${WAYLAND_DISPLAY}"
-
-pgrep -f "^runsvdir ${svdir}" &&
-    exec echo "runsvdir already running for wayland session"
-
-# recursive, deref links, preserve mode, if target is a dir, overwrite
-# instead of copying into it
-cp -rLpT ~/.local/sv $svdir
-
-exec runsvdir $svdir \
-    'log: ...........................................................................................................................................................................................................................................................................................................................................................................................................'
+rivertile -view-padding 4 -outer-padding 4 &
+foot --server &
+swayidle -w \
+	timeout 300 "waylock.sh" \
+	timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" &

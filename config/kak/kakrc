@@ -74,12 +74,9 @@ hook global WinSetOption filetype=(c|cpp) %{
 # key bindings
 # ==============================================================================
 
-# space is the best leader
-map global normal <space> , -docstring 'leader'
-
 # use backspace to do what space used to do
-map global normal <backspace> <space> -docstring 'remove all sels except main'
-map global normal <a-backspace> <a-space> -docstring 'remove main sel'
+map global normal <backspace> , -docstring 'remove all sels except main'
+map global normal <a-backspace> <a-,> -docstring 'remove main sel'
 
 # this particular readline style binding is quite nice
 map global insert <c-w> <esc>bdi
