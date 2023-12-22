@@ -73,3 +73,5 @@ foot --server &
 swayidle -w \
 	timeout 300 "waylock.sh" \
 	timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" &
+mako &
+poweralertd &
