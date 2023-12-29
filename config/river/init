@@ -59,6 +59,13 @@ riverctl declare-mode passthrough
 riverctl map normal $mod+Mod1+Shift+Control Escape enter-mode passthrough
 riverctl map passthrough $mod+Mod1+Shift+Control Escape enter-mode normal
 
+for mode in normal locked
+do
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'doas -n /usr/bin/brightnessctl s 10%+'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'doas -n /usr/bin/brightnessctl s 10%-'
+done
+
+
 riverctl set-repeat 80 300
 
 riverctl xcursor-theme Adwaita
