@@ -1,0 +1,11 @@
+address "chat.sr.ht:6697"
+nickname "ifreund"
+password-cmd pass chat.sr.ht
+typings false
+
+colors {
+	prompt green
+	unread green
+	status 10
+	nicks fixed 14 7
+}
