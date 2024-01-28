@@ -1,7 +1,6 @@
-# TODO: implement something in river to allow implementation of :focus here
-provide-module wayland %{
+provide-module foot %{
 
-define-command wayland-terminal -params 1.. -shell-completion %{
+define-command foot-terminal -params 1.. -shell-completion %{
     evaluate-commands -save-regs 'a' %{
         set-register a %arg{@}
         evaluate-commands %sh{
@@ -10,6 +9,6 @@ define-command wayland-terminal -params 1.. -shell-completion %{
     }
 }
 
-alias global terminal wayland-terminal
+alias global terminal foot-terminal
 
 }
