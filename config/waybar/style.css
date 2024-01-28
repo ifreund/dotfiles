@@ -83,6 +83,7 @@ window#waybar {
 #cpu,
 #memory,
 #network,
+#idle_inhibitor,
 #temperature {
     padding: 1px 5px;
     margin-top: 8px;

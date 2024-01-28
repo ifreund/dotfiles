@@ -7,6 +7,7 @@
   ],
   "modules-right": [
     "river/mode",
+    "idle_inhibitor",
     "network",
     "cpu",
     "memory",
@@ -23,6 +24,9 @@
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
     "tooltip": false
   },
   "cpu": {
