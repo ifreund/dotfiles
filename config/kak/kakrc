@@ -46,7 +46,7 @@ add-highlighter global/ show-matching
 set-option global scrolloff 3,3
 set-option global ui_options ncurses_assistant=none
 
-set-option global startup_info_version 20231227
+set-option global startup_info_version 20240201
 
 set-option global gdb_location_symbol ▶
 
