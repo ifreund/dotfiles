@@ -1,4 +1,0 @@
-#!/bin/sh
-exec swayidle -w \
-	timeout 300 "waylock.sh" \
-	timeout 600 "wlopm --off '*'" resume "wlopm --on '*'"
