@@ -75,6 +75,14 @@ riverctl rule-add -app-id float float
 
 riverctl default-layout rivertile
 
+# The user dinit instance is shared across all login sessions and all ttys
+# Therefore, only tell it about the first wayland session
+if [ "$WAYLAND_DISPLAY" = "wayland-1" ]; then
+	dinitctl setenv WAYLAND_DISPLAY
+	dinitctl setenv DISPLAY
+	dinitctl restart dbus --force
+fi
+
 rivertile -view-padding 4 -outer-padding 4 &
 foot --server &
 swayidle -w \
