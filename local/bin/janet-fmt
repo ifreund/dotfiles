@@ -1,0 +1,6 @@
+#!/usr/bin/env janet
+
+(import spork)
+
+(defn main [&]
+  (prin (spork/fmt/format (file/read stdin :all))))
