@@ -13,7 +13,7 @@ for file in $(git ls-files --recurse-submodules)
 do
 	path="$name/$(dirname "$file")"
 	mkdir -p "$path"
-	cp "$file" "$path"
+	cp -r "$file" "$path"
 done
 
 tar -cavf "$name".tar.gz "$name"
