@@ -1,3 +1,8 @@
-elpa
 auto-save-list
+elpa
 eshell
+places
+projects
+straight/**
+!straight/versions
+transient

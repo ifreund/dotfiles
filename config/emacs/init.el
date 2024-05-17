@@ -1,27 +1,76 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+;; -*- lexical-binding: t -*-
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
 
-(load-theme 'solarized-dark)
+(use-package emacs
+  :config
+  ;; Anything persistent should go in this init.el file
+  (setq custom-file null-device)
+  
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (horizontal-scroll-bar-mode -1)
+  
+  (save-place-mode 1)
 
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (setq inhibit-startup-screen t)
+  
+  (require 'uniquify)
+  (setq uniquify-buffer-name-style 'forward)
 
-(defun meow-setup ()
+  (set-frame-font "Hack 12"))
+  
+(use-package solarized-theme
+  :config
+  (setq solarized-use-less-bold t)
+  (load-theme 'solarized-dark t))
+
+(use-package vertico
+  :init
+  (vertico-mode))
+
+(use-package hotfuzz
+  :config
+  (setq completion-styles '(hotfuzz))
+  (setq completion-ignore-case t))
+
+(use-package consult
+  :bind (("C-x b" . consult-buffer)))
+
+(use-package marginalia
+  :init
+  (marginalia-mode))
+
+(use-package magit)
+
+(use-package meow
+  :config
   (meow-motion-overwrite-define-key
    '("a" . meow-next)
    '("e" . meow-prev)
    '("<escape>" . ignore))
 
   (meow-leader-define-key
-   '("w" . save-buffer))
+   '("w" . save-buffer)
+   '("b" . "C-x b"))
 
   (meow-normal-define-key
    '("h" . meow-left)
@@ -94,8 +143,5 @@
    '("'" . repeat)
 
    '("q" . meow-quit)
-   '("<escape>" . ignore)))
-   
-(require 'meow)
-(meow-setup)
-(meow-global-mode 1)
+   '("<escape>" . ignore))
+  (meow-global-mode 1))
