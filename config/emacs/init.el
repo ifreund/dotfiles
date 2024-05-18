@@ -72,9 +72,11 @@
    '("e" . meow-prev)
    '("<escape>" . ignore))
 
+  (setq meow-keypad-ctrl-meta-prefix ?M)
   (meow-leader-define-key
    '("w" . save-buffer)
-   '("b" . "C-x b"))
+   '("b" . "C-x b")
+   '("g" . "C-x g"))
 
   (meow-normal-define-key
    '("h" . meow-left)
