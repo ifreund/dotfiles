@@ -36,7 +36,9 @@
   (require 'uniquify)
   (setq uniquify-buffer-name-style 'forward)
 
-  (set-frame-font "Hack 12"))
+  (set-frame-font "Hack 12")
+
+  (setq tab-always-indent 'complete))
   
 (use-package solarized-theme
   :config
@@ -56,8 +58,10 @@
   :bind (("C-x b" . consult-buffer)))
 
 (use-package marginalia
-  :init
-  (marginalia-mode))
+  :init (marginalia-mode))
+
+(use-package corfu
+  :init (global-corfu-mode))
 
 (use-package magit)
 
