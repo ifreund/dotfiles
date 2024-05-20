@@ -77,7 +77,6 @@
    '("w" . save-buffer)
    '("b" . "C-x b")
    '("g" . "C-x g")
-   '("o" . "C-x p D")
    '("p" . "C-x p f"))
 
   (meow-normal-define-key
