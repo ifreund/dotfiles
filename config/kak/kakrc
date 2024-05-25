@@ -16,7 +16,7 @@ hook global InsertChar \n %{
 
 # trim trailing whitespace on the current line when leaving insert mode
 hook global ModeChange pop:insert:.* %{
-    try %{ execute-keys -draft '<a-x>s\h+$<ret>d' }
+    try %{ execute-keys -draft 'xs\h+$<ret>d' }
 }
 
 # run the formatcmd for the current filetype on write
