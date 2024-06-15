@@ -11,6 +11,8 @@
 	program = gpg
 [pull]
 	ff = only
+[merge]
+	ff = only
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	annotate = yes
