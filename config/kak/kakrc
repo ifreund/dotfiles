@@ -93,7 +93,7 @@ map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
 
 # wrap to 80 characters
-map global user f '|fmt -w 80<ret>' -docstring 'wrap to 80'
+map global user f '|fmt -w 80 -l 0<ret>' -docstring 'wrap to 80'
 
 # wrap to 80 with comments and shit
 map global user F '<a-x>Z<a-;>;Wyzs^<c-r>"<ret>dz|fmt -w 77<ret><a-s>ghP<space>'
