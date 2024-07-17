@@ -1,3 +1,6 @@
 [submodule "config/kak/autoload/gdb"]
 	path = config/kak/autoload/gdb
 	url = https://github.com/occivink/kakoune-gdb
+[submodule "config/kak/autoload/kakoune-find"]
+	path = config/kak/autoload/kakoune-find
+	url = git@github.com:occivink/kakoune-find.git
