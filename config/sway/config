@@ -215,11 +215,6 @@
     smart_borders on
     smart_gaps on
 
-    # Hide titlebars completely in stacking/tabbed layouts
-    font pango:cozette 0
-    titlebar_border_thickness 0
-    titlebar_padding 0 0
-
     # Note: urgent only relevant for xwayland windows
     #                       border  background text    indicator child_border
     client.focused          $base0  $base03    $base0  $base0    $base0
