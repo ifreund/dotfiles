@@ -65,6 +65,8 @@
 
 (use-package magit)
 
+(use-package zig-mode)
+
 (use-package meow
   :config
   (meow-motion-overwrite-define-key
