@@ -60,6 +60,16 @@ define-command fuzzy-open-file %{
     }
 }
 
+define-command fuzzy -params 1 %{ edit %arg{1} }
+complete-command -menu fuzzy shell-script-candidates %{
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
+    then
+        git ls-files
+    else
+        rg --files
+    fi
+}
+
 # Enable kak-lsp for some filetypes
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(c|cpp) %{
@@ -82,7 +92,7 @@ map global insert <c-w> <esc>bdi
 # general utility
 map global user w ': w<ret>' -docstring 'write'
 map global user g ':grep ' -docstring 'grep'
-map global user p ': fuzzy-open-file<ret>' -docstring 'open file'
+map global user p ': fuzzy ' -docstring 'open file'
 map global user d ': db<ret>' -docstring 'close buffer'
 map global user b ': make<ret>' -docstring 'make'
 
