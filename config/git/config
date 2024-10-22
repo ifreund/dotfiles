@@ -24,3 +24,5 @@
 	detachedHead = false
 [rerere]
 	enabled = true
+[includeIf "gitdir:freebsd/"]
+	path = ~/.config/git/config_freebsd

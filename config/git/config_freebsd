@@ -1,0 +1,5 @@
+[user]
+	email = ifreund@freebsdfoundation.org
+[commit]
+	gpgSign = false
+	template = ~/.config/git/commit_template_freebsd
