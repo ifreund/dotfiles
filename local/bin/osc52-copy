@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Use first argument or stdin as input
+encoded=$(echo "${1:-$(cat -)}" | base64)
+printf "\033]52;c;%s\a" "$encoded" > /dev/tty

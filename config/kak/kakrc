@@ -97,7 +97,7 @@ map global user d ': db<ret>' -docstring 'close buffer'
 map global user b ': make<ret>' -docstring 'make'
 
 # system clipboard
-map global user c '<a-|>wl-copy<ret>' -docstring 'wl-copy'
+map global user c '<a-|>osc52-copy<ret>' -docstring 'osc52-copy'
 map global user v '!wl-paste -n<ret>' -docstring 'wl-paste'
 
 # wrap to 80 characters
