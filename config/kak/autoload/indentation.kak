@@ -1,7 +1,7 @@
 define-command noexpandtab %{
     remove-hooks global noexpandtab
     hook -group noexpandtab global NormalKey <gt> %{ try %{
-        execute-keys -draft "<a-x>s^\h+<ret><a-@>"
+        execute-keys -draft "xs^\h+<ret><a-@>"
     }}
     set-option global aligntab true
     remove-hooks global expandtab
@@ -27,7 +27,7 @@ define-command smarttab %{
         execute-keys -draft h@
     }}
     hook -group smarttab global NormalKey <gt> %{ try %{
-        execute-keys -draft "<a-x>s^\h+<ret><a-@>"
+        execute-keys -draft "xs^\h+<ret><a-@>"
     }}
     set-option global aligntab false
     remove-hooks global expandtab
