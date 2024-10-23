@@ -65,7 +65,7 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'doas -n /usr/bin/brightnessctl s 10%-'
 done
 
-
+riverctl keyboard-layout -options "compose:ralt" us
 riverctl set-repeat 80 300
 
 riverctl xcursor-theme Adwaita
