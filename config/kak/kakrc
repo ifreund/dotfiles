@@ -39,6 +39,8 @@ set-option global windowing_modules 'wayland'
 # ==============================================================================
 
 colorscheme solarized-dark
+# Reduce angry fruit salad effect, in particular for lua
+set-face global variable Default
 
 add-highlighter global/ number-lines -hlcursor -separator ' '
 add-highlighter global/ show-matching
