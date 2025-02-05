@@ -35,6 +35,9 @@ set-option global grepcmd 'rg --column'
 # use foot as the terminal
 set-option global windowing_modules 'wayland'
 
+# :make-jump compatible with `note:` in Zig errors
+set-option global make_error_pattern "^([^:\n]+):(\d+):(?:(\d+):)? (?:fatal )?(error|note):([^\n]+)?"
+
 # ui settings
 # ==============================================================================
 
