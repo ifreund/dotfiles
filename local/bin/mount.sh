@@ -4,4 +4,4 @@ device_name=$(lsblk -o NAME,SIZE,MODEL -l | tail -n +2 | tr -s ' ' | fuzzel.sh -
 mount_point=~/mnt/${device_name}
 mkdir -p ${mount_point} || exit 1
 printf "mounting /dev/%s to %s\n" ${device_name} ${mount_point}
-doas mount /dev/${device_name} ${mount_point}
+doas -n /usr/bin/mount -o umask=000 /dev/${device_name} ${mount_point}
