@@ -11,6 +11,6 @@ host smtp.migadu.com
 from mail@isaacfreund.com
 auth on
 user mail@isaacfreund.com
-passwordeval gpg2 --no-tty -q -d ~/.password-store/mail@isaacfreund.com.gpg
+passwordeval gpg --no-tty -q -d ~/.password-store/mail.gpg
 
 account default : main
