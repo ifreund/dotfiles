@@ -15,8 +15,8 @@ export MANPATH="${HOME}/.local/share/man:/usr/share/man:"
 
 # setup path
 path=("$HOME/.local/bin" $path)
-# cargo why are you dumb
 path=("$HOME/.cargo/bin" $path)
+path=("$HOME/.local/lib/janet/bin" $path)
 export PATH
 
 export EDITOR=kak
