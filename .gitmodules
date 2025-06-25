@@ -7,3 +7,6 @@
 [submodule "config/kak/autoload/parinfer-rust"]
 	path = config/kak/autoload/parinfer-rust
 	url = https://github.com/eraserhd/parinfer-rust
+[submodule "config/kak/autoload/repl-buffer"]
+	path = config/kak/autoload/repl-buffer
+	url = https://gitlab.com/Screwtapello/kakoune-repl-buffer

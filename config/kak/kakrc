@@ -51,7 +51,7 @@ add-highlighter global/ show-matching
 set-option global scrolloff 3,3
 set-option global ui_options ncurses_assistant=none
 
-set-option global startup_info_version 20240201
+set-option global startup_info_version 20250700
 
 set-option global gdb_location_symbol ▶
 
@@ -87,6 +87,20 @@ hook global WinSetOption filetype=(c|cpp) %{
 hook global WinSetOption filetype=(janet) %{
     parinfer-enable-window -smart
 }
+
+define-command janet-repl-new %{
+    repl-buffer-new -name "janet" janet -q -n -p
+}
+
+define-command repl-send %{
+    repl-buffer-send-text %val{selection}
+    # Hack to send a newline, stolen from kakoune-repl-buffer's git history
+    evaluate-commands -save-regs n %{
+        execute-keys -draft ge"ny
+        repl-buffer-send-text %reg{n}
+    }
+}
+map global user r ': repl-send<ret>' -docstring 'send to repl'
 
 # key bindings
 # ==============================================================================
