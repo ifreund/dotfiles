@@ -84,6 +84,10 @@ hook global WinSetOption filetype=(c|cpp) %{
 # uncomment to enable debug logging for kak-lsp
 #set-option global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
+hook global WinSetOption filetype=(janet) %{
+    parinfer-enable-window -smart
+}
+
 # key bindings
 # ==============================================================================
 

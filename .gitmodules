@@ -4,3 +4,6 @@
 [submodule "config/kak/autoload/kakoune-find"]
 	path = config/kak/autoload/kakoune-find
 	url = git@github.com:occivink/kakoune-find.git
+[submodule "config/kak/autoload/parinfer-rust"]
+	path = config/kak/autoload/parinfer-rust
+	url = https://github.com/eraserhd/parinfer-rust
