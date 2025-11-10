@@ -41,7 +41,7 @@ set-option global make_error_pattern "^([^:\n]+):(\d+):(?:(\d+):)? (?:fatal )?(e
 # ui settings
 # ==============================================================================
 
-colorscheme solarized-dark
+colorscheme modus-operandi
 # Reduce angry fruit salad effect, in particular for lua
 set-face global variable Default
 

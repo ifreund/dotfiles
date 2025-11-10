@@ -70,6 +70,12 @@ riverctl set-repeat 80 300
 
 riverctl xcursor-theme Adwaita
 
+# https://protesilaos.com/emacs/modus-themes-colors
+riverctl background-color 0xffffff # bg-main
+riverctl border-color-focused 0x000000 # fg-main
+riverctl border-color-unfocused 0x9f9f9f # border
+riverctl border-color-urgent 0xa60000 # red
+
 riverctl rule-add ssd
 riverctl rule-add -app-id float float
 

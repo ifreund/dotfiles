@@ -4,8 +4,5 @@ password-cmd pass chat.sr.ht
 typings false
 
 colors {
-	prompt #839496
-	unread #839496
-	status 10
-	nicks fixed 14 7
+	nicks fixed
 }

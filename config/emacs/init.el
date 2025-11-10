@@ -40,11 +40,6 @@
 
   (setq tab-always-indent 'complete))
   
-(use-package solarized-theme
-  :config
-  (setq solarized-use-less-bold t)
-  (load-theme 'solarized-dark t))
-
 (use-package vertico
   :init
   (vertico-mode))

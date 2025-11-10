@@ -55,4 +55,4 @@ zstyle ':vcs_info:*' enable git
 setopt prompt_subst
 PROMPT='
 %F{blue}%~%f ${vcs_info_msg_0_}
-%F{cyan}%(1j.+%j .)%f%F{yellow}❯%f '
+%F{cyan}%(1j.+%j .)%f❯ '
