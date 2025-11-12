@@ -1,7 +1,6 @@
 # https://protesilaos.com/emacs/modus-themes-colors
 
 evaluate-commands %sh{
-
 bg_main='rgb:ffffff'
 bg_dim='rgb:f2f2f2'
 fg_main='rgb:000000'
@@ -126,7 +125,38 @@ bg_paren_match='rgb:5fcfff'
 bg_paren_expression='rgb:efd3f5'
 
 echo "
-# syntax
+# builtin
+face global Default            ${fg_main},${bg_main}
+face global PrimarySelection   ${fg_main},${bg_region}+fg
+face global SecondarySelection ${fg_dim},${bg_region}+fg
+face global PrimaryCursor      ${bg_main},${fg_main}+fg
+face global SecondaryCursor    ${bg_main},${fg_dim}+fg
+face global PrimaryCursorEol   ${bg_main},${fg_dim}+fg
+face global SecondaryCursorEol ${bg_main},${fg_dim}+fg
+face global MenuForeground     ${fg_main},${bg_active}
+face global MenuBackground     ${fg_main},${bg_main}
+face global MenuInfo           ${fg_dim}
+face global Information        ${fg_main},${bg_main}
+face global InlineInformation  ${fg_main},${bg_main}
+face global Error              ${red}+b
+face global DiagnosticError    ${red}
+face global DiagnosticWarning  ${yellow_warmer}
+face global StatusLine         ${fg_main},${bg_main}
+face global StatusLineMode     ${fg_main},${bg_main}
+face global StatusLineInfo     ${fg_main},${bg_main}
+face global StatusLineValue    ${fg_main},${bg_main}
+face global StatusCursor       ${bg_main},${fg_main}
+face global Prompt             ${fg_main}+b
+face global BufferPadding      ${fg_main},${bg_main}
+
+# builtin highlighters
+face global LineNumbers        ${fg_dim},${bg_dim}
+face global LineNumberCursor   ${fg_main},${bg_active}
+face global LineNumbersWrapped ${bg_dim},${bg_dim}
+face global MatchingChar       ${bg_dim},${fg_dim}+fg
+face global Whitespace         ${fg_dim}+f
+
+# syntax highlighters
 face global value              ${blue_cooler}
 face global type               ${cyan_cooler}
 face global variable           ${cyan}
@@ -141,7 +171,7 @@ face global documentation      ${green_faint}
 face global meta               ${red_cooler}
 face global builtin            ${magenta_warmer}
 
-# markup
+# markup highlighters
 face global title              ${cyan_cooler}+b
 face global header             ${cyan_cooler}
 face global mono               default
@@ -149,33 +179,5 @@ face global block              default
 face global link               ${blue_warmer}
 face global bullet             default
 face global list               default
-
-# builtin
-face global Default            ${fg_main},${bg_main}
-face global PrimarySelection   ${fg_main},${bg_region}+fg
-face global SecondarySelection ${fg_dim},${bg_region}+fg
-face global PrimaryCursor      ${bg_main},${fg_main}+fg
-face global SecondaryCursor    ${bg_main},${fg_dim}+fg
-face global PrimaryCursorEol   ${bg_main},${fg_dim}+fg
-face global SecondaryCursorEol ${bg_main},${fg_dim}+fg
-face global LineNumbers        ${fg_dim},${bg_dim}
-face global LineNumberCursor   ${fg_main},${bg_active}
-face global LineNumbersWrapped ${bg_dim},${bg_dim}
-face global MenuForeground     ${fg_main},${bg_active}
-face global MenuBackground     ${fg_main},${bg_main}
-face global MenuInfo           ${fg_dim}
-face global Information        ${cyan_cooler}
-face global Error              ${red},default+b
-face global DiagnosticError    ${red}
-face global DiagnosticWarning  ${yellow_warmer}
-face global StatusLine         ${fg_main},${bg_active}
-face global StatusLineMode     default
-face global StatusLineInfo     default
-face global StatusLineValue    default
-face global StatusCursor       ${bg_main},${fg_main}
-face global Prompt             ${fg_main}+b
-face global MatchingChar       ${bg_dim},${fg_dim}+fg
-face global BufferPadding      ${fg_main},${bg_main}
-face global Whitespace         ${fg_dim}+f
 "
 }

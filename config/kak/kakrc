@@ -41,7 +41,6 @@ set-option global make_error_pattern "^([^:\n]+):(\d+):(?:(\d+):)? (?:fatal )?(e
 # ui settings
 # ==============================================================================
 
-add-highlighter global/ number-lines -hlcursor -separator ' '
 add-highlighter global/ show-matching
 
 set-option global scrolloff 3,3

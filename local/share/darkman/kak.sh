@@ -1,7 +1,7 @@
 #!/bin/sh
 
 case "$1" in
-dark) COLORSCHEME=solarized-dark ;;
+dark) COLORSCHEME=modus-vivendi ;;
 light) COLORSCHEME=modus-operandi ;;
 default) exit 1 ;;
 esac
