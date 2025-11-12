@@ -147,8 +147,8 @@ face global header             ${cyan_cooler}
 face global mono               default
 face global block              default
 face global link               ${blue_warmer}
-face global bullet             ${yellow}
-face global list               ${green}
+face global bullet             default
+face global list               default
 
 # builtin
 face global Default            ${fg_main},${bg_main}

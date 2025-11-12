@@ -9,6 +9,7 @@ ln -s  ${dotfiles}/zprofile ~/.zprofile
 # create ~/.config and ~/.local if they don't exist
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
 
 # symlink everything in config and local/bin
 for file in ${dotfiles}/config/*; do
@@ -16,4 +17,7 @@ for file in ${dotfiles}/config/*; do
 done
 for file in ${dotfiles}/local/bin/*; do
 	ln -s ${file} ~/.local/bin/
+done
+for file in ${dotfiles}/local/share/*; do
+	ln -s ${file} ~/.local/share/
 done

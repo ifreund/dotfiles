@@ -6,8 +6,8 @@
 mod="Mod4"
 
 # Normal terminal and version with large ttf font for screenshare
-riverctl map normal $mod+Mod1 Space spawn 'foot --log-level=warning'
-riverctl map normal Mod4+Mod1+Shift Space spawn 'foot --font=dejavusansmono:size=16 --log-level=warning'
+riverctl map normal $mod+Mod1 Space spawn 'footclient --log-level=warning'
+riverctl map normal Mod4+Mod1+Shift Space spawn 'footclient --font=dejavusansmono:size=16 --log-level=warning'
 
 riverctl map normal $mod L spawn fuzzel.sh
 riverctl map normal $mod+Mod1 U close
@@ -81,12 +81,10 @@ riverctl rule-add -app-id float float
 
 riverctl default-layout rivertile
 
-# The user dinit instance is shared across all login sessions and all ttys
+# The user dbus session is shared across all login sessions and all ttys
 # Therefore, only tell it about the first wayland session
 if [ "$WAYLAND_DISPLAY" = "wayland-1" ]; then
-	dinitctl setenv WAYLAND_DISPLAY
-	dinitctl setenv DISPLAY
-	dinitctl restart dbus --force
+	dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP PATH
 fi
 
 rivertile -view-padding 4 -outer-padding 4 &
