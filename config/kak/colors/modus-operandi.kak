@@ -127,8 +127,8 @@ bg_paren_expression='rgb:efd3f5'
 echo "
 # builtin
 face global Default            ${fg_main},${bg_main}
-face global PrimarySelection   ${fg_main},${bg_region}+fg
-face global SecondarySelection ${fg_dim},${bg_region}+fg
+face global PrimarySelection   ${fg_main},${bg_active}+fg
+face global SecondarySelection ${fg_main},${bg_inactive}+fg
 face global PrimaryCursor      ${bg_main},${fg_main}+fg
 face global SecondaryCursor    ${bg_main},${fg_dim}+fg
 face global PrimaryCursorEol   ${bg_main},${fg_dim}+fg
