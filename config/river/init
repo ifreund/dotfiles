@@ -89,8 +89,6 @@ fi
 
 rivertile -view-padding 4 -outer-padding 4 &
 foot --server &
-swayidle -w \
-	timeout 300 "waylock.sh" \
-	timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" &
 poweralertd &
 kanshi &
+wlsunset -l 50.8 -L 6.1 &
