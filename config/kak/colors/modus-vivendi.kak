@@ -179,5 +179,8 @@ face global block              default
 face global link               ${blue_warmer}
 face global bullet             default
 face global list               default
+
+#custom highlighters
+face global max_column         default,${bg_active}
 "
 }

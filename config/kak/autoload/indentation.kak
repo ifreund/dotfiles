@@ -77,7 +77,7 @@ define-command my-editorconfig-load -params ..1 -docstring "editorconfig-load [f
                             print "hook buffer BufWritePre \"" file "\" -group editorconfig-hooks %{ try %{ execute-keys -draft %{%s\\h+$|\\n+\\z<ret>d} } }"
                         }
                         if (max_line_length && max_line_length != "off") {
-                            print "add-highlighter window/ column %sh{ echo $((" max_line_length "+1)) } default,rgb:073642"
+                            print "add-highlighter window/ column %sh{ echo $((" max_line_length "+1)) } max_column"
                         }
                     }
                 ' ;;
