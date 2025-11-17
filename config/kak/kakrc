@@ -74,6 +74,8 @@ complete-command -menu fuzzy shell-script-candidates %{
 evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(c|cpp) %{
     lsp-enable-window
+    # Get rid of error gutter
+    lsp-diagnostic-lines-disable window
 }
 
 # uncomment to enable debug logging for kak-lsp
