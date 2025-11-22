@@ -9,7 +9,7 @@ mod="Mod4"
 riverctl map normal $mod+Mod1 Space spawn 'footclient --log-level=warning'
 riverctl map normal Mod4+Mod1+Shift Space spawn 'footclient --font=dejavusansmono:size=16 --log-level=warning'
 
-riverctl map normal $mod L spawn fuzzel.sh
+riverctl map normal $mod L spawn fuzzel
 riverctl map normal $mod+Mod1 U close
 
 # view focus

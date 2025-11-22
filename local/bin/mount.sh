@@ -1,5 +1,5 @@
 #!/bin/sh
-device_name=$(lsblk -o NAME,SIZE,MODEL -l | tail -n +2 | tr -s ' ' | fuzzel.sh -d 2> /dev/null | cut -d ' ' -f 1)
+device_name=$(lsblk -o NAME,SIZE,MODEL -l | tail -n +2 | tr -s ' ' | fuzzel -d 2> /dev/null | cut -d ' ' -f 1)
 [ -n "${device_name}" ] || exit 1
 mount_point=~/mnt/${device_name}
 mkdir -p ${mount_point} || exit 1
