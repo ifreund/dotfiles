@@ -5,4 +5,5 @@ typings false
 
 colors {
 	nicks fixed
+	nicks self 0
 }
