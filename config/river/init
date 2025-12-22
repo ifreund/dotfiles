@@ -20,6 +20,9 @@
 # Therefore, only tell it about the first wayland session
 if [ "$WAYLAND_DISPLAY" = "wayland-1" ]; then
 	dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP PATH
+	dbus-send --dest=org.freedesktop.DBus /org/freedesktop/Dbus \ 
+		org.freedesktop.Dbus.StartServiceByName \ 
+		string:org.freedesktop.impl.portal.desktop.darkman uint32:0
 fi
 
 # TODO use a service manager
