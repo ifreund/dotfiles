@@ -10,3 +10,6 @@
 [submodule "config/kak/autoload/repl-buffer"]
 	path = config/kak/autoload/repl-buffer
 	url = https://gitlab.com/Screwtapello/kakoune-repl-buffer
+[submodule "config/kak/autoload/git-async"]
+	path = config/kak/autoload/git-async
+	url = https://github.com/ifreund/git-async.kak
