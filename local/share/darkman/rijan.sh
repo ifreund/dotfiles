@@ -3,7 +3,7 @@
 case "$1" in
 dark|light)
 	for path in $(find "${XDG_RUNTIME_DIR}" -name "rijan-*"); do
-		echo "(do (merge-into config ${1}) (:manage-dirty (registry :rwm)))" | \
+		echo "(do (merge-into config ${1}) (:manage-dirty (registry (string 'river_window_manager_v1))))" | \
 			janet-netrepl -U "${path}" -c
 	done
 	;;
