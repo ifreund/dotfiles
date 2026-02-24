@@ -8,7 +8,7 @@ export JANET_PATH="${HOME}/.local/lib/janet"
 export JANET_BINPATH="${HOME}/.local/bin"
 
 export LD_LIBRARY_PATH="${HOME}/.local/lib"
-export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig"
+export PKG_CONFIG_PATH="${HOME}/.local/lib/pkgconfig:${HOME}/.local/share/pkgconfig"
 export MANPATH="${HOME}/.local/share/man:/usr/share/man:"
 
 # setup path
