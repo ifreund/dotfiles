@@ -1,21 +1,5 @@
 #!/bin/sh
 
-# TODO support these things in rijan/river 0.4
-#
-# for mode in normal locked
-# do
-#     riverctl map $mode None XF86MonBrightnessUp   spawn 'doas -n /usr/bin/brightnessctl s 10%+'
-#     riverctl map $mode None XF86MonBrightnessDown spawn 'doas -n /usr/bin/brightnessctl s 10%-'
-# done
-#
-# riverctl keyboard-layout -options "compose:ralt" us
-# riverctl set-repeat 80 300
-#
-# riverctl xcursor-theme Adwaita
-#
-# riverctl rule-add ssd
-# riverctl rule-add -app-id float float
-
 # The user dbus session is shared across all login sessions and all ttys
 # Therefore, only tell it about the first wayland session
 if [ "$WAYLAND_DISPLAY" = "wayland-1" ]; then
