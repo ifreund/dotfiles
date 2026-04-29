@@ -12,7 +12,7 @@ fi
 # TODO use a service manager
 
 timestamp=$(date +%F-%R)
-WAYLAND_DEBUG=1 rijan > /tmp/rijan-${timestamp}.log 2>&1 &
+rijan > /tmp/rijan-${timestamp}.log 2>&1 &
 
 foot --server &
 poweralertd &
