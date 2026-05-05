@@ -15,6 +15,7 @@ export MANPATH="${HOME}/.local/share/man:/usr/share/man:"
 path=("$HOME/.local/bin" $path)
 path=("$HOME/.cargo/bin" $path)
 path=("$HOME/.local/lib/janet/bin" $path)
+path=("$HOME/.luarocks/bin" $path)
 export PATH
 
 export EDITOR=kak
