@@ -4,4 +4,9 @@ profile {
 		position 0,0
 		adaptive_sync on
 	}
+	output HDMI-A-1 {
+		enable
+		position 2560,180
+		scale 1.5
+	}
 }
